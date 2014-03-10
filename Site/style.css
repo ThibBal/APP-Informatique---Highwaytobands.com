@@ -2,7 +2,7 @@
 {
     text-align: center;
    	display: inline-block;
-    width: 31%;
+    width: 30%;
     height: auto;
     border-radius: 5px;
     padding: 10px;
@@ -17,7 +17,7 @@
 #article2{
     text-align: center;
     display: inline-block;
-    width: 31%;
+    width: 30%;
     height: auto;
     border-radius: 5px;
     padding: 10px;
@@ -32,7 +32,7 @@
     text-align: center;
     display: inline-block;
     height: auto;
-    width: 31%;
+    width: 30%;
     border-radius: 5px;
     padding: 10px;
     color: white;
@@ -54,7 +54,7 @@ nav{
     width: 100%;
     margin : auto;
     border: 1px solid red;
-    min-width: 800px;
+    
    
 }
 
@@ -78,3 +78,5 @@ footer{
 body { 
 font-family: Trebuchet MS;
 background-color:#C0C0C0;
+min-width: 800px;
+}
