@@ -1,13 +1,80 @@
-nav
+#article1
 {
-    position: absolute;
-    right: 0px;
-    bottom: 0px;
+    text-align: center;
+   	display: inline-block;
+    width: 31%;
+    height: auto;
+    border-radius: 5px;
+    padding: 10px;
+    color: white;
+    font-size: 0.9em;
+    margin : auto;
+    border: 1px solid blue;
+    vertical-align: top;
+
 }
 
-div
-{
-    position: fixed;
-    right: 0px;
-    bottom: 0px;
+#article2{
+    text-align: center;
+    display: inline-block;
+    width: 31%;
+    height: auto;
+    border-radius: 5px;
+    padding: 10px;
+    color: white;
+    font-size: 0.9em;
+    margin : auto;
+    border: 1px solid blue;
+    vertical-align: top;
 }
+
+#article3{
+    text-align: center;
+    display: inline-block;
+    height: auto;
+    width: 31%;
+    border-radius: 5px;
+    padding: 10px;
+    color: white;
+    font-size: 0.9em;
+    margin : auto;
+    border: 1px solid blue;
+    vertical-align: top;
+}
+
+
+nav{
+    width: auto;
+    margin : auto;
+    border: 1px solid black;
+    text-align: center;
+}
+
+#contenu{
+    width: 100%;
+    margin : auto;
+    border: 1px solid red;
+    min-width: 800px;
+   
+}
+
+header{
+    width: auto;
+    margin : auto;
+    border: 1px solid green;
+    background-image: url("http://concreteplayground.com.au/_snacks/wp-content/uploads/2013/11/gig.jpg");
+
+	}
+
+footer{
+    width : 100%;
+    float: top;
+    text-align: center;
+    border: 1px solid blue;
+
+    
+}
+
+body { 
+font-family: Trebuchet MS;
+background-color:#C0C0C0;
