@@ -49,7 +49,7 @@
     height: 100%;
     margin : auto;
     border: 1px solid red; 
-
+    background-color:#C0C0C0;
    
 }
 
@@ -59,9 +59,9 @@
     margin : auto;
     border: 1px solid green; 
     float:left;
-    font-family: Arial;
     background-color: #515151;
     text-align: center;
+    font-size: 10px;
     
 
 }
@@ -69,32 +69,74 @@
 nav{
     width: auto;
     margin : auto;
-    border: 1px solid black;
+    border: 1px solid red;
     text-align: center;
 }
 
 
-header{
-    width: auto;
-    margin : auto;
-    border: 1px solid green;
-    background-image: url("http://concreteplayground.com.au/_snacks/wp-content/uploads/2013/11/gig.jpg");
 
+
+header{
+    width: 100%;
+    background-color: transparent;
+    height: 180px;
+
+    
 	}
 
 footer{
-    width : 99%;
-    position: absolute;
+    width : 100%;
     text-align: center;
     border: 1px solid blue;
+    background-color: #D1D2CA;
 
     
 }
 
 html, body { 
 font-family: Arial;
-background-color:#C0C0C0;
+background-image: url("http://concreteplayground.com.au/_snacks/wp-content/uploads/2013/11/gig.jpg");
 min-width: 800px;
+}
+
+#logo{
+    width: 200px;
+    float: left;
+    vertical-align: middle;
+}
+
+
+#connexion{
+   width: 110px;
+   background-color: white;
+   color: black;
+   border-radius: 100px;
+   text-align: center;
+   float: right;   
+
+}
+
+#cadre{
+width: 300px;
+float: right;
+background-color: transparent;
+border: 1px solid transparent;
+
+}
+
+#search{
+    float: right;
+}
+
+#menu{
+    display: inline-block;
+    border: 1px solid grey;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    float: right;
+
+
 }
 
 #menu a{
@@ -120,7 +162,7 @@ min-width: 800px;
  width:100px;
  color:white;
  text-decoration:none;
- padding:5px;
+ padding:4px;
  }
 #menu li a:hover {
  color:black;
