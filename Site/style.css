@@ -43,6 +43,14 @@
 }
 
 
+#contenu{
+    width: 100%;
+    height: 100%;
+    margin : auto;
+    border: 1px solid red;   
+   
+}
+
 nav{
     width: auto;
     margin : auto;
@@ -50,13 +58,6 @@ nav{
     text-align: center;
 }
 
-#contenu{
-    width: 100%;
-    margin : auto;
-    border: 1px solid red;
-    
-   
-}
 
 header{
     width: auto;
@@ -68,15 +69,55 @@ header{
 
 footer{
     width : 100%;
-    float: top;
+    absolute: bottom;
     text-align: center;
     border: 1px solid blue;
 
     
 }
 
-body { 
-font-family: Trebuchet MS;
+html, body { 
+font-family: Arial;
 background-color:#C0C0C0;
 min-width: 800px;
 }
+
+#menu a{
+    width : 160px; 
+}
+
+#menu ul {
+ margin:0;
+ padding:0;
+ list-style-type:none;
+ text-align:center;
+ }
+#menu li {
+ float:left;
+ margin:auto;
+ padding:0;
+ background-color:black;
+ }
+#menu li a {
+ display:block;
+ width:100px;
+ color:white;
+ text-decoration:none;
+ padding:5px;
+ }
+#menu li a:hover {
+ color:black;
+ background-color: white;
+ }
+ #menu ul li ul {
+ display:none;
+ }
+ #menu ul li:hover ul {
+ display:block;
+ }
+#menu li:hover ul li {
+ float:none;
+ }
+ #menu li ul {
+ position:absolute;
+ }
