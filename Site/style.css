@@ -1,45 +1,18 @@
-#article1
+.article1
 {
     text-align: center;
+    text-decoration:none;
    	display: inline-block;
-    width: 32%;
+    width: 31%;
     height: auto;
     border-radius: 5px;
     padding: 10px;
     color: white;
     font-size: 0.9em;
     margin : auto;
-    border: 1px solid blue;
+    border: 1px solid grey;
     vertical-align: top;
-
-}
-
-#article2{
-    text-align: center;
-    display: inline-block;
-    width: 32%;
-    height: auto;
-    border-radius: 5px;
-    padding: 10px;
-    color: white;
-    font-size: 0.9em;
-    margin : auto;
-    border: 1px solid blue;
-    vertical-align: top;
-}
-
-#article3{
-    text-align: center;
-    display: inline-block;
-    height: auto;
-    width: 30%;
-    border-radius: 5px;
-    padding: 10px;
-    color: white;
-    font-size: 0.9em;
-    margin : auto;
-    border: 1px solid blue;
-    vertical-align: top;
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
 
@@ -48,20 +21,20 @@
     width: 100%;
     height: 100%;
     margin : auto;
-    border: 1px solid red; 
-    background-color:#C0C0C0;
+    background-color: transparent;
    
 }
 
-#contenu2{
+.vide{
     width: 100%;
-    height: 30px;
+    height: 20px;
     margin : auto;
-    border: 1px solid green; 
-    float:left;
-    background-color: #515151;
+    border: 1px solid transparent; 
+    float:top;
+    background-color: transparent;
     text-align: center;
     font-size: 10px;
+
     
 
 }
@@ -94,7 +67,8 @@ footer{
 }
 
 html, body { 
-font-family: Arial;
+
+font-family: Impact;
 background-image: url("http://concreteplayground.com.au/_snacks/wp-content/uploads/2013/11/gig.jpg");
 min-width: 800px;
 }
@@ -107,7 +81,7 @@ min-width: 800px;
 
 
 #connexion{
-   width: 110px;
+   width: 150px;
    background-color: white;
    color: black;
    border-radius: 100px;
@@ -116,25 +90,15 @@ min-width: 800px;
 
 }
 
-#cadre{
-width: 300px;
-float: right;
-background-color: transparent;
-border: 1px solid transparent;
 
-}
-
-#search{
-    float: right;
-}
 
 #menu{
     display: inline-block;
     border: 1px solid grey;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 15%;
+    margin-right:15% ;
     text-align: center;
-    float: right;
+    float: top;
 
 
 }
