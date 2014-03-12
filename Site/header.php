@@ -1,7 +1,7 @@
 <header>
 
 		<div id="logo"><center><a href="accueil.php"><img width=150 src="img/logo.png" alt="Logo du site"></a></center></div>
-		<a href="#"><div id="connexion"><p>Identification</p>
+		<a href="#"><div id="connexion"><p>Identification / Inscription</p>
 		</div></a>
 
 		<div id="cadre">
@@ -34,8 +34,9 @@
 							</li>
 						</ul>
 					</li>
+					<li><a href="contact.html">Votre compte</a></li>
 					<li><a href="forum.html">Forum</a></li>
-					<li><a href="contact.html">Contact</a></li>
+					<li><a href="contact.html">Contact</a></li>					
 				</ul>
 			</div>
 
