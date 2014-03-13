@@ -1,0 +1,94 @@
+header{
+    width: 100%;
+    background-color: transparent;
+    height: 25%;    
+    display: inline-block;
+    font-family: 'Maiden Orange', cursive;
+    font-size: 1.2em;
+
+	}
+
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+
+
+#logo{
+    width: 200px;
+    float: left;
+    vertical-align: middle;
+    
+}
+
+
+#connexion
+{
+    position : absolute;
+    right: 2%;     
+}
+
+form input
+{
+    display: block; 
+
+}
+
+#rechercher{
+    position: absolute;
+    top: 20%;
+    right: 2%;
+}
+
+
+#menu{
+    display: inline-block;
+    border: 1px solid grey;
+    margin-left: 2%;
+    margin-right:5% ;
+    text-align: center;
+    float: top;
+
+
+}
+
+
+
+#menu ul {
+ margin:0;
+ padding:0;
+ list-style-type:none;
+ text-align:center;
+ }
+#menu li {
+ float:left;
+ margin:auto;
+ padding:0;
+ background-color: rgba(0, 0, 0, 0.4);
+ border: 1px solid #D6D6D6; 
+ }
+#menu li a {
+ display:block;
+ width:140px;
+ color:white;
+ text-decoration:none;
+ padding:4px;
+ }
+#menu li a:hover {
+ color:black;
+ background-color: white;
+ }
+ #menu ul li ul {
+ display:none;
+ }
+ #menu ul li:hover ul {
+ display:block;
+ }
+#menu li:hover ul li {
+ float:none;
+ }
+ #menu li ul {
+ position:absolute;
+ }

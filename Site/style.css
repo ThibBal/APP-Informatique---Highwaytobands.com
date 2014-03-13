@@ -1,62 +1,17 @@
-.article
-{
-    text-align: center;
-    text-decoration:none;
-   	display: inline-block;
-    width: 31%;
-    height: 90%;
-    border-radius: 5px;
-    padding: 10px;
-    color: white;
-    font-size: 0.9em;
-    margin : auto;
-    border: 1px solid grey;
-    vertical-align: top;
-    background-color: rgba(0, 0, 0, 0.8);
+html, body { 
+
+font-family: 'Open Sans', sans-serif;
+background-color: #DFE0DA;
+background-size: cover;
+min-width: 800px;
 
 }
-
-
-#contenu{
-
-    width: 100%;
-    height: 100%;
-    margin : auto;
-    background-color: transparent;
-   
-}
-
-.vide{
-    width: 100%;
-    height: 15px;
-    margin : auto;
-    border: 1px solid transparent; 
-    float:top;
-    background-color: transparent;
-    text-align: center;
-    font-size: 10px;
-
-    
-
-}
-
-
-
-header{
-    width: 100%;
-    background-color: transparent;
-    height: 40%;
-    
-
-    
-	}
 
 footer{
-    width : 100%;
-    text-align: center;
-    background-color: transparent;
 
-    
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.6);
+
 }
 
 a{
@@ -64,100 +19,55 @@ a{
     color: white;
 }
 
-html, body { 
 
-font-family: Impact;
-background-image: url("http://blog.eventmarketerpro.com/wp-content/uploads/2013/12/Concert-Tours.jpeg");
-background-size: cover;
-min-width: 800px;
-height: 90%;
+.article
+{
+   
+    text-decoration:none;
+   	display: inline-block;
+    width: 32%;
+    border-radius: 5px;
+    padding: 2px;
+    color: white;
+    font-size: 0.9em;
+    margin : auto;
+    border: 1px solid grey;
+    vertical-align: top;
+    background-color: rgba(0, 0, 0, 0.5);
 
 }
-
 .actu{
-    border: 1px solid grey;
-    
+    border-bottom: 1px solid grey;
+    padding: 1%;
 }
 
 .concert{
-    border: 1px solid grey;
+
+
+    border-bottom: 1px solid grey;
+    padding: 1%;
 }
 
-#logo{
-    width: 200px;
-    float: left;
-    vertical-align: middle;
-}
-
-
-#connexion
-{
-    position : absolute;
-    right: 2%;     
-}
-
-form input
-{
-    display: block; 
-
-}
-
-#rechercher{
-    position: absolute;
-    top: 30%;
-    right: 2%
-}
-
-
-#menu{
-    display: inline-block;
-    border: 1px solid grey;
-    margin-left: 10%;
-    margin-right:10% ;
+.titre{
     text-align: center;
+    border-bottom: 1px solid grey;
+    padding-bottom: 1%;
+}
+
+#contenu{
+
+    
     float: top;
+    margin-bottom: 1%;
+    padding: auto;
+    background-color: transparent;
+   display: block;
+  
+}
+
 
 
 }
 
-#menu a{
-    width : 160px;
 
-}
 
-#menu ul {
- margin:0;
- padding:0;
- list-style-type:none;
- text-align:center;
- }
-#menu li {
- float:left;
- margin:auto;
- padding:0;
- background-color:black;
- border: 1px solid #D6D6D6; 
- }
-#menu li a {
- display:block;
- width:100px;
- color:white;
- text-decoration:none;
- padding:4px;
- }
-#menu li a:hover {
- color:black;
- background-color: white;
- }
- #menu ul li ul {
- display:none;
- }
- #menu ul li:hover ul {
- display:block;
- }
-#menu li:hover ul li {
- float:none;
- }
- #menu li ul {
- position:absolute;
- }

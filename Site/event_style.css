@@ -20,13 +20,29 @@ a{
 }
 
 #banniere{
-    width: 90%;    
+
+    width: 100%;    
+    text-align: center;
+    font-size: 0.9em;
+    margin-bottom: 3%;
+    color: white;  
+     
+
+}
+
+
+#image_banniere{
+    width: 100%;    
     text-align: center;
     font-size: 0.9em;
     margin : auto;
     color: white;   
+    display: inline-block;
+      background-size: cover;
+      background-repeat: no-repeat;
+      webkit-background-size: cover;
+     
 }
-
 
 .article
 {
@@ -40,13 +56,14 @@ a{
     margin : auto;
     vertical-align: top;   
     border-right: 2px solid black; 
+
     
 
 }
 
 .sous_article{
 
-height: 50%;
+
 }
 
 
@@ -54,15 +71,14 @@ height: 50%;
 
     width: 100%;
     height: auto;
-    border-radius: 5px;
     margin-bottom: 1%;
+    border-radius: 5px;
     background-color: rgba(0, 0, 0, 0.5);
     display: block;
 
     
    
 }
-
 
 
 .actu{
