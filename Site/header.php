@@ -40,7 +40,7 @@
 				</ul>
 			</div>
 
-		<div id="search">
+		<div size="600" id="search">
 			
 		</div>	
 		

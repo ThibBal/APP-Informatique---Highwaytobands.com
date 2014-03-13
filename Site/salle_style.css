@@ -1,18 +1,27 @@
+#banniere{
+    width: 90%;    
+    text-align: center;
+    font-size: 0.9em;
+    margin : auto;
+    color: white;   
+}
+
+
 .article
 {
     text-align: center;
-    text-decoration:none;
-   	display: inline-block;
-    width: 31%;
-    height: 90%;
-    border-radius: 5px;
+    display: inline-block;
+    width: 22%;
+    height: 90%;    
     padding: 10px;
     color: white;
     font-size: 0.9em;
     margin : auto;
-    border: 1px solid grey;
-    vertical-align: top;
-    background-color: rgba(0, 0, 0, 0.8);
+    vertical-align: top;    
+
+}
+
+.sous_article{
 
 }
 
@@ -20,44 +29,26 @@
 #contenu{
 
     width: 100%;
-    height: 100%;
+    height: auto;
     margin : auto;
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: block;
+    
    
 }
-
-.vide{
-    width: 100%;
-    height: 15px;
-    margin : auto;
-    border: 1px solid transparent; 
-    float:top;
-    background-color: transparent;
-    text-align: center;
-    font-size: 10px;
-
-    
-
-}
-
-
 
 header{
     width: 100%;
     background-color: transparent;
-    height: 40%;
-    
-
+    height: 25%; 
     
 	}
 
 footer{
     width : 100%;
     text-align: center;
-    background-color: transparent;
-
-    
-}
+   
+        }
 
 a{
     text-decoration: none;
@@ -67,8 +58,10 @@ a{
 html, body { 
 
 font-family: Impact;
-background-image: url("http://blog.eventmarketerpro.com/wp-content/uploads/2013/12/Concert-Tours.jpeg");
+background-image: url("http://xn--80aqafcrtq.cc/img/4/7/3/Concert%20smoke,%20crowd%20people,%20%D0%BA%D0%BE%D0%BD%D1%86%D0%B5%D1%80%D1%82,%20%D0%BC%D1%83%D0%B7%D1%8B%D0%BA%D0%B0,%20%D0%BC%D0%BE%D0%BB%D0%BE%D0%B4%D1%91%D0%B6%D1%8C,%20%D0%BA%D0%BB%D1%83%D0%B1,%20%D1%84%D0%BE%D1%82%D0%BE,%203648x2736.jpg");
 background-size: cover;
+background-repeat: no-repeat;
+background-attachment: fixed;
 min-width: 800px;
 height: 90%;
 
@@ -104,8 +97,8 @@ form input
 
 #rechercher{
     position: absolute;
-    top: 30%;
-    right: 2%
+    top: 20%;
+    right: 2%;
 }
 
 
