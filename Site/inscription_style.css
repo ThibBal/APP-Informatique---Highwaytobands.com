@@ -58,3 +58,8 @@ input[type=checkbox] {
 	width:25px;
     height:25px;
 }
+
+.champs span {
+	width: 150px;
+	display: inline-block;
+}

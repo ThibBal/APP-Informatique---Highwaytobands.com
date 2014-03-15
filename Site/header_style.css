@@ -24,7 +24,12 @@ header{
     border-bottom: 1px solid #808080;
     
 	}
+footer{
 
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.6);
+
+}
 
 a{
     text-decoration: none;
