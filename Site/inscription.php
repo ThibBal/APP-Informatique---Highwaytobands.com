@@ -12,15 +12,22 @@
 	<?php include 'header.php' ?>
 	<div id="inscription">
 		<form method="post" action="envoi.php">
-	<ul>
-		<li><span>Pseudo : </span><input class= "box" type="text"></li>
-		<li><span>Mot de passe : </span><input class="box" type="password"></li>
-		<li><span>Adresse E-Mail : </span><input class="box" type="mail"></li>
-		<li><span>Code postal : </span><input class="box" type="text"></li>
-		<li><span>J'accepte les <a href="conditions.php">Conditions Générales d'Utilisation</a></span><input type="checkbox"></li>
-		<li><span></span></li>
+			<span id="blabla">Inscription : Veuillez compléter les champs suivants</span>
+	<ul id="formulaire">
+		<li class="champs"><span>Pseudo : </span><input class= "box" type="text"></li>
+		<li class="champs"><span>Mot de passe : </span><input class="box" type="password"></li>
+		<li class="champs"><span>Adresse E-Mail : </span><input class="box" type="mail"></li>
+		<li class="champs"><span>Code postal : </span><input class="box" type="text"></li>
+		<li id="CGU"><span>J'accepte les <a href="conditions.php">Conditions Générales d'Utilisation</a></span><input type="checkbox"/></li>
 		
 	</ul>
+
+	<a href="envoi.php"><div id="envoi">S'inscrire</div></a>
+
 </div>
+<footer>
+		<a href="faq.html">FAQ</a>
+		<a href="legales.html">Mentions légales</a>
+	</footer>	
 	</body>
 		</html>

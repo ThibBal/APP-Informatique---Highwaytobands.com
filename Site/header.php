@@ -5,8 +5,8 @@
 		<div id="logo"><a href="accueil.php"><img width=150 src="img/logo.png" alt="Logo du site"></a></div>
 			
 				<form id="connexion" method="post" action="traitement.php">
-					<input type="text" placeholder ="pseudo" size="12"/>
-					<input type="password" placeholder ="mot de passe" size="12" />
+					<input type="text" placeholder =" pseudo" size="12"/>
+					<input type="password" placeholder =" mot de passe" size="12" />
 				</form>
 			
 
@@ -45,7 +45,7 @@
 			</div>
 
 			<div id="rechercher"><form method="post" action="rechercher.php">
-			<input type="text" placeholder ="Rechercher" size="20" />
+			<input type="text" placeholder =" Rechercher" size="20" />
 			</form></div>		
 	</header>
 
