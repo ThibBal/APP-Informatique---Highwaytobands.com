@@ -38,7 +38,7 @@
 							</li>
 						</ul>
 					</li>
-					<li><a href="contact.php">Votre compte</a></li>
+					<li><a href="inscription.php">Votre compte</a></li>
 					<li><a href="forum.php">Forum</a></li>
 					<li><a href="contact.html">Contact</a></li>					
 				</ul>

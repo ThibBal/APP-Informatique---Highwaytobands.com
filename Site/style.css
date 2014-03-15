@@ -1,34 +1,3 @@
-
-
-html, body { 
-
-font-family: 'Open Sans', sans-serif;
-background: rgb(212,228,239); /* Old browsers */
-background: -moz-radial-gradient(center, ellipse cover, rgba(212,228,239,1) 0%, rgba(134,174,204,1) 100%); /* FF3.6+ */
-background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(212,228,239,1)), color-stop(100%,rgba(134,174,204,1))); /* Chrome,Safari4+ */
-background: -webkit-radial-gradient(center, ellipse cover, rgba(212,228,239,1) 0%,rgba(134,174,204,1) 100%); /* Chrome10+,Safari5.1+ */
-background: -o-radial-gradient(center, ellipse cover, rgba(212,228,239,1) 0%,rgba(134,174,204,1) 100%); /* Opera 12+ */
-background: -ms-radial-gradient(center, ellipse cover, rgba(212,228,239,1) 0%,rgba(134,174,204,1) 100%); /* IE10+ */
-background: radial-gradient(ellipse at center, rgba(212,228,239,1) 0%,rgba(134,174,204,1) 100%); /* W3C */
-
-background-size: cover;
-min-width: 800px;
-
-}
-
-footer{
-
-    text-align: center;
-    background-color: rgba(0, 0, 0, 0.4);
-
-}
-
-a{
-    text-decoration: none;
-    color: white;
-}
-
-
 .article
 {
    
@@ -65,9 +34,9 @@ a{
 
 #contenu{
 
-    
+    margin-left: 1%;
     float: top;
-    margin-bottom: 1%;
+    
     padding: auto;
     background-color: transparent;
    display: block;

@@ -22,12 +22,13 @@ header{
     font-family: 'Maiden Orange', cursive;
     font-size: 1.2em;
     border-bottom: 1px solid #808080;
-    
+    margin-bottom: 1%;
 	}
+    
 footer{
-
+    margin-top: 1%;
     text-align: center;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.4);
 
 }
 
