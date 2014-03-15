@@ -5,7 +5,8 @@ header{
     display: inline-block;
     font-family: 'Maiden Orange', cursive;
     font-size: 1.2em;
-
+    border-bottom: 1px solid #808080;
+    
 	}
 
 
@@ -20,7 +21,8 @@ a{
     width: 200px;
     float: left;
     vertical-align: middle;
-    
+    margin-left: 1%;
+    margin-top: 2px;
 }
 
 
@@ -72,13 +74,13 @@ form input
 #menu li a {
  display:block;
  width:140px;
- color:white;
+ color:#E6E6E6;
  text-decoration:none;
  padding:4px;
  }
 #menu li a:hover {
  color:black;
- background-color: white;
+ background-color: #E6E6E6;
  }
  #menu ul li ul {
  display:none;

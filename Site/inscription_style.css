@@ -1,7 +1,6 @@
-
-
 html, body { 
-
+margin: 0;
+padding: 0;
 font-family: 'Open Sans', sans-serif;
 background: rgb(212,228,239); /* Old browsers */
 background: -moz-radial-gradient(center, ellipse cover, rgba(212,228,239,1) 0%, rgba(134,174,204,1) 100%); /* FF3.6+ */
@@ -10,7 +9,6 @@ background: -webkit-radial-gradient(center, ellipse cover, rgba(212,228,239,1) 0
 background: -o-radial-gradient(center, ellipse cover, rgba(212,228,239,1) 0%,rgba(134,174,204,1) 100%); /* Opera 12+ */
 background: -ms-radial-gradient(center, ellipse cover, rgba(212,228,239,1) 0%,rgba(134,174,204,1) 100%); /* IE10+ */
 background: radial-gradient(ellipse at center, rgba(212,228,239,1) 0%,rgba(134,174,204,1) 100%); /* W3C */
-
 background-size: cover;
 min-width: 800px;
 
@@ -19,64 +17,14 @@ min-width: 800px;
 footer{
 
     text-align: center;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.6);
 
 }
 
-a{
-    text-decoration: none;
-    color: white;
-}
-
-
-.article
-{
-   
-    text-decoration:none;
-   	display: inline-block;
-    width: 32%;
-    border-radius: 5px;
-    padding: 2px;
-    color: white;
-    font-size: 0.9em;
-    margin : auto;
-    border: 1px solid grey;
-    vertical-align: top;
-    background-color: rgba(0, 0, 0, 0.3);
+.box{
+ border-radius: 6px;
 
 }
-.actu{
-    border-bottom: 1px solid grey;
-    padding: 1%;
+ul{
+  list-style-type:none;
 }
-
-.concert{
-
-
-    border-bottom: 1px solid grey;
-    padding: 1%;
-}
-
-.titre{
-    text-align: center;
-    border-bottom: 1px solid grey;
-    padding-bottom: 1%;
-}
-
-#contenu{
-
-    
-    float: top;
-    margin-bottom: 1%;
-    padding: auto;
-    background-color: transparent;
-   display: block;
-  
-}
-
-
-
-}
-
-
-

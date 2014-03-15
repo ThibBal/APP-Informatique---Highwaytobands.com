@@ -6,7 +6,7 @@
 			
 				<form id="connexion" method="post" action="traitement.php">
 					<input type="text" placeholder ="pseudo" size="12"/>
-					<input type="text" placeholder ="mot de passe" size="12" />
+					<input type="password" placeholder ="mot de passe" size="12" />
 				</form>
 			
 
@@ -14,21 +14,21 @@
 		
 			<div id="menu">
 				<ul>
-					<li><a href="event.html">Concerts</a>
+					<li><a href="event.php">Concerts</a>
 						<ul>
 							<li><a href="#">Les plus populaires</a></li>
 							<li><a href="#">Ordre alphabétique</a></li>
 							<li><a href="#">Les plus récents</a></li>
 						</ul>
 					</li>
-					<li><a href="salle.html">Salles</a>
+					<li><a href="salle.php">Salles</a>
 						<ul>
 							<li><a href="#">Les plus populaires</a></li>
 							<li><a href="#">Ordre alphabétique</a></li>
 							<li><a href="#">Proche de chez vous</a></li>
 						</ul>
 					</li>
-					<li><a href="groupe.html">Groupes</a>
+					<li><a href="groupe.php">Artistes</a>
 						<ul>
 							<li><a href="#">Les plus populaires</a>
 							</li>
@@ -38,8 +38,8 @@
 							</li>
 						</ul>
 					</li>
-					<li><a href="contact.html">Votre compte</a></li>
-					<li><a href="forum.html">Forum</a></li>
+					<li><a href="contact.php">Votre compte</a></li>
+					<li><a href="forum.php">Forum</a></li>
 					<li><a href="contact.html">Contact</a></li>					
 				</ul>
 			</div>

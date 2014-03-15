@@ -33,7 +33,7 @@
 
 
 		<div class="article">
-			<h2>Infos & Horaires</h2>
+			<h2>Infos et Horaires</h2>
 			<div class="actu"><p><a href="#">Article : Une actualité top du top</a></p>
 			<p>Cumque pertinacius ut legum gnarus accusatorem flagitaret atque sollemnia, doctus id Caesar libertatemque superbiam ratus tamquam obtrectatorem audacem excarnificari praecepit, qui ita</p>
 
