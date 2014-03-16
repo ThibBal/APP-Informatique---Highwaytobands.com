@@ -18,7 +18,8 @@
 		<li class="champs"><span>Mot de passe : </span><input class="box" type="password"></li>
 		<li class="champs"><span>Adresse E-Mail : </span><input class="box" type="mail"></li>
 		<li class="champs"><span>Code postal : </span><input class="box" type="text"></li>
-		<li id="CGU"><span>J'accepte les <a href="conditions.php">Conditions Générales d'Utilisation</a></span><input type="checkbox"/></li>
+		<li class="CGU"><span>Vous souhaitez être : </span><span class="statut">Un membre</span><input name="radio" type="radio"/><span class="statut">Une salle</span><input name="radio" type="radio"/><span class="statut">Un groupe</span><input name="radio" type="radio" /></li>
+		<li class="CGU"><span>J'accepte les <a href="conditions.php">Conditions Générales d'Utilisation</a></span><input type="checkbox"/></li>
 		
 	</ul>
 

@@ -14,7 +14,7 @@
 
 }
 
-#CGU{
+.CGU{
 	margin-top: 3%;
 margin-bottom: 3%;
 
@@ -47,9 +47,21 @@ font-size: 2em;
     margin-left: 25%;
 }
 
+.statut{
+	margin-left: 1%;
+}
+
 span{
 	text-align: center;
 
+}
+
+input[type=radio] {
+	display: inline;
+	margin-right: 2%;
+	margin-left: 1%;
+	width:20px;
+    height:20px;
 }
 
 input[type=checkbox] {

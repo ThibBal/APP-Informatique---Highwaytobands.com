@@ -19,13 +19,13 @@
 		<div class="article">
 
 			<div class="sous_article">
-			<h2>Photos</h2>
+			<h3>Photos</h3>
 			<img width=150 src="http://www.le-hiboo.com/wp-content/uploads/2012/10/20121010_dionysos_olympia_paris_17.jpg">
 			<img width=150 src="http://lh6.ggpht.com/_ZunlmXG2fZY/Sq-nC9hjAgI/AAAAAAAAA3U/xxZX-a0E_5Q/Olympia%20coup%C3%A9.jpg">
 			</div>
 
 			<div class="sous_article">
-			<h2>Playlist</h2>
+			<h3>Playlist</h3>
 			<div class="actu"><p></p>
 			<p>Cumque pertinacius ut legum gnarus accusatorem flagitaret atque sollemnia, doctus id Caesar libertatemque superbiam ratus tamquam obtrectatorem audacem excarnificari praecepit, qui ita</p></div>	
 			</div>			
@@ -33,7 +33,7 @@
 
 
 		<div class="article">
-			<h2>Infos & Horaires</h2>
+			<h3>Infos & Horaires</h3>
 			<div class="actu"><p><a href="#">Article : Une actualité top du top</a></p>
 			<p>Cumque pertinacius ut legum gnarus accusatorem flagitaret atque sollemnia, doctus id Caesar libertatemque superbiam ratus tamquam obtrectatorem audacem excarnificari praecepit, qui ita</p>
 
@@ -42,21 +42,31 @@
 		</div>
 
 		<div class="article">
-			<h2>Description</h2>
+			<h3>Description</h3>
 			<div class="actu"><p><a href="#">Article : Une actualité top du top</a></p>
 			<p>Cumque pertinacius ut legum gnarus accusatorem flagitaret atque sollemnia, doctus id Caesar libertatemque superbiam ratus tamquam obtrectatorem audacem excarnificari praecepit, qui ita</p></div>			
 		</div>
 
 		<div class="article">
 			<div class="sous_article">
-			<h2>Ils y participent</h2>
-			<div class="actu"><p></p>
-			<p>Cumque pertinacius ut legum gnarus accusatorem flagitaret atque sollemnia, doctus id Caesar libertatemque superbiam ratus tamquam obtrectatorem audacem excarnificari praecepit, qui ita</p>
-			</div>
+			<h3>Ils y participent</h3>
+			<div id="participants"><p></p>
+			<ul>
+				<li>Gégé44</li>
+				<li>FrancoisLeCasque</li>
+				<li>NicolasS</li>
+				<li>Louisxvi</li>
+				<li>BorisDu92</li>
+				<li>BarackO</li>
+				<li>Liza2</li>
+				<li>BradP</li>
+				<li>KylieMin</li>
+			</ul>
+			</div>	
 			</div>
 
 			<div class="sous_article">
-			<h2>Commentaires</h2>
+			<h3>Commentaires</h3>
 			<div class="actu">
 			<p>Cumque pertinacius ut legum gnarus accusatorem flagitaret atque sollemnia, doctus id Caesar libertatemque superbiam ratus tamquam obtrectatorem audacem excarnificari praecepit, qui ita</p>	
 			</div>

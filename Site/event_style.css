@@ -40,6 +40,11 @@
 
 }
 
+h3{
+    text-align: center;
+    border-bottom: 1px solid white;
+}
+
 .sous_article{
 
 
@@ -60,10 +65,16 @@
 
 
 .actu{
-    border: 1px solid grey;
+ 
     
 }
 
 .concert{
-    border: 1px solid grey;
+
+}
+
+#participants{
+    max-height: 100px;
+    overflow-y: scroll;
+    text-align: left;
 }
