@@ -4,7 +4,7 @@
 
 		<div id="logo"><a href="accueil.php"><img width=150 src="img/logo.png" alt="Logo du site"></a></div>
 			
-				<form id="connexion" method="post" action="traitement.php">
+				<form id="connexion" method="post" action="identification.php">
 					<input type="text" placeholder =" pseudo" size="12"/>
 					<input type="password" placeholder =" mot de passe" size="12" />
 				</form>
