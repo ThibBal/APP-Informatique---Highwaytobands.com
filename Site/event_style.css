@@ -78,3 +78,7 @@ h3{
     overflow-y: scroll;
     text-align: left;
 }
+
+li{
+    list-style-type:none;
+}
