@@ -11,11 +11,12 @@
 <body>
 	<?php include 'header.php' ?>
 	<div id="inscription">
-		<form action="insert.php" method="post" enctype="multipart/form-data">
+		<form action="controleur/membrecontroleur.php" method="post" enctype="multipart/form-data">
 			<span id="blabla">Inscription : Veuillez compléter les champs suivants</span>
 	<ul id="formulaire">
 		<li class="champs"><span>Login : </span><input name=login class= "box" type="text"></li>
-		<li class="champs"><span>Mot de passe : </span><input name=password class="box" type="password"></li>
+		<li class="champs"><span>Mot de passe :<span class=small>(5 caractères requis)</span>  </span><input name=password class="box" type="password"></li>
+		<li class="champs"><span>Vérification du mot de passe : </span><input name=password2 class="box" type="password"></li>
 		<li class="champs"><span>Adresse E-Mail : </span><input name=mail class="box" type="email"></li>
 		<li class="champs"><span>Code postal : </span><input name=zipcode class="box" type="text"></li>
 		<li class="champs"><span>Photo de profil : </span><input name=photo class="box" type="file" /></li>

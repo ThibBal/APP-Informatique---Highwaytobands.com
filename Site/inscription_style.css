@@ -20,6 +20,10 @@ margin-bottom: 3%;
 
 }
 
+.small{
+	font-size:0.7em;
+}
+
 #blabla{
 	font-size: 1.5em;
 	font-weight: bold;

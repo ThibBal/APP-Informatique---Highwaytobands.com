@@ -74,8 +74,9 @@ h3{
 }
 
 
-.actu{
-    
+#actu{
+   overflow-y: scroll; 
+   max-height: 400px;
 }
 
 .concert{

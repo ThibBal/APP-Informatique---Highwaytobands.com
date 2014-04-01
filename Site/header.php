@@ -9,16 +9,23 @@
 <header>
 		
 		<div id="logo"><a href="accueil.php"><img width=150 src="img/logo.png" alt="Logo du site"></a></div>
-			<?php if(!isset($_SESSION['login'])){ ?>
+
+			<?php 
+			if(!isset($_SESSION['login'])){ ?>
 		
 				<form id="connexion" method="post" action="identification.php">
 					<input type="text" name="login" placeholder =" login" size="12"/>
 					<input type="password" name="password" placeholder =" mot de passe" size="12" />
 					<input type="submit" value="OK" />
 				</form>
+
+				
 			<?php }else{ ?> <div id="connexion"> 
+			session_start()
 			Bonjour <?= $_SESSION['login']?>
-		</div>
+			<form id="déconnexion" method="post" action="modele/membremodele.php">
+<inpute type="submit" value="Déconnexion" />
+					</div>
 				
 				 
 				<?php
