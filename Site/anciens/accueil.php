@@ -9,7 +9,7 @@
 </head>
 
 <body>
-	<?php include 'header.php' ?>
+	<?php include 'vues/headervue.php' ?>
 	<div id="inscription">
 		Inscris toi et profite :
 		<ul>

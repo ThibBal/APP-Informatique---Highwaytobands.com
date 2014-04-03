@@ -1,7 +1,4 @@
 <?php
-try {$bdd = new PDO('mysql:host=localhost;dbname=mydb', 'root', '');} // Connexion à la bdd
-catch (Exception $e) {die("Problème d'accès");}
- 
 
 function inscription($login, $password,$mail, $zipcode){
 global $bdd; // Inscription au site
@@ -10,14 +7,15 @@ echo 'Le membre a bien été ajouté !';
 }
 
 function login($login, $password){ // Connexion
-session_start();
 global $bdd;
+	$password=sha1($password);
 $result=$bdd->query("SELECT COUNT(id) FROM membre WHERE login='$login' AND password='$password' ");
 $num = $result->fetchColumn();
 if ($num==1){
-	$_SESSION['login']=$login;
-	$_SESSION['id']=$id;
-}
+	return true;
+	}else{
+		return false;
+	}
 }
 
 function veriflogin($login){ // Vérification du login
@@ -36,9 +34,27 @@ function logout() { // Déconnexion
     session_start();
     unset($_SESSION);
     session_destroy();
-    header ('Location: header.php');
+    header ('Location: headear.php');
 
 
 }
+
+function recupid($login, $password){
+	global $bdd;
+	$result=$bdd->query("SELECT id FROM membre WHERE login='$login' AND password='$password' ");
+	$res = $result-> fetch();
+	return $res; 
+}
+
+function info($id){
+	global $bdd;
+$res = "SELECT * from membre where membre_id ='$id'";
+$req = $bdd-> query($res) or die(print_r($bdd->errorInfo()));
+
+ 	$donnee = $req-> fetch();
+ 	return $donnee;
+}
+
+
 
 ?>

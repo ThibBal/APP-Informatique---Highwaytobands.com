@@ -18,7 +18,7 @@ if($password == $password2){
 	$password=sha1($password2); // Cryptage du mot de passe
 	 // On vérifie la taille du mot de passe
 
-			require('../modele/membremodele.php'); // Unicité du login
+			require('modeles/membremodele.php'); // Unicité du login
 			$verif=veriflogin($login);
 			if($verif){
 				inscription($login, $password,$mail, $zipcode);
@@ -32,5 +32,8 @@ if($password == $password2){
 		echo 'Mot de passe incorrect';
 	}
 
-	//include('../accueil.php');
+
+
+	include('inscription.php');
+	
 	?>

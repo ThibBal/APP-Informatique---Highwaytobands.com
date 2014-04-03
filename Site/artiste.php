@@ -12,7 +12,7 @@
 	<link rel="stylesheet" href="header_style.css" />
 	<link href='http://fonts.googleapis.com/css?family=Maiden+Orange' rel='stylesheet' type='text/css'>
 
-	<?php include 'header.php' ?>
+	<?php include 'controleurs/headercontroleur.php' ?>
 
 	<div class="banniere_artiste"> <img width=100% src=http://static.tumblr.com/p28joo0/zD0lv2oiv/1059639-acdc_banner.jpg />
 	</div>
