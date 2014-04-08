@@ -24,7 +24,6 @@ if($password == $password2){
 				inscription($login, $password,$mail, $zipcode);
 			}else{
 				echo 'Pseudo déjà utilisé !';
-				include('vues/inscription.php');
 			}
 		}else{ 
 			echo 'Mot de passe trop court !';
@@ -35,6 +34,6 @@ if($password == $password2){
 
 
 
-	header ('Location: index.php?page=accueilcontroleur');
+	include('inscription.php');
 	
 	?>

@@ -6,12 +6,27 @@
 	<link rel="icon" href="img/favicon.ico" />
 	<title>Highway To Bands</title>    
 </head>
-
 <header>
 	
 	<div id="logo"><a href="index.php?page=accueilvue"><img width=150 src="img/logo.png" alt="Logo du site"></a></div>
 
+	<?php 
+	if(!isset($_SESSION['login'])){ ?>
 	
+	<form id="connexion" method="post" action="index.php?page=headercontroleur">
+		<input type="text" name="login" placeholder =" login" size="12"/>
+		<input type="password" name="password" placeholder =" mot de passe" size="12" />
+		<input type="submit" value="OK" />
+	</form>
+<?php }else{ ?> <div id="connexion"> 
+	Bonjour <a href="index.php?page=comptecontroleur"><?php echo $_SESSION['login']?></a> 
+	<a href="index.php?page=logout">
+		<input type="submit" value="Déconnexion" /></div>
+	
+	<?php
+}
+?>
+
 <div id="menu">
 	<ul>
 		<li><a href="index.php?page=eventcontroleur">Concerts</a>
@@ -44,25 +59,7 @@
 	</ul>
 </div>
 
-<div id="connexion">
-	<?php if(!isset($_SESSION['login'])){ ?>
-		<form method="post" action="index.php?page=headercontroleur">
-		<input type="text" name="login" placeholder =" login" size="12"/>
-		<input type="password" name="password" placeholder =" mot de passe" size="12" />
-		<input type="submit" value="OK" />
-	</form>
-<?php }else{ ?> 
-<form method="post" action="index.php?page=logout">
-	Bonjour <a href="index.php?page=comptecontroleur"><?php echo $_SESSION['login']?></br></a>
-		
-		<input type="submit" value="Déconnexion"/>
-	</form>
-	<?php } ?>
-</div>
 <div id="rechercher"><form method="post" action="index.php?page=recherchercontroleur.php">
 	<input type="text" placeholder =" Rechercher" size="20" />
-</form>
-</div>		
-
-
+</form></div>		
 </header>

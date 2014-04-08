@@ -60,15 +60,8 @@ a{
 #connexion
 {
     position : absolute;
-    bottom: : 2%;     
-   
-}
-
-#deconnexion
-{
-    position : absolute;
-    bottom: 2%;     
-   
+    right: 2%;     
+    border : 1px solid red;
 }
 
 form input
@@ -88,8 +81,9 @@ form input
 
 #menu{
     display: inline-block;
+    border: 1px solid grey;
     margin-left: 2%;
-    margin-right:2% ;
+    margin-right:5% ;
     text-align: center;
     position: absolute;
     top: 1%;
@@ -105,20 +99,19 @@ form input
  list-style-type:none;
  text-align:center;
  }
-
 #menu li {
  float:left;
  margin:auto;
  padding:0;
  background-color: rgba(0, 0, 0, 0.4);
- 
+ border: 1px solid #D6D6D6; 
  }
 #menu li a {
  display:block;
- width:10%;
+ width:140px;
  color:#E6E6E6;
  text-decoration:none;
- padding:1%;
+ padding:4px;
  }
 #menu li a:hover {
  color:black;

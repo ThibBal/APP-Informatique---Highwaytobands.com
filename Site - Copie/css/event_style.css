@@ -1,0 +1,84 @@
+#banniere{
+
+    width: 100%;    
+    text-align: center;
+    font-size: 0.9em;
+    margin-bottom: 3%;
+    color: white;  
+     
+
+}
+
+
+#image_banniere{
+        
+    text-align: center;
+    font-size: 0.9em;
+    margin : auto;
+    color: white;   
+    display: inline-block;
+      background-size: cover;
+      background-repeat: no-repeat;
+      webkit-background-size: cover;
+     
+}
+
+.article
+{
+    text-align: center;
+    display: inline-block;
+    width: 22%;
+    height: 470px;    
+    padding: 10px;
+    color: white;
+    font-size: 0.9em;
+    margin : auto;
+    vertical-align: top;   
+    border-right: 2px solid black; 
+
+    
+
+}
+
+h3{
+    text-align: center;
+    border-bottom: 1px solid white;
+}
+
+.sous_article{
+
+
+}
+
+
+#contenu{
+  margin-left: 1%;
+  margin-right: 1%;
+ 
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: block;
+
+    
+   
+}
+
+
+.actu{
+ 
+    
+}
+
+.concert{
+
+}
+
+#participants{
+    max-height: 100px;
+    overflow-y: scroll;
+    text-align: left;
+}
+
+li{
+    list-style-type:none;
+}
