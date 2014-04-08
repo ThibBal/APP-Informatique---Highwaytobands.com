@@ -24,7 +24,7 @@ if($password == $password2){
 				inscription($login, $password,$mail, $zipcode);
 			}else{
 				echo 'Pseudo déjà utilisé !';
-				include('vues/inscription.php');
+				
 			}
 		}else{ 
 			echo 'Mot de passe trop court !';

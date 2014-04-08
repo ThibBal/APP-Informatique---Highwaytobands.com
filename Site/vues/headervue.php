@@ -38,7 +38,13 @@
 				</li>
 			</ul>
 		</li>
-		<li><a href="index.php?page=inscriptioncontroleur">Votre compte</a></li>
+		<?php if(!isset($_SESSION['login'])){ ?>
+		<li><a href="index.php?page=inscriptioncontroleur">Inscription</a></li>
+<?php }else{ ?> 
+<li><a href="index.php?page=comptecontroleur">Votre compte</a></li>
+		
+		
+	<?php } ?>
 		<li><a href="forum.php">Forum</a></li>
 		<li><a href="contact.html">Contact</a></li>					
 	</ul>
