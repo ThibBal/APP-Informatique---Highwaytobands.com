@@ -9,7 +9,7 @@
 
 <header>
 	
-	<div id="logo"><a href="index.php?page=accueilvue"><img width=150 src="img/logo.png" alt="Logo du site"></a></div>
+	<div id="logo"><a href="index.php?page=accueilvue"><img src="img/logo2.png" alt="Logo du site"></a></div>
 
 	
 <div id="menu">

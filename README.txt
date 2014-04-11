@@ -1,8 +1,7 @@
-Installer MAMP / WAMP 
-Modifier dossier www => git
-Installer l'appli github => Plus simple
+--- Highway to bands ---
 
-Finalisation des pages
+- Inscription
+- Connexion
 
 
 http://localhost/phpmyadmin/import.php#PMAURL-4:index.php?db=&table=&server=1&target=&token=60d741634067a6936757f28a8bd0e13a

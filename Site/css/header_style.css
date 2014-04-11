@@ -24,6 +24,8 @@ header{
     border-bottom: 1px solid #808080;
     margin-bottom: 1%;
 
+    
+
     background: rgb(197,222,234); /* Old browsers */
 background: -moz-radial-gradient(center, ellipse cover, rgba(197,222,234,1) 0%, rgba(138,187,215,1) 31%, rgba(6,109,171,1) 100%); /* FF3.6+ */
 background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(197,222,234,1)), color-stop(31%,rgba(138,187,215,1)), color-stop(100%,rgba(6,109,171,1))); /* Chrome,Safari4+ */
@@ -49,27 +51,19 @@ a{
 
 
 #logo{
-    width: 200px;
-    float: left;
-    vertical-align: middle;
-    margin-left: 1%;
-    margin-top: 2px;
+   width: 10%;
+    float: left;    
+    margin : 1px;
 }
 
 
 #connexion
 {
-    position : absolute;
-    bottom: : 2%;     
-   
+float: right;
+width : 10%;
+display: inline-block;
 }
 
-#deconnexion
-{
-    position : absolute;
-    bottom: 2%;     
-   
-}
 
 form input
 {
@@ -79,20 +73,18 @@ form input
 }
 
 #rechercher{
-    position: absolute;
-    top: 19%;
-    right: 2%;
+   width: 12px; 
+   float: top;
 
 }
 
-
 #menu{
-    display: inline-block;
-    margin-left: 2%;
-    margin-right:2% ;
-    text-align: center;
-    position: absolute;
-    top: 1%;
+display: inline-block;    
+width: 70%;
+text-align: center;
+position: absolute;
+top: 1%:;
+margin-left : 10%;
 
 
 }
@@ -105,20 +97,19 @@ form input
  list-style-type:none;
  text-align:center;
  }
-
 #menu li {
  float:left;
  margin:auto;
  padding:0;
  background-color: rgba(0, 0, 0, 0.4);
- 
+ border: 1px solid #D6D6D6; 
  }
 #menu li a {
  display:block;
- width:10%;
+ width:140px;
  color:#E6E6E6;
  text-decoration:none;
- padding:1%;
+ padding:4px;
  }
 #menu li a:hover {
  color:black;
