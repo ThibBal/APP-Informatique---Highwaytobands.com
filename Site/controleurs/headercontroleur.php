@@ -6,17 +6,19 @@ $password=$_POST['password'];
 
 require('modeles/membremodele.php');
 $connexion=login($login, $password);
-$id=recupid($login, $password);
-if ($connexion){
 
+if ($connexion){
+    $_SESSION['message']='Bienvenue';
 	$_SESSION['login']=$login;
-	$_SESSION['id']= $id['id'];
+	$_SESSION['password']=$password;
+	$resultat=recupid($login, $password);
+	$_SESSION['id']= $resultat['id'];
   
 	header ('Location: index.php?page=accueilcontroleur');
 }
 
 else{
-	echo('Identifiants incorrects');
+	$_SESSION['message']='Identifiants incorrects';
 	header ('Location: index.php?page=accueilcontroleur');
 
 }

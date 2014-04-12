@@ -23,14 +23,14 @@ if($password == $password2){
 			if($verif){
 				inscription($login, $password,$mail, $zipcode);
 			}else{
-				echo 'Pseudo déjà utilisé !';
+				$_SESSION['message']='Pseudo déjà utilisé !';
 				
 			}
 		}else{ 
-			echo 'Mot de passe trop court !';
+			$_SESSION['message']='Mot de passe trop court !';
 		}
 	}else{ 
-		echo 'Mot de passe incorrect';
+		$_SESSION['message']='Mot de passe incorrect';
 	}
 
 

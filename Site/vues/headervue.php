@@ -3,15 +3,16 @@
 	<meta charset="utf-8" />
 	<link rel="stylesheet" href="css/header_style.css" />
 	<link href='http://fonts.googleapis.com/css?family=Maiden+Orange' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 	<link rel="icon" href="img/favicon.ico" />
 	<title>Highway To Bands</title>    
 </head>
 
 <header>
 	
-	<div id="logo"><a href="index.php?page=accueilvue"><img src="img/logo2.png" alt="Logo du site"></a></div>
+	<div id="logo"><a href="index.php?page=accueilvue"><img width=150 src="img/logo.png" alt="Logo du site"></a></div>
 
-	
+
 <div id="menu">
 	<ul>
 		<li><a href="index.php?page=eventcontroleur">Concerts</a>
@@ -34,7 +35,7 @@
 				</li>
 				<li><a href="#">Ordre alphabétique</a>
 				</li>
-				<li><a href="#">Par style de musique</a>
+				<li><a href="#">Styles de musique</a>
 				</li>
 			</ul>
 		</li>
@@ -64,6 +65,11 @@
 		<input type="submit" value="Déconnexion"/>
 	</form>
 	<?php } ?>
+	<div id="message"><?php if(isset($_SESSION['message'])){ ?>
+		<?php echo $_SESSION['message']?>
+		
+			<?php } ?>
+</div>	
 </div>
 <div id="rechercher"><form method="post" action="index.php?page=recherchercontroleur.php">
 	<input type="text" placeholder =" Rechercher" size="20" />
@@ -71,4 +77,5 @@
 </div>		
 
 
+	
 </header>

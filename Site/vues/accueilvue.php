@@ -47,6 +47,6 @@
 	</div>
 
 	
-	<?php include 'footer.php' ?>		
+	<?php include 'controleurs/footer.php' ?>		
 </body>
 </html>

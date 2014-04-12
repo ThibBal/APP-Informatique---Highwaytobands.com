@@ -1,15 +1,15 @@
 <?php
 
-function inscription($login, $password,$mail, $zipcode){
+function inscription($login, $password, $name, $style, $description, $mail){
 global $bdd; // Inscription au site
-	$bdd->query("INSERT INTO membre(login, password, mail, zipcode) VALUES('$login', '$password', '$mail', '$zipcode')");
-echo 'Le membre a bien été ajouté !';
+	$bdd->query("INSERT INTO artiste(login, password, name, style, description, mail) VALUES('$login', '$password', '$name', '$style', '$description','$mail')");
+
 }
 
 function login($login, $password){ // Connexion
 global $bdd;
 	$password=sha1($password);
-$result=$bdd->query("SELECT COUNT(id) FROM membre WHERE login='$login' AND password='$password' ");
+$result=$bdd->query("SELECT COUNT(id) FROM artiste WHERE login='$login' AND password='$password' ");
 $num = $result->fetchColumn();
 if ($num==1){
 	return true;
@@ -20,7 +20,7 @@ if ($num==1){
 
 function veriflogin($login){ // Vérification du login
 global $bdd;
-$result=$bdd->query("SELECT COUNT(id) FROM membre WHERE login='$login'");
+$result=$bdd->query("SELECT COUNT(id) FROM artiste WHERE login='$login'");
 $num = $result->fetchColumn();
 if ($num!=1){
 	return true;
@@ -32,14 +32,14 @@ if ($num!=1){
 
 function recupid($login, $password){
 	global $bdd;
-	$result=$bdd->query("SELECT id FROM membre WHERE login='$login' AND password='$password' ");
+	$result=$bdd->query("SELECT id FROM artiste WHERE login='$login' AND password='$password' ");
 	$res = $result-> fetch();
 	return $res; 
 }
 
 function id($login, $password){
 	global $bdd;
-$req = $bdd->prepare('SELECT id FROM membre WHERE login = :login AND password = :password');
+$req = $bdd->prepare('SELECT id FROM artiste WHERE login = :login AND password = :password');
 $req->execute(array(
     'login' => $login,
     'password' => $password));
@@ -50,7 +50,7 @@ return $resultat;
 
 function info($id){
 	global $bdd;
-$res = "SELECT * from membre where id ='$id'";
+$res = "SELECT * from artiste where id ='$id'";
 $req = $bdd-> query($res) or die(print_r($bdd->errorInfo()));
 
  	$data = $req-> fetch();

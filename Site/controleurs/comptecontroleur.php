@@ -1,8 +1,8 @@
 <?php
 
 require('modeles/membremodele.php');
-    $data=info($_SESSION['id']);
-
+   
+$_SESSION['id']=recupid($_SESSION['login'], $_SESSION['password']);
 
 include('vues/comptevue.php');
 
