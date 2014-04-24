@@ -2,7 +2,7 @@
 
 require('modeles/membre.php');
    
-$_SESSION['id']=recupid($_SESSION['login'], $_SESSION['password']);
+$data=info($_SESSION['id']);
 
 include('vues/compte.php');
 

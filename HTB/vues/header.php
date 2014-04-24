@@ -1,4 +1,3 @@
-
 <head>
 	<meta charset="utf-8" />
 	<link rel="stylesheet" href="css/header_style.css" />
@@ -60,16 +59,18 @@
 	</form>
 <?php }else{ ?> 
 <form method="post" action="index.php?page=logout">
-	Bonjour <a href="index.php?page=compte"><?php echo $_SESSION['login']?></br></a>
+	<a href="index.php?page=compte"><?php echo $_SESSION['login']?></br></a>
 		
-		<input type="submit" value="Déconnexion"/>
+		<center><input type="submit" value="Déconnexion"/></center>
 	</form>
 	<?php } ?>
 	<div id="message"><?php if(isset($_SESSION['message'])){ ?>
 		<?php echo $_SESSION['message']?>
 		
+		
 			<?php } ?>
 </div>	
+
 </div>
 <div id="rechercher"><form method="post" action="index.php?page=rechercher.php">
 	<input type="text" placeholder =" Rechercher" size="20" />

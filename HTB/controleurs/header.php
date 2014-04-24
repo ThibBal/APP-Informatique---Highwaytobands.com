@@ -1,29 +1,33 @@
-<?php
+<?php 
 
-if(isset($_POST['login'], $_POST['password'])){ 
-$login=$_POST['login']; // Changement des variables pour les étudier 
-$password=$_POST['password']; 
 
-require('modeles/membre.php');
-$connexion=login($login, $password);
+if(isset($_POST) && !empty($_POST['login']) && !empty($_POST['password'])) {
+ extract($_POST);
+ $password = sha1($password); 
+ include ('modeles/membre.php');
+ 
+ $donnee = verification($login);
 
-if ($connexion){
-    $_SESSION['message']='Bienvenue';
-	$_SESSION['login']=$login;
-	$_SESSION['password']=$password;
-	$resultat=recupid($login, $password);
-	$_SESSION['id']= $resultat['id'];
-  
-	header ('Location: index.php?page=accueil');
+ if( $donnee['password'] != $password) {
+   $_SESSION['message']='Erreur';
+   
+
+   header ('Location: index.php?page=accueil');
+
+ }  else {
+   $_SESSION['login'] = $login;
+   $_SESSION['id'] = $donnee['id'];
+   
+   $_SESSION['message']='Bienvenue';
+
+   header ('Location: index.php?page=accueil');
+ } 
+
+ // }else {
+//   echo '<p>Vous avez oublié de remplir un champ.</p>';
+//   exit;
 }
 
-else{
-	$_SESSION['message']='Identifiants incorrects';
-	header ('Location: index.php?page=accueil');
-
-}
-}
-
-include('vues/header.php');
+include ('vues/header.php');
 
 ?>

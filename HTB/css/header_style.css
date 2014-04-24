@@ -19,7 +19,7 @@ header{
     height: 25%;    
     display: inline-block;
     font-family: 'Open Sans', sans-serif;
-    font-color: white;
+    font-color: black;
     font-size: 0.9em;
  
 
@@ -71,6 +71,7 @@ a{
 float: right;
 width : 10%;
 display: inline-block;
+text-align: center;
 }
 
 
@@ -117,7 +118,7 @@ margin-left : 8%;
 #menu li a {
  display:block;
  width:140px;
- color:#E6E6E6;
+ color: white;
  text-decoration:none;
  padding:4px;
  }

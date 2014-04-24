@@ -6,7 +6,14 @@ $password=$_POST['password'];
 $password2=$_POST['password2']; 
 $mail=$_POST['mail']; 
 $zipcode=$_POST['zipcode'];
+//$photo=$_POST['photo'];
 //}
+
+  $photo = "";
+
+if(!empty($_POST['photo'])){
+$photo = mysql_real_escape_string(htmlspecialchars($_POST['photo']));
+}
 
 if($password == $password2){
 	if(strlen($_POST['password'])>=5) // Taille du mot de passe >= 5 caractères
@@ -17,7 +24,7 @@ if($password == $password2){
 			require('modeles/membre.php'); // Unicité du login
 			$verif=veriflogin($login);
 			if($verif){
-				inscription($login, $password,$mail, $zipcode);
+				inscription($login, $password,$mail, $zipcode, $photo);
 			}else{
 				$_SESSION['message']='Pseudo déjà utilisé !';
 				

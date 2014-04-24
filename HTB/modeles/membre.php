@@ -1,9 +1,9 @@
 <?php
 
-function inscription($login, $password,$mail, $zipcode){
+function inscription($login, $password,$mail, $zipcode, $photo){
 global $bdd; // Inscription au site
-	$bdd->query("INSERT INTO membre(login, password, mail, zipcode) VALUES('$login', '$password', '$mail', '$zipcode')");
-echo 'Le membre a bien été ajouté !';
+	$bdd->query("INSERT INTO membre(login, password, mail, zipcode, photo) VALUES('$login', '$password', '$mail', '$zipcode', '$photo')");
+
 }
 
 function login($login, $password){ // Connexion
@@ -27,6 +27,14 @@ if ($num!=1){
 	}else{
 		return false;
 	}
+}
+
+function verification($login){
+global $bdd;
+$sql = "SELECT id, password from membre where login ='$login'";
+$req = $bdd->query($sql) or die(print_r($bdd->errorInfo()));
+ 	$donnee = $req->fetch();
+ 	return $donnee;
 }
 
 

@@ -11,7 +11,7 @@
 <body>
 	<?php include 'controleurs/header.php' ?>
 	<div id="inscription">
-		<form action="index.php?page=membre" method="post" enctype="multipart/form-data">
+		<form action="index.php?page=membre" method="post">
 			<span id="blabla">Inscription : Veuillez compléter les champs suivants</span>
 	<ul id="formulaire">
 		<li class="champs"><span>Login : </span><input name=login class= "box" type="text"></li>
