@@ -39,7 +39,14 @@
 			</ul>
 		</li>
 		<?php if(!isset($_SESSION['login'])){ ?>
-		<li><a href="index.php?page=inscription">Inscription</a></li>
+		<li><a href="index.php?page=inscription">Inscription</a>
+		<ul>
+				<li><a href="index.php?page=inscription_salle">Inscription d'une salle</a>
+				</li>
+				<li><a href="index.php?page=inscription_artiste">Inscription d'un artiste</a>
+				</li>
+			</ul>
+		</li>
 <?php }else{ ?> 
 <li><a href="index.php?page=compte">Votre compte</a></li>
 		
@@ -64,8 +71,8 @@
 		<center><input type="submit" value="Déconnexion"/></center>
 	</form>
 	<?php } ?>
-	<div id="message"><?php if(isset($_SESSION['message'])){ ?>
-		<?php echo $_SESSION['message']?>
+	<div id="message"><?php if(isset($message)){ ?>
+		<?php echo $message; ?>
 		
 		
 			<?php } ?>

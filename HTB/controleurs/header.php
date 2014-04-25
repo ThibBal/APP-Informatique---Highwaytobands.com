@@ -9,17 +9,15 @@ if(isset($_POST) && !empty($_POST['login']) && !empty($_POST['password'])) {
  $donnee = verification($login);
 
  if( $donnee['password'] != $password) {
-   $_SESSION['message']='Erreur';
+   //$_SESSION['message']='Erreur';
+   $message ='Erreur de mot de passe !!';
+   //exit;
    
-
-   header ('Location: index.php?page=accueil');
 
  }  else {
    $_SESSION['login'] = $login;
    $_SESSION['id'] = $donnee['id'];
-   
-   $_SESSION['message']='Bienvenue';
-
+ 
    header ('Location: index.php?page=accueil');
  } 
 
