@@ -63,6 +63,23 @@ h3{
    
 }
 
+.liste
+{
+    
+    display: inline-block;
+    width: 48%;
+    height: 470px;    
+    padding: 10px;
+    color: black;
+    font-size: 0.9em;
+    margin : auto;
+    vertical-align: top;   
+    max-height: auto;
+    overflow-y: scroll;
+    
+
+}
+
 
 .actu{
  

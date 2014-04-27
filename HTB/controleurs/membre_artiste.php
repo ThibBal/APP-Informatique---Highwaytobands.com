@@ -4,15 +4,13 @@
 $login=$_POST['login']; // Changement des variables pour les étudier 
 $password=$_POST['password']; 
 $password2=$_POST['password2']; 
-$mail=$_POST['mail']; 
-$zipcode=$_POST['zipcode'];
 $name=$_POST['name'];
-$description=$_POST['description'];
 $style=$_POST['style'];
-//$photo=$_POST['photo'];
-//}
+$description=$_POST['description'];
+$mail=$_POST['mail']; 
 
-  $photo = "";
+
+ $photo = "";
 
 if(!empty($_POST['photo'])){
 $photo = mysql_real_escape_string(htmlspecialchars($_POST['photo']));
@@ -24,22 +22,23 @@ if($password == $password2){
 	$password=sha1($password2); // Cryptage du mot de passe
 	 // On vérifie la taille du mot de passe
 
-			require('modeles/artiste.php'); // Unicité du login
-			$verif=veriflogin($login);
+			require('modeles/artiste.php'); 
+			$verif=veriflogin_artiste($login); // Unicité du login
 			if($verif){
-				inscription($login, $password,$mail, $zipcode, $photo, $name, $description, $style);
+				inscription_artiste($login, $password, $name, $style, $description, $mail, $photo);
+				$message='cool';
 			}else{
-				$_SESSION['message']='Pseudo déjà utilisé !';
+				$message='Pseudo déjà utilisé !';
 				
 			}
 		}else{ 
-			$_SESSION['message']='Mot de passe trop court !';
+			$message='Mot de passe trop court !';
 		}
 	}else{ 
-		$_SESSION['message']='Mot de passe incorrect';
+		$message='Mot de passe incorrect';
 	}
 
-
+$message='Great';
 
 	header ('Location: index.php?page=accueil');
 	

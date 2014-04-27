@@ -11,7 +11,7 @@
 <body>
 	<?php include 'controleurs/header.php' ?>
 	<div id="inscription">
-		<form action="index.php?page=inscription_artiste" method="post">
+		<form action="index.php?page=membre_artiste" method="post">
 			<span id="blabla">Inscription d'un nouvel artiste : Veuillez compléter les champs suivants</span>
 	<ul id="formulaire">
 		<li class="champs"><span>Login : </span><input name=login class= "box" type="text"></li>
@@ -21,7 +21,7 @@
 		<li class="champs"><span>Nom de l'artiste : </span><input name=name class="box" type="text"></li>
 		<li class="champs"><span>Photo de profil : </span><input name=photo class="box" type="file" /></li>
 		<li class="CGU"><span>Présentation : </span></br><textarea name=description rows=5 cols=50></textarea></li>
-		<li class="CGU"><span>Style de musiques : </span><SELECT name="style" size="1">
+		<li class="CGU"><span>Style de musiques : </span><SELECT name=style size="1">
 <OPTION>Rock
 <OPTION>Pop
 <OPTION>Alternative

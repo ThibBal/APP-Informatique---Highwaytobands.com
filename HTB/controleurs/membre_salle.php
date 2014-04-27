@@ -31,9 +31,9 @@ if($password == $password2){
 	 // On vérifie la taille du mot de passe
 
 			require('modeles/salle.php'); // Unicité du login
-			$verif=veriflogin($login);
+			$verif=veriflogin_salle($login);
 			if($verif){
-				inscription($login, $password, $name, $capacity, $zipcode, $mail, $phone, $adress, $description, $hours, $photo);
+				inscription_salle($login, $password, $name, $capacity, $zipcode, $mail, $phone, $adress, $description, $hours, $photo);
 			}else{
 				$_SESSION['message']='Pseudo déjà utilisé !';
 				

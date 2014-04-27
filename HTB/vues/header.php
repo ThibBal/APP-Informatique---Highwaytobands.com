@@ -16,21 +16,21 @@
 	<ul>
 		<li><a href="index.php?page=event">Concerts</a>
 			<ul>
-				<li><a href="#">Les plus populaires</a></li>
-				<li><a href="#">Ordre alphabétique</a></li>
+				<li><a href="#">Liste des concertss</a></li>
+				<li><a href="#">Ajouter un concert</a></li>
 				<li><a href="#">Les plus récents</a></li>
 			</ul>
 		</li>
 		<li><a href="index.php?page=salle">Salles</a>
 			<ul>
-				<li><a href="#">Les plus populaires</a></li>
+				<li><a href="index.php?page=liste_membre">Liste des membres</a></li>
 				<li><a href="#">Ordre alphabétique</a></li>
 				<li><a href="#">Proche de chez vous</a></li>
 			</ul>
 		</li>
 		<li><a href="index.php?page=artiste">Artistes</a>
 			<ul>
-				<li><a href="#">Les plus populaires</a>
+				<li><a href="index.php?page=liste_membre">Liste des membres</a>
 				</li>
 				<li><a href="#">Ordre alphabétique</a>
 				</li>
@@ -45,10 +45,12 @@
 				</li>
 				<li><a href="index.php?page=inscription_artiste">Inscription d'un artiste</a>
 				</li>
-			</ul>
+		</ul>
 		</li>
 <?php }else{ ?> 
-<li><a href="index.php?page=compte">Votre compte</a></li>
+<li><a href="index.php?page=compte">Votre compte</a>
+<ul><li><a href="index.php?page=musique">Ajouter / Supprimer une musique</a>
+				</li></ul></li>
 		
 		
 	<?php } ?>

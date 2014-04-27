@@ -21,11 +21,27 @@
 			<h3>Infos personnelles</h3>
 			Votre mail : <?php echo($data['mail']); ?> </br>
 	Votre code postal : <?php echo($data['zipcode']); ?> </br>
+
 	<form method="post" action="index.php?page=modifier">			
 		<center><input type="submit" value="Modifier vos informations"/></center>
 	</form>
 			</div>
+<div class="sous_article">
+			<h3>Vos morceaux</h3>
+			<?php
 
+while ($musique = $extraits->fetch())
+{
+?>
+    <audio src="files/<?php echo($musique['fichier']); ?>" controls></audio></br>
+	<?php echo $musique['nom']; ?> - <?php echo $musique['album']; ?></br>
+<?php
+}
+?>
+<form method="post" action="index.php?page=musique">			
+		<center><input type="submit" value="Ajouter / Supprimer un morceau"/></center>
+	</form>			
+		</div>
 					
 		</div>
 

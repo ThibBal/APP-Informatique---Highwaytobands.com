@@ -1,21 +1,9 @@
 <?php
 
-function inscription($login, $password,$mail, $zipcode, $photo){
-global $bdd; // Inscription au site
+function inscription($login, $password,$mail, $zipcode, $photo){ // Inscription au site
+global $bdd; 
 	$bdd->query("INSERT INTO membre(login, password, mail, zipcode, photo) VALUES('$login', '$password', '$mail', '$zipcode', '$photo')");
 
-}
-
-function login($login, $password){ // Connexion
-global $bdd;
-	$password=sha1($password);
-$result=$bdd->query("SELECT COUNT(id) FROM membre WHERE login='$login' AND password='$password' ");
-$num = $result->fetchColumn();
-if ($num==1){
-	return true;
-	}else{
-		return false;
-	}
 }
 
 function veriflogin($login){ // Vérification du login
@@ -45,24 +33,22 @@ function recupid($login, $password){
 	return $res; 
 }
 
-function id($login, $password){
-	global $bdd;
-$req = $bdd->prepare('SELECT id FROM membre WHERE login = :login AND password = :password');
-$req->execute(array(
-    'login' => $login,
-    'password' => $password));
 
-$resultat = $req->fetch();
-return $resultat;
-}
-
-function info($id){
+function info($id){ // Récupère les informations d'un membre
 	global $bdd;
 $res = "SELECT * from membre where id ='$id'";
 $req = $bdd-> query($res) or die(print_r($bdd->errorInfo()));
 
  	$data = $req-> fetch();
  	return $data;
+}
+
+function liste_membre(){ // Récupère les informations d'un membre
+	global $bdd;
+$res = "SELECT * from membre";
+$req = $bdd-> query($res) or die(print_r($bdd->errorInfo()));
+
+ 	 	return $req;
 }
 
 
