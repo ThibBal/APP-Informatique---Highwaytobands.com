@@ -8,14 +8,15 @@
 - Liste des membres (et artistes)
 
 ----
+Mettre un nom dans la table membre
 Mettre les styles de musiques (iTunes)
-artiste_id null (à corriger !)
+artiste_id null (ï¿½ corriger !)
 Connexion pour salle et artiste
-Creation d'un évènement
-Abonnement à Artiste, Salle et Evenement
+Creation d'un ï¿½vï¿½nement
+Abonnement ï¿½ Artiste, Salle et Evenement
 ----
-- Supperssion de "durée" pour un extrait / morceau de musique
-- Ajout de "photo" (de profil) à artiste et salle (BDD)
-- Ajout de "fichier" à extrait et photo (BDD)
+- Supperssion de "durï¿½e" pour un extrait / morceau de musique
+- Ajout de "photo" (de profil) ï¿½ artiste et salle (BDD)
+- Ajout de "fichier" ï¿½ extrait et photo (BDD)
 
 http://localhost/phpmyadmin/import.php#PMAURL-4:index.php?db=&table=&server=1&target=&token=60d741634067a6936757f28a8bd0e13a
