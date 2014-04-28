@@ -12,18 +12,21 @@
 	
 	
 <div id="contenu">
-		<div id="banniere"><h1>Liste des membres inscrits</h1>			
+		<div id="banniere"><h1>Liste des salles répertoriées</h1>			
 		</div>	
 	<div class="liste">
 
 <?php
 
-while ($donnees = $membres->fetch())
+while ($donnees = $salles->fetch())
 {
 ?>
     <p>
     <strong>Login</strong> : <?php echo $donnees['login']; ?>
-    <strong>Code-postal</strong> : <?php echo $donnees['zipcode']; ?><br />
+    <strong>Adresse</strong> : <?php echo $donnees['adress']; ?>
+    <strong>Code-postal</strong> : <?php echo $donnees['zipcode']; ?>
+    <strong>Téléphone</strong> : <?php echo $donnees['phone']; ?>
+    <strong>Description</strong> : <?php echo $donnees['description']; ?><br />
    </p>
 <?php
 }

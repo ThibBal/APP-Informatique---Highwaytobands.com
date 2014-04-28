@@ -1,1 +1,5 @@
-<?php include 'vues/event.php' ?>
+<?php 
+
+//$_SESSION["temp"]='Page event';
+
+include 'vues/event.php' ?>

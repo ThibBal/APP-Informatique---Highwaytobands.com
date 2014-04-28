@@ -12,18 +12,21 @@
 	
 	
 <div id="contenu">
-		<div id="banniere"><h1>Liste des membres inscrits</h1>			
+		<div id="banniere"><h1>Liste des artistes inscrits</h1>			
 		</div>	
-	<div class="liste">
+
+<div class="liste">
 
 <?php
 
-while ($donnees = $membres->fetch())
+while ($artiste = $artistes->fetch())
 {
 ?>
     <p>
-    <strong>Login</strong> : <?php echo $donnees['login']; ?>
-    <strong>Code-postal</strong> : <?php echo $donnees['zipcode']; ?><br />
+    <strong>Login</strong> : <?php echo $artiste['login']; ?>
+    <strong>Nom</strong> : <?php echo $artiste['name']; ?>
+    <strong>Style</strong> : <?php echo $artiste['style']; ?>
+    <strong>Description</strong> : <?php echo $artiste['description']; ?><br />
    </p>
 <?php
 }
@@ -32,7 +35,6 @@ while ($donnees = $membres->fetch())
 
 ?>
 			</div>
-
 		</div>
 
 

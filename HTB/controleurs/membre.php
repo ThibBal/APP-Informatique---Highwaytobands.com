@@ -24,19 +24,20 @@ if($password == $password2){
 			require('modeles/membre.php'); // Unicité du login
 			$verif=veriflogin($login);
 			if($verif){
-				inscription($login, $password,$mail, $zipcode, $photo);
+				inscription($login, $password, $mail, $zipcode, $photo);
+				$message='Vous êtes bien inscrit !';
 			}else{
-				$_SESSION['message']='Pseudo déjà utilisé !';
+				$message='Pseudo déjà utilisé !';
 				
 			}
 		}else{ 
-			$_SESSION['message']='Mot de passe trop court !';
+			$message='Mot de passe trop court !';
 		}
 	}else{ 
-		$_SESSION['message']='Mot de passe incorrect';
+		$message='Mot de passe incorrect';
 	}
 
-
+ $_SESSION['temp'] = $message;
 
 	header ('Location: index.php?page=accueil');
 	

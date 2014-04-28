@@ -16,21 +16,21 @@
 	<ul>
 		<li><a href="index.php?page=event">Concerts</a>
 			<ul>
-				<li><a href="#">Liste des concertss</a></li>
+				<li><a href="index.php?page=liste_concert">Liste des concerts</a></li>
 				<li><a href="#">Ajouter un concert</a></li>
 				<li><a href="#">Les plus récents</a></li>
 			</ul>
 		</li>
 		<li><a href="index.php?page=salle">Salles</a>
 			<ul>
-				<li><a href="index.php?page=liste_membre">Liste des membres</a></li>
+				<li><a href="index.php?page=liste_salle">Liste des salles</a></li>
 				<li><a href="#">Ordre alphabétique</a></li>
 				<li><a href="#">Proche de chez vous</a></li>
 			</ul>
 		</li>
 		<li><a href="index.php?page=artiste">Artistes</a>
 			<ul>
-				<li><a href="index.php?page=liste_membre">Liste des membres</a>
+				<li><a href="index.php?page=liste_artiste">Liste des artistes</a>
 				</li>
 				<li><a href="#">Ordre alphabétique</a>
 				</li>
@@ -50,6 +50,8 @@
 <?php }else{ ?> 
 <li><a href="index.php?page=compte">Votre compte</a>
 <ul><li><a href="index.php?page=musique">Ajouter / Supprimer une musique</a>
+	<li><a href="index.php?page=liste_membre">Liste des membres</a>
+				</li>
 				</li></ul></li>
 		
 		
@@ -73,8 +75,9 @@
 		<center><input type="submit" value="Déconnexion"/></center>
 	</form>
 	<?php } ?>
-	<div id="message"><?php if(isset($message)){ ?>
-		<?php echo $message; ?>
+	<div id="message"><?php if(isset($_SESSION['temp'])){ ?>
+		<?php echo htmlspecialchars($_SESSION["temp"]); 
+		unset($_SESSION['temp']); ?>
 		
 		
 			<?php } ?>

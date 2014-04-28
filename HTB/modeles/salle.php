@@ -26,6 +26,13 @@ if ($num!=1){
 	}
 }
 
+function liste_salle(){ // Récupère les informations d'un membre
+	global $bdd;
+$res = "SELECT * from salle";
+$req = $bdd-> query($res) or die(print_r($bdd->errorInfo()));
+
+ 	 	return $req;
+}
 
 
 function recupid_salle($login, $password){

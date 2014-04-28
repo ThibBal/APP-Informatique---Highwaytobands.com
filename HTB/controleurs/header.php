@@ -9,21 +9,21 @@ if(isset($_POST) && !empty($_POST['login']) && !empty($_POST['password'])) {
  $donnee = verification($login);
 
  if( $donnee['password'] != $password) {
-   //$_SESSION['message']='Erreur';
-   $message ='Erreur de mot de passe !!';
+
+   $message ='Mot de passe incorrect';
+    $_SESSION['temp'] = $message;
    //exit;
-   
+   //header ('Location: index.php?page=accueil');
 
  }  else {
    $_SESSION['login'] = $login;
    $_SESSION['id'] = $donnee['id'];
- 
+   $message= 'Bienvenue';
+  $_SESSION['temp'] = 'Bienvenue';
    header ('Location: index.php?page=accueil');
  } 
 
- // }else {
-//   echo '<p>Vous avez oublié de remplir un champ.</p>';
-//   exit;
+
 }
 
 include ('vues/header.php');
