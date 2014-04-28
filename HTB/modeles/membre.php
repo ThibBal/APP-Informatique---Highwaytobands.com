@@ -1,8 +1,8 @@
 <?php
 
-function inscription($login, $password,$mail, $zipcode, $photo){ // Inscription au site
+function inscription($login, $password,$mail, $zipcode, $photo, $name){ // Inscription au site
 global $bdd; 
-	$bdd->query("INSERT INTO membre(login, password, mail, zipcode, photo) VALUES('$login', '$password', '$mail', '$zipcode', '$photo')");
+	$bdd->query("INSERT INTO membre(login, password, mail, zipcode, photo, name) VALUES('$login', '$password', '$mail', '$zipcode', '$photo', '$name')");
 
 }
 

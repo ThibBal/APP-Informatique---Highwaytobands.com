@@ -10,7 +10,8 @@
 <body>
 	<?php include 'vues/header.php' ?>
 	
-	
+<?php if((!isset($data3['login']))&&(!isset($data2['login']))){ ?>
+							
 <div id="contenu">
 		<div id="banniere"><h1><?php echo ($data['name']); ?></h1>
 			<img width=200px src="img/<?php echo($data['photo']); ?>">
@@ -46,10 +47,6 @@ while ($musique = $extraits->fetch())
 					
 		</div>
 
-
-		
-
-		
 
 		<div class="article">
 			<div class="sous_article">
@@ -93,7 +90,87 @@ while ($musique = $extraits->fetch())
 		</div>
 		</div>
 	</div>
-	
+<?php } ?>
+
+<?php if((!isset($data['login']))&&(!isset($data3['login']))){ ?>
+							
+<div id="contenu">
+		<div id="banniere"><h1><?php echo ($data2['name']); ?></h1>
+			<img width=200px src="img/<?php echo($data2['photo']); ?>">
+			</div>	
+		<div class="article">
+
+			<div class="sous_article">
+			<h3>Infos personnelles</h3>
+			Votre login : <?php echo($data2['login']); ?> </br>
+			Votre mail : <?php echo($data2['mail']); ?> </br>
+	Votre style : <?php echo($data2['style']); ?> </br>
+
+	<form method="post" action="index.php?page=modifier">			
+		<center><input type="submit" value="Modifier vos informations"/></center>
+	</form>
+			</div>
+<div class="sous_article">
+			<h3>Vos morceaux</h3>
+			<?php
+
+while ($musique = $extraits->fetch())
+{
+?>
+    <audio src="files/<?php echo($musique['fichier']); ?>" controls></audio></br>
+	<?php echo $musique['nom']; ?> - <?php echo $musique['album']; ?></br>
+<?php
+}
+?>
+<form method="post" action="index.php?page=musique">			
+		<center><input type="submit" value="Ajouter / Supprimer un morceau"/></center>
+	</form>			
+		</div>
+		</div>
+		</div>
+	</div>
+<?php } ?>
+
+<?php if((!isset($data['login']))&&(!isset($data2['login']))){ ?>
+							
+<div id="contenu">
+		<div id="banniere"><h1><?php echo ($data3['name']); ?></h1>
+			<img width=200px src="img/<?php echo($data3['photo']); ?>">
+			</div>	
+		<div class="article">
+
+			<div class="sous_article">
+			<h3>Infos personnelles</h3>
+			Votre login : <?php echo($data3['login']); ?> </br>
+			Votre mail : <?php echo($data3['mail']); ?> </br>
+	 		Votre code postal : <?php echo($data3['zipcode']); ?> </br>
+	 		Votre adresse : <?php echo($data3['adress']); ?> </br>
+
+	<form method="post" action="index.php?page=modifier">			
+		<center><input type="submit" value="Modifier vos informations"/></center>
+	</form>
+			</div>
+<div class="sous_article">
+			<h3>Vos morceaux</h3>
+			<?php
+
+while ($musique = $extraits->fetch())
+{
+?>
+    <audio src="files/<?php echo($musique['fichier']); ?>" controls></audio></br>
+	<?php echo $musique['nom']; ?> - <?php echo $musique['album']; ?></br>
+<?php
+}
+?>
+<form method="post" action="index.php?page=musique">			
+		<center><input type="submit" value="Ajouter / Supprimer un morceau"/></center>
+	</form>			
+		</div>
+					
+		</div>
+
+	</div>
+<?php } ?>	
 
 <?php include 'controleurs/footer.php' ?>		
 </body>

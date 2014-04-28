@@ -26,7 +26,7 @@ if($password == $password2){
 			$verif=veriflogin_artiste($login); // Unicité du login
 			if($verif){
 				inscription_artiste($login, $password, $name, $style, $description, $mail, $photo);
-				$message='cool';
+				$message='Vous êtes bien inscrit !';
 			}else{
 				$message='Pseudo déjà utilisé !';
 				
@@ -38,8 +38,9 @@ if($password == $password2){
 		$message='Mot de passe incorrect';
 	}
 
-$message='Great';
+ $_SESSION['temp'] = $message;
 
 	header ('Location: index.php?page=accueil');
 	
+	?>
 	?>

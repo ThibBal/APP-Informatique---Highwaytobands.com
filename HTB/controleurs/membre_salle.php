@@ -34,18 +34,19 @@ if($password == $password2){
 			$verif=veriflogin_salle($login);
 			if($verif){
 				inscription_salle($login, $password, $name, $capacity, $zipcode, $mail, $phone, $adress, $description, $hours, $photo);
+			$message='Vous êtes bien inscrit !';
 			}else{
-				$_SESSION['message']='Pseudo déjà utilisé !';
+				$message='Pseudo déjà utilisé !';
 				
 			}
 		}else{ 
-			$_SESSION['message']='Mot de passe trop court !';
+			$message='Mot de passe trop court !';
 		}
 	}else{ 
-		$_SESSION['message']='Mot de passe incorrect';
+		$message='Mot de passe incorrect';
 	}
 
-
+ $_SESSION['temp'] = $message;
 
 	header ('Location: index.php?page=accueil');
 	

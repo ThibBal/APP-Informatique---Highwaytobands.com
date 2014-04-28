@@ -14,9 +14,9 @@
 	<div id="inscription">
 		Inscris toi et profite :
 		<ul>
-			<li>De contenu personnalisé</li>
-			<li>Des services géniaux</li>
-			<li>Un truc cool</li>
+			<li>De contenu personnalisé selon tes préférences</li>
+			<li>De services exclusifs</li>
+			<li>D'une communauté de passionnés</li>
 		</ul>
 	</div>
 	<?php } ?>

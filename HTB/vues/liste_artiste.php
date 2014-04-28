@@ -23,8 +23,7 @@ while ($artiste = $artistes->fetch())
 {
 ?>
     <p>
-    <strong>Login</strong> : <?php echo $artiste['login']; ?>
-    <strong>Nom</strong> : <?php echo $artiste['name']; ?>
+    <strong>Login</strong> : <?php echo htmlspecialchars($artiste['name']); ?>
     <strong>Style</strong> : <?php echo $artiste['style']; ?>
     <strong>Description</strong> : <?php echo $artiste['description']; ?><br />
    </p>

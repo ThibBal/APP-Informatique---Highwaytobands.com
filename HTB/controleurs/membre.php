@@ -6,6 +6,7 @@ $password=$_POST['password'];
 $password2=$_POST['password2']; 
 $mail=$_POST['mail']; 
 $zipcode=$_POST['zipcode'];
+$name=$_POST['name'];
 //$photo=$_POST['photo'];
 //}
 
@@ -24,7 +25,7 @@ if($password == $password2){
 			require('modeles/membre.php'); // Unicité du login
 			$verif=veriflogin($login);
 			if($verif){
-				inscription($login, $password, $mail, $zipcode, $photo);
+				inscription($login, $password, $mail, $zipcode, $photo, $name);
 				$message='Vous êtes bien inscrit !';
 			}else{
 				$message='Pseudo déjà utilisé !';
