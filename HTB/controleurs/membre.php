@@ -25,7 +25,7 @@ if($password == $password2){
 			require('modeles/membre.php'); // Unicité du login
 			$verif=veriflogin($login);
 			if($verif){
-				inscription($login, $password, $mail, $zipcode, $photo, $name);
+				inscription($login, $password,$mail, $zipcode, $photo, $name);
 				$message='Vous êtes bien inscrit !';
 			}else{
 				$message='Pseudo déjà utilisé !';

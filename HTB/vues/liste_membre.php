@@ -22,7 +22,7 @@ while ($donnees = $membres->fetch())
 {
 ?>
     <p>
-    <strong>Login</strong> : <?php echo $donnees['login']; ?>
+    <strong>Login</strong> : <a href="index.php?page=compte&id=<?php echo $donnees['id']; ?>"><?php echo $donnees['login']; ?></a>
     <strong>Code-postal</strong> : <?php echo $donnees['zipcode']; ?><br />
    </p>
 <?php

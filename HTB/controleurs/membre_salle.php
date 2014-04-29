@@ -12,6 +12,7 @@ $capacity=$_POST['capacity'];
 $phone=$_POST['phone'];
 $hours=$_POST['hours'];
 $adress=$_POST['adress'];
+$CGU=$_POST['CGU'];
 
 
 
@@ -34,6 +35,7 @@ if($password == $password2){
 			$verif=veriflogin_salle($login);
 			if($verif){
 				inscription_salle($login, $password, $name, $capacity, $zipcode, $mail, $phone, $adress, $description, $hours, $photo);
+
 			$message='Vous êtes bien inscrit !';
 			}else{
 				$message='Pseudo déjà utilisé !';

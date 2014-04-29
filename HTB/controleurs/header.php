@@ -23,7 +23,7 @@ if(isset($_POST) && !empty($_POST['login']) && !empty($_POST['password'])) {
 
  	$message ='Mot de passe incorrect';
     $_SESSION['temp'] = $message;
-    header ('Location: index.php?page=accueil');
+  //  header ('Location: index.php?page=accueil');
 
  }  else {
    $_SESSION['login'] = $login;

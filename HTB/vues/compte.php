@@ -57,15 +57,11 @@ while ($musique = $extraits->fetch())
 			<div id="participants"><p></p>
 			<ul>
 				
-				<li>15/03/14 : Bruno Mars</li>
-				<li>16/03/14 : Imagine Dragons</li>
-				<li>18/03/14 : The Who</li>
-				<li>20/03/14 : Bastille</li>
-				<li>25/03/14 : Oasis</li>
-				<li>31/03/14 : Supertramp</li>
-				<li>01/04/14 : The Rolling Stones</li>
-				<li>10/04/14 : Mika</li>
-				<li>15/04/14 : Stromae</li>
+				<li>Bruno Mars</li>
+				<li>Imagine Dragons</li>
+				<li>The Who</li>
+				<li>Bastille</li>
+				<li>Stromae</li>
 			</ul>
 			</div>
 			<form method="post" action="index.php?page=modifier">

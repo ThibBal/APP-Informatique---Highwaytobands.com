@@ -38,6 +38,7 @@
 			<p>Cumque pertinacius ut legum gnarus accusatorem flagitaret atque sollemnia, doctus id Caesar libertatemque superbiam ratus tamquam obtrectatorem audacem excarnificari praecepit, qui ita</p>
 
 			<a id="plan" href="img/olympia.png"><img width=250 src="img/olympia.png"></a></div>	
+			<center><input type="submit" value="Y participer"/></center>
 				
 		</div>
 
