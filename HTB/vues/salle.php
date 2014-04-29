@@ -45,9 +45,9 @@
 			<h3>Description</h3>
 			<div class="actu"><p><?php echo ($data['description']); ?></p>
 
-			<a id="plan" href="img/olympia.png"><img width=250 src="img/olympia.png"></a></div>	
+			</div>	
 			<center><input type="submit" value="S'abonner"/></center>
-				
+					
 		</div>
 
 		<div class="article">
@@ -57,6 +57,14 @@
 			<p>Code-postal : <?php echo ($data['zipcode']); ?></p>
 			<p>Horaires : <?php echo ($data['hours']); ?></p>
 			<p>Téléphone : <?php echo ($data['phone']); ?></p>
+			<center><iframe
+  width="250"
+  height="250"
+  frameborder="0" style="border:0"
+  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCTQZ5rKhEnDfS2LJiU-hmV-DuCWpql02k
+    &q=<?php echo ($data['adress']); ?>+<?php echo ($data['zipcode']); ?>">
+</iframe><br /></center>
+
 		</div>			
 		</div>
 
