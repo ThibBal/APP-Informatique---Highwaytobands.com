@@ -42,7 +42,7 @@
 
 
 		<div class="article">
-			<h3>Infos</h3>
+			<h3>Description</h3>
 			<div class="actu"><p><?php echo ($data['description']); ?></p>
 
 			<a id="plan" href="img/olympia.png"><img width=250 src="img/olympia.png"></a></div>	
@@ -51,23 +51,26 @@
 		</div>
 
 		<div class="article">
-			<h3>Horaires</h3>
-			<div class="actu"><p><a href="#">Article : Une actualité top du top</a></p>
-			<p>Cumque pertinacius ut legum gnarus accusatorem flagitaret atque sollemnia, doctus id Caesar libertatemque superbiam ratus tamquam obtrectatorem audacem excarnificari praecepit, qui ita</p></div>			
+			<h3>Infos</h3>
+			<div class="actu">
+			<p>Adresse : <?php echo ($data['adress']); ?></p>
+			<p>Code-postal : <?php echo ($data['zipcode']); ?></p>
+			<p>Horaires : <?php echo ($data['hours']); ?></p>
+			<p>Téléphone : <?php echo ($data['phone']); ?></p>
+		</div>			
 		</div>
 
 		<div class="article">
 			<div class="sous_article">
 			<h3>Récents concerts</h3>
 			<div class="actu"><p></p>
-			<p>Cumque pertinacius ut legum gnarus accusatorem flagitaret atque sollemnia, doctus id Caesar libertatemque superbiam ratus tamquam obtrectatorem audacem excarnificari praecepit, qui ita</p>
 			</div>
 			</div>
 
 			<div class="sous_article">
 			<h3>Commentaires</h3>
 			<div class="actu">
-			<p>Cumque pertinacius ut legum gnarus accusatorem flagitaret atque sollemnia, doctus id Caesar libertatemque superbiam ratus tamquam obtrectatorem audacem excarnificari praecepit, qui ita</p>	
+			<p></p>	
 			</div>
 		</div>
 		</div>
