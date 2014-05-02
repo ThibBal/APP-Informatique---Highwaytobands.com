@@ -34,7 +34,8 @@ if($password == $password2){
 			require('modeles/salle.php'); // Unicité du login
 			$verif=veriflogin_salle($login);
 			if($verif){
-				inscription_salle($login, $password, $name, $capacity, $zipcode, $mail, $phone, $adress, $description, $hours, $photo);
+				//inscription_salle($login, $password, $name, $capacity, $zipcode, $mail, $phone, $adress, $description, $hours, $photo);
+				inscription_salle($login, $password, $name, $capacity, $zipcode, $mail, $phone, $adress, $hours, $photo, $description);
 
 			$message='Vous êtes bien inscrit !';
 			}else{

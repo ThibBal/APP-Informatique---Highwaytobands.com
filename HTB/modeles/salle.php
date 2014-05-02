@@ -1,8 +1,8 @@
 <?php
 
-function inscription_salle($login, $password, $name, $capacity, $zipcode, $mail, $phone, $adress, $description, $hours, $photo){
+function inscription_salle($login, $password, $name, $capacity, $zipcode, $mail, $phone, $adress, $hours, $photo, $description){
 global $bdd; // Inscription au site
-	$bdd->query("INSERT INTO salle(login, password, name, capacity, zipcode, mail, phone, adress, description, hours, photo) VALUES('$login', '$password', '$name', '$capacity', '$zipcode', '$mail', '$phone', '$adress', '$description', '$hours', '$photo')");
+	$bdd->query("INSERT INTO salle(login, password, name, capacity, zipcode, mail, phone, adress, hours, photo, description) VALUES('$login', '$password', '$name', '$capacity', '$zipcode', '$mail', '$phone', '$adress', '$hours', '$photo', '$description')");
 
 }
 
