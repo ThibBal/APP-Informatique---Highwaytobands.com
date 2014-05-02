@@ -2,7 +2,7 @@
 
 require('modeles/artiste.php');
 
-$data=info-artiste($_GET["id"]);
+$data=info_artiste($_GET["id"]);
 
 include 'vues/artiste.php' 
 

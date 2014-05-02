@@ -28,7 +28,7 @@
 			<li><a href="#">Proche de chez vous</a></li>
 		</ul>
 	</li>
-	<li><a href="index.php?page=artiste">Artistes</a>
+	<li><a href="index.php?page=liste_artiste">Artistes</a>
 		<ul>
 			<li><a href="index.php?page=liste_artiste">Liste des artistes</a>
 			</li>

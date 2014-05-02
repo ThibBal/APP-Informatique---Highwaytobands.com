@@ -14,8 +14,8 @@
 
 	<?php include 'controleurs/header.php' ?>
 
-	<div class="banniere_artiste"> <img width=100% src="img/<?php echo($data['banniere']); ?>   />
-	</div>
+ <!--<div class="banniere_artiste"><img width=100% src="img/<?php echo($data['banniere']); ?>   />
+	</div>-->
 	
 
 	<div id="contenu">
@@ -24,28 +24,27 @@
 
 			<div class="sous_article">
 				<h2><?php echo ($data['name']); ?></h2>
-				<img width=250 src="img/<?php echo ($data['photo']); ?> />
+				<img width=250 src="img/<?php echo ($data['photo']); ?>"/>
 				
-			</div>
+				
+		</div>
 
-			<div> S'abonner 
-			</div>
 			<div class="wiki">
-				<h2> Infos générales </h2>
-				<p><?php echo ($data['description']); ?>
+				<h2> Actualités </h2>
+				<!--<p><?php echo ($data['actu']); ?>-->
 				</p>
 				<h2> Composition du groupe </h2>
-				<p> <?php echo ($data['membres_groupe']); ?>
-				</p>
+				<!--<p> <?php echo ($data['membres_groupe']); ?>
+				</p>-->
 			</div>	
 			
 		</div>
 
 
 		<div class="article2">
-			<h3>Actualités</h3>
+			<h3>Informations</h3>
 			<div class="actu" id="actu">
-				<?php echo ($data['actu']); ?> 
+				<?php echo ($data['description']); ?>
 				</div>			
 			</div>
 
@@ -117,7 +116,7 @@
 				<div class="sous_article">
 					<h3>Commentaires</h3>
 					<div class="actu">
-					<?php echo (['commentaires']); ?>
+					<!--<?php echo (['commentaires']); ?>-->
 					</div>
 				</div>
 			</div>
