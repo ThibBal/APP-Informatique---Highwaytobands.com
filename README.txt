@@ -14,6 +14,7 @@ artiste_id null (� corriger !)
 Connexion pour salle et artiste
 Creation d'un �v�nement
 Abonnement � Artiste, Salle et Evenement
+Mettre à jour la BDD 'artiste' 
 ----
 - Supperssion de "dur�e" pour un extrait / morceau de musique
 - Ajout de "photo" (de profil) � artiste et salle (BDD)
