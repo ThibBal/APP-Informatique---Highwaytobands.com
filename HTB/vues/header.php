@@ -70,7 +70,7 @@
 </form>
 <?php }else{ ?> 
 <form method="post" action="index.php?page=logout">
-<a href="index.php?page=compte"><?php echo $_SESSION['login']?></br></a>
+<a href="index.php?page=compte&id=<?php echo $_SESSION['id']; ?>"><?php echo $_SESSION['login']?></br></a>
 	
 	<center><input type="submit" value="Déconnexion"/></center>
 </form>
