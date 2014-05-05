@@ -1,5 +1,10 @@
 <?php 
 
-//$_SESSION["temp"]='Page event';
+require('modeles/concert.php');
 
-include 'vues/event.php' ?>
+//$data=info_concert($_GET["id"]);
+
+
+include 'vues/event.php' 
+
+?>

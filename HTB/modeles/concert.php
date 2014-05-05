@@ -1,62 +1,27 @@
 <?php
 
-function inscription($login, $password, $name, $style, $description, $mail){
-global $bdd; // Inscription au site
-	$bdd->query("INSERT INTO artiste(login, password, name, style, description, mail) VALUES('$login', '$password', '$name', '$style', '$description','$mail')");
+function creation_concert($artist, $salle, $date, $description, $price){
+global $bdd; // Création d'un concert
+	$bdd->query("INSERT INTO concert(artist, salle, date, description, price) VALUES('$artist', '$sale', '$date', '$description', '$price')");
 
 }
 
-function login($login, $password){ // Connexion
-global $bdd;
-	$password=sha1($password);
-$result=$bdd->query("SELECT COUNT(id) FROM artiste WHERE login='$login' AND password='$password' ");
-$num = $result->fetchColumn();
-if ($num==1){
-	return true;
-	}else{
-		return false;
-	}
-}
-
-function veriflogin($login){ // Vérification du login
-global $bdd;
-$result=$bdd->query("SELECT COUNT(id) FROM artiste WHERE login='$login'");
-$num = $result->fetchColumn();
-if ($num!=1){
-	return true;
-	}else{
-		return false;
-	}
-}
-
-
-function recupid($login, $password){
+function info_concert($id){
 	global $bdd;
-	$result=$bdd->query("SELECT id FROM artiste WHERE login='$login' AND password='$password' ");
-	$res = $result-> fetch();
-	return $res; 
-}
-
-function id($login, $password){
-	global $bdd;
-$req = $bdd->prepare('SELECT id FROM artiste WHERE login = :login AND password = :password');
-$req->execute(array(
-    'login' => $login,
-    'password' => $password));
-
-$resultat = $req->fetch();
-return $resultat;
-}
-
-function info($id){
-	global $bdd;
-$res = "SELECT * from artiste where id ='$id'";
+$res = "SELECT * from concert where id ='$id'";
 $req = $bdd-> query($res) or die(print_r($bdd->errorInfo()));
 
  	$data = $req-> fetch();
  	return $data;
 }
 
+function liste_concert(){ // Récupère les informations d'un membre
+	global $bdd;
+$res = "SELECT * from concert";
+$req = $bdd-> query($res) or die(print_r($bdd->errorInfo()));
+
+ 	 	return $req;
+}
 
 
 ?>
