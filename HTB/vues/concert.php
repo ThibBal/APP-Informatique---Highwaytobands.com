@@ -12,14 +12,14 @@
 	<?php include 'controleurs/header.php' ?>
 	<div id="inscription">
 		<form action="index.php?page=concert" method="post"> 
-			<span id="blabla">Inscription : Veuillez compléter les champs suivants</span>
+			<span id="blabla">Création Evènement : Veuillez compléter les champs suivants</span>
 	<ul id="formulaire">
 		<li class="champs"><span>Nom : </span><input name=login class= "box" type="text"></li>
 		<li class="champs"><span>Salle : </span><input name=salle class="box" type="text"></li>
 		<li class="champs"><span>Artiste : </span><input name=artist class= "box" type="text"></li>
-		<li class="champs"><span>Date : </span><input name=zipcode class="box" type="text"></li>
-		<li class="champs"><span>Description : </span><input name=description class="box" type="text"></li>
-		<li class="champs"><span>Prix : </span><input name=photo class="box" type="text" /></li>
+		<li class="champs"><span>Date : </span><input name=date class="box" type="text"></li>
+		<li class="champs"><span>Description : </span> <br/> <textarea rows=5 cols=50 name=description ></textarea></li>
+		<li class="champs"><span>Prix : </span><input name=price class="box" type="text" /></li>
 		<li class="CGU"><span>J'accepte les <a href="conditions.php">Conditions Générales d'Utilisation</a></span><input type="checkbox" name="CGU" value="checked"/></li>
 		
 	</ul>
