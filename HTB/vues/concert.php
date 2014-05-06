@@ -11,8 +11,8 @@
 <body>
 	<?php include 'controleurs/header.php' ?>
 	<div id="inscription">
-		<form action="index.php?page=concert" method="post"> 
-			<span id="blabla">Création Evènement : Veuillez compléter les champs suivants</span>
+		<form action="index.php?page=creationconcert" method="post"> 
+			<span id="blabla">Création évènement : Veuillez compléter les champs suivants</span>
 	<ul id="formulaire">
 		<li class="champs"><span>Nom : </span><input name=login class= "box" type="text"></li>
 		<li class="champs"><span>Salle : </span><input name=salle class="box" type="text"></li>
