@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client: localhost
--- Généré le: Jeu 08 Mai 2014 à 19:17
+-- Généré le: Mar 29 Avril 2014 à 09:29
 -- Version du serveur: 5.6.12-log
 -- Version de PHP: 5.4.12
 
@@ -48,8 +48,7 @@ CREATE TABLE IF NOT EXISTS `artiste` (
 INSERT INTO `artiste` (`id`, `login`, `password`, `name`, `style`, `description`, `mail`, `photo`) VALUES
 (1, 'thotel', '36a32e96cbfd11fd98e8c98e38d9ad9b41f57f1a', 'Tokio Hotel', 'Rock', 'Tokio Hotel est un groupe de pop-rock originaire de Magdebourg, en Allemagne.', 'th@gmail.com', NULL),
 (2, 'muse', 'ae5b05ab3cd47f4a88d7b0da49eb96fd034406d0', 'Muse', 'Pop', 'Muse est un groupe originaire de Teignmouth, Devon en Angleterre. Apparu en 1994, Matthew Bellamy (chant, guitare, piano), Christopher Wolstenholme (basse, chant) et Dominic Howard (batterie, percussions) forment le trio du groupe.', 'tbalmette@gmail.com', 'photo2.jpg'),
-(3, 'ELO', '36a32e96cbfd11fd98e8c98e38d9ad9b41f57f1a', 'Electric Light Orchestra', 'Rock', 'Electric Light Orchestra (ELO), est un groupe de rock britannique originaire de Birmingham. Sa musique se veut un croisement d''influences classiques, rock et pop.', 'elo@mail.com', 'photo1.jpg'),
-(4, 'TCHOU', 'ae5b05ab3cd47f4a88d7b0da49eb96fd034406d0', 'Shakira', 'Rock', 'wESSSH', 'tba@gmail.com', 'ledome-810j.jpg');
+(3, 'ELO', '36a32e96cbfd11fd98e8c98e38d9ad9b41f57f1a', 'Electric Light Orchestra', 'Rock', 'Electric Light Orchestra (ELO), est un groupe de rock britannique originaire de Birmingham. Sa musique se veut un croisement d''influences classiques, rock et pop.', 'elo@mail.com', 'photo1.jpg');
 
 -- --------------------------------------------------------
 
@@ -100,14 +99,7 @@ CREATE TABLE IF NOT EXISTS `concert` (
   `description` varchar(45) DEFAULT NULL,
   `price` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
-
---
--- Contenu de la table `concert`
---
-
-INSERT INTO `concert` (`id`, `login`, `artist`, `salle`, `date`, `description`, `price`) VALUES
-(1, NULL, '$artist', '$sale', '$date', '$description', 0);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -125,7 +117,7 @@ CREATE TABLE IF NOT EXISTS `extrait` (
   `artiste` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_extrait_artiste_idx` (`artiste_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=18 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=20 ;
 
 --
 -- Contenu de la table `extrait`
@@ -152,7 +144,7 @@ CREATE TABLE IF NOT EXISTS `membre` (
   `name` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `login_UNIQUE` (`login`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=98 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=62 ;
 
 --
 -- Contenu de la table `membre`
@@ -176,11 +168,7 @@ INSERT INTO `membre` (`id`, `login`, `password`, `zipcode`, `mail`, `photo`, `na
 (57, 'DonaldDuck', '36a32e96cbfd11fd98e8c98e38d9ad9b41f57f1a', '34645', 'donald@duck.com', 'donald.jpg', NULL),
 (58, 'Potatoes', '36a32e96cbfd11fd98e8c98e38d9ad9b41f57f1a', '91240', 'tba@gmail.com', 'photo3.JPG', NULL),
 (59, 'tbalmette', '36a32e96cbfd11fd98e8c98e38d9ad9b41f57f1a', '91260', 'tbalmette@gmail.com', '8bit_r2d2.jpg', 'Thibault'),
-(61, 'Thibault', '36a32e96cbfd11fd98e8c98e38d9ad9b41f57f1a', '91260', 'tbalmette@gmail.com', '8bit_r2d2.jpg', 'Thibault B'),
-(94, 'Clement', '36a32e96cbfd11fd98e8c98e38d9ad9b41f57f1a', '91250', 'azert@gmail.com', '94.png', 'Clermont'),
-(95, 'canal', '36a32e96cbfd11fd98e8c98e38d9ad9b41f57f1a', '91260', 'mistertiti91@hotmail.fr', '95.jpg', 'Canal'),
-(96, 'chirac', '36a32e96cbfd11fd98e8c98e38d9ad9b41f57f1a', '75008', 'elysee@gmail.com', '96.jpg', 'Jacques'),
-(97, 'eurovision', '36a32e96cbfd11fd98e8c98e38d9ad9b41f57f1a', '91260', 'mistertiti91@hotmail.fr', '97.png', 'Eurovision');
+(61, 'Thibault', '36a32e96cbfd11fd98e8c98e38d9ad9b41f57f1a', '91260', 'tbalmette@gmail.com', '8bit_r2d2.jpg', 'Thibault B');
 
 -- --------------------------------------------------------
 
@@ -274,23 +262,18 @@ CREATE TABLE IF NOT EXISTS `salle` (
   `description` text,
   `hours` varchar(45) DEFAULT NULL,
   `photo` varchar(255) DEFAULT NULL,
-  `voie` int(255) DEFAULT NULL,
-  `ville` varchar(255) DEFAULT NULL,
-  `pays` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `Pseudo_UNIQUE` (`login`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
 
 --
 -- Contenu de la table `salle`
 --
 
-INSERT INTO `salle` (`id`, `login`, `password`, `name`, `capacity`, `zipcode`, `mail`, `phone`, `adress`, `description`, `hours`, `photo`, `voie`, `ville`, `pays`) VALUES
-(1, 'olympia', '08cf32d7f7bbd7395535521042d96127cd68cf09', 'Olympia', 1996, 75009, 'olympia@salle.com', '012595939', '28 Boulevard des Capucines', 'L Olympia est une salle de spectacle. C''est le plus ancien music-hall de Paris encore existant.', '16h-19h', 'olympia-hall.gif', NULL, NULL, NULL),
-(2, 'Bercy', '36a32e96cbfd11fd98e8c98e38d9ad9b41f57f1a', 'Bercy', 25000, 75000, 'bercy@mail.com', '0123456789', '8 Boulevard de Bercy', 'Le palais omnisports de Paris-Bercy est une salle polyvalente', '10h - 20h', 'bercy.jpg', NULL, NULL, NULL),
-(3, 'casapaco', '36a32e96cbfd11fd98e8c98e38d9ad9b41f57f1a', 'Casa Paco', 50, 75000, 'casa@mail.com', '0123456789', '13 Rue de Bassano', 'La Casa Paco est un bar typique espagnol, toute la chaleur, on retrouve la bonne humeur de Madrid dans ce bar restaurant.', '17h - 20h', 'casa.jpg', NULL, NULL, NULL),
-(7, 'dome', '36a32e96cbfd11fd98e8c98e38d9ad9b41f57f1a', 'LeDÃ´meDeMarseille', 8500, 13004, 'dome@email.com', '3367894560', '48 Avenue de Saint-Just', NULL, '14h-15h', 'ledome-810j.jpg', NULL, NULL, NULL),
-(8, 'Cocacola', '36a32e96cbfd11fd98e8c98e38d9ad9b41f57f1a', 'Weshou', 6543, 91260, 'azert@gmail.com', '3367894560', 'Hihi rue du troc', 'WESH', '14h', 'donald.jpg', NULL, NULL, NULL);
+INSERT INTO `salle` (`id`, `login`, `password`, `name`, `capacity`, `zipcode`, `mail`, `phone`, `adress`, `description`, `hours`, `photo`) VALUES
+(1, 'olympia', '08cf32d7f7bbd7395535521042d96127cd68cf09', 'Olympia', 1996, 75009, 'olympia@salle.com', '012595939', '28 Boulevard des Capucines', 'L Olympia est une salle de spectacle. C''est le plus ancien music-hall de Paris encore existant.', '16h-19h', 'olympia-hall.gif'),
+(2, 'Bercy', '36a32e96cbfd11fd98e8c98e38d9ad9b41f57f1a', 'Bercy', 25000, 75000, 'bercy@mail.com', '0123456789', '8 Boulevard de Bercy', 'Le palais omnisports de Paris-Bercy est une salle polyvalente', '10h - 20h', 'bercy.jpg'),
+(3, 'casapaco', '36a32e96cbfd11fd98e8c98e38d9ad9b41f57f1a', 'Casa Paco', 50, 75000, 'casa@mail.com', '0123456789', '13 Rue de Bassano', 'La Casa Paco est un bar typique espagnol, toute la chaleur, on retrouve la bonne humeur de Madrid dans ce bar restaurant.', '17h - 20h', 'casa.jpg');
 
 -- --------------------------------------------------------
 

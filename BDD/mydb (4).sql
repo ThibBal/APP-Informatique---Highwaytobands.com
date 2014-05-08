@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client: localhost
--- Généré le: Jeu 08 Mai 2014 à 19:17
+-- Généré le: Mar 06 Mai 2014 à 06:18
 -- Version du serveur: 5.6.12-log
 -- Version de PHP: 5.4.12
 
@@ -152,7 +152,7 @@ CREATE TABLE IF NOT EXISTS `membre` (
   `name` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `login_UNIQUE` (`login`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=98 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=62 ;
 
 --
 -- Contenu de la table `membre`
@@ -176,11 +176,7 @@ INSERT INTO `membre` (`id`, `login`, `password`, `zipcode`, `mail`, `photo`, `na
 (57, 'DonaldDuck', '36a32e96cbfd11fd98e8c98e38d9ad9b41f57f1a', '34645', 'donald@duck.com', 'donald.jpg', NULL),
 (58, 'Potatoes', '36a32e96cbfd11fd98e8c98e38d9ad9b41f57f1a', '91240', 'tba@gmail.com', 'photo3.JPG', NULL),
 (59, 'tbalmette', '36a32e96cbfd11fd98e8c98e38d9ad9b41f57f1a', '91260', 'tbalmette@gmail.com', '8bit_r2d2.jpg', 'Thibault'),
-(61, 'Thibault', '36a32e96cbfd11fd98e8c98e38d9ad9b41f57f1a', '91260', 'tbalmette@gmail.com', '8bit_r2d2.jpg', 'Thibault B'),
-(94, 'Clement', '36a32e96cbfd11fd98e8c98e38d9ad9b41f57f1a', '91250', 'azert@gmail.com', '94.png', 'Clermont'),
-(95, 'canal', '36a32e96cbfd11fd98e8c98e38d9ad9b41f57f1a', '91260', 'mistertiti91@hotmail.fr', '95.jpg', 'Canal'),
-(96, 'chirac', '36a32e96cbfd11fd98e8c98e38d9ad9b41f57f1a', '75008', 'elysee@gmail.com', '96.jpg', 'Jacques'),
-(97, 'eurovision', '36a32e96cbfd11fd98e8c98e38d9ad9b41f57f1a', '91260', 'mistertiti91@hotmail.fr', '97.png', 'Eurovision');
+(61, 'Thibault', '36a32e96cbfd11fd98e8c98e38d9ad9b41f57f1a', '91260', 'tbalmette@gmail.com', '8bit_r2d2.jpg', 'Thibault B');
 
 -- --------------------------------------------------------
 

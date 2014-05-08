@@ -57,7 +57,7 @@
 	
 <?php } ?>
 	<li><a href="forum/forum.php">Forum</a></li>
-	<li><a href="contact.php">Contact</a></li>					
+	<li><a href="index.php?page=contact">Contact</a></li>					
 </ul>
 </div>
 

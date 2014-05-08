@@ -30,6 +30,7 @@ if(isset($_POST) && !empty($_POST['login']) && !empty($_POST['password'])) {
    $_SESSION['id'] = $donnee3['id'];
    $message= 'Bienvenue';
   $_SESSION['temp'] = 'Bienvenue';
+  $_SESSION['statut'] = 'salle';
    header ('Location: index.php?page=accueil');
  } 
 
@@ -38,6 +39,7 @@ if(isset($_POST) && !empty($_POST['login']) && !empty($_POST['password'])) {
    $_SESSION['id'] = $donnee2['id'];
    $message= 'Bienvenue';
   $_SESSION['temp'] = 'Bienvenue';
+    $_SESSION['statut'] = 'artiste';
    header ('Location: index.php?page=accueil');
  } 
 
@@ -46,6 +48,7 @@ if(isset($_POST) && !empty($_POST['login']) && !empty($_POST['password'])) {
    $_SESSION['id'] = $donnee['id'];
    $message= 'Bienvenue';
   $_SESSION['temp'] = 'Bienvenue';
+  $_SESSION['statut'] = 'membre';
    header ('Location: index.php?page=accueil');
  } 
 

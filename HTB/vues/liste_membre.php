@@ -30,7 +30,7 @@ while ($donnees = $membres->fetch())
 
 
 
-?>
+?><?php echo count($donnees); ?>
 			</div>
 
 		</div>

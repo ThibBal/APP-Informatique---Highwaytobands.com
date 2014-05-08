@@ -6,6 +6,19 @@ global $bdd;
 
 }
 
+
+function inscription2($login, $password,$mail, $zipcode, $photo, $name){ // Inscription au site
+global $bdd; 
+	$bdd->query("INSERT INTO membre(login, password, mail, zipcode, photo, name) VALUES('$login', '$password', '$mail', '$zipcode', '$photo', '$name')");
+
+}
+function ajout_photo($id, $photo){ // Ajout de la photo de profil
+global $bdd; 
+	$bdd->query("UPDATE membre SET photo='$photo' WHERE id=$id 
+");
+
+}
+
 function veriflogin($login){ // Vérification du login
 global $bdd;
 $result=$bdd->query("SELECT COUNT(id) FROM membre WHERE login='$login'");
