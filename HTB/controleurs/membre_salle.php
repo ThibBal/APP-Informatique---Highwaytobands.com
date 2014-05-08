@@ -36,8 +36,29 @@ if($password == $password2){
 			if($verif){
 				//inscription_salle($login, $password, $name, $capacity, $zipcode, $mail, $phone, $adress, $description, $hours, $photo);
 				inscription_salle($login, $password, $name, $capacity, $zipcode, $mail, $phone, $adress, $hours, $photo, $description);
+$donnee = connexion_salle($login);
+				$nomOrigine = $_FILES['photo']['name'];
+				$elementsChemin = pathinfo($nomOrigine);
+				$extensionFichier = $elementsChemin['extension'];
+				$extensionsAutorisees = array("jpeg", "jpg", "gif", "png");
+				$nomDestination = $donnee['id'].".".$extensionFichier; // Nom du fichier : id.extension
+				ajout_photo_salle($donnee['id'], $nomDestination); // Ajout de l'attribu photo au membre
+				$message = 'Inscription réussite';
 
-			$message='Vous êtes bien inscrit !';
+if (!(in_array($extensionFichier, $extensionsAutorisees))) {
+$message = "Le fichier n'a pas l'extension attendue";
+} else {    
+
+$repertoireDestination = dirname(dirname(__FILE__))."/"."img"."/"."salles"."/"; // Copie dans le répertoire img
+//   $nomDestination = "fichier_du_".date("YmdHis").".".$extensionFichier;
+
+move_uploaded_file($_FILES["photo"]["tmp_name"], 
+                                 $repertoireDestination.$nomDestination);
+
+   // $message = "Le fichier temporaire ".$_FILES["photo"]["tmp_name"].
+     //       " a été déplacé vers ".$repertoireDestination.$nomDestination;
+
+}
 			}else{
 				$message='Pseudo déjà utilisé !';
 				

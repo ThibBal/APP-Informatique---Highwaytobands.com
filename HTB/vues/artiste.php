@@ -24,7 +24,7 @@
 
 			<div class="sous_article">
 				<h2><?php echo ($data['name']); ?></h2>
-				<img width=250 src="img/<?php echo ($data['photo']); ?>"/>
+				<img width=250 src="img/artistes/<?php echo ($data['photo']); ?>"/>
 				
 				
 		</div>

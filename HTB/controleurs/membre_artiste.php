@@ -26,7 +26,31 @@ if($password == $password2){
 			$verif=veriflogin_artiste($login); // Unicité du login
 			if($verif){
 				inscription_artiste($login, $password, $name, $style, $description, $mail, $photo);
-				$message='Vous êtes bien inscrit !';
+				$donnee = connexion_artiste($login);
+				$nomOrigine = $_FILES['photo']['name'];
+				$elementsChemin = pathinfo($nomOrigine);
+				$extensionFichier = $elementsChemin['extension'];
+				$extensionsAutorisees = array("jpeg", "jpg", "gif", "png");
+				$nomDestination = $donnee['id'].".".$extensionFichier; // Nom du fichier : id.extension
+				ajout_photo_artiste($donnee['id'], $nomDestination); // Ajout de l'attribu photo au membre
+				$message = 'Inscription réussite';
+
+if (!(in_array($extensionFichier, $extensionsAutorisees))) {
+$message = "Le fichier n'a pas l'extension attendue";
+} else {    
+
+$repertoireDestination = dirname(dirname(__FILE__))."/"."img"."/"."artistes"."/"; // Copie dans le répertoire img
+//   $nomDestination = "fichier_du_".date("YmdHis").".".$extensionFichier;
+
+move_uploaded_file($_FILES["photo"]["tmp_name"], 
+                                 $repertoireDestination.$nomDestination);
+
+   // $message = "Le fichier temporaire ".$_FILES["photo"]["tmp_name"].
+     //       " a été déplacé vers ".$repertoireDestination.$nomDestination;
+
+}
+
+
 			}else{
 				$message='Pseudo déjà utilisé !';
 				

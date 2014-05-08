@@ -14,6 +14,13 @@ $req = $bdd->query($sql) or die(print_r($bdd->errorInfo()));
  	return $donnee;
 }
 
+function ajout_photo_salle($id, $photo){ // Ajout de la photo de profil
+global $bdd; 
+	$bdd->query("UPDATE salle SET photo='$photo' WHERE id=$id 
+");
+
+}
+
 
 function veriflogin_salle($login){ // Vérification du login
 global $bdd;

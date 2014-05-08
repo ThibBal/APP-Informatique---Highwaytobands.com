@@ -14,6 +14,13 @@ $req = $bdd->query($sql) or die(print_r($bdd->errorInfo()));
  	return $donnee;
 }
 
+function ajout_photo_artiste($id, $photo){ // Ajout de la photo de profil
+global $bdd; 
+	$bdd->query("UPDATE artiste SET photo='$photo' WHERE id=$id 
+");
+
+}
+
 function veriflogin_artiste($login){ // Vérification du login
 global $bdd;
 $result=$bdd->query("SELECT COUNT(id) FROM artiste WHERE login='$login'");

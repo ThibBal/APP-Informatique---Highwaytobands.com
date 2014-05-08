@@ -14,7 +14,7 @@
 
 	<div id="contenu">
 		<div id="banniere"><h1><?php echo ($data['name']); ?></h1>
-			<img width=450 src="img/<?php echo($data['photo']); ?>">
+			<img width=450 src="img/salles/<?php echo($data['photo']); ?>">
 		</div>	
 		<div class="article">
 
