@@ -11,7 +11,7 @@
 <body>
 	<?php include 'controleurs/header.php' ?>
 	<div id="inscription">
-		<form action="index.php?page=ajouter_musique" method="post">
+		<form enctype="multipart/form-data" action="index.php?page=ajouter_musique" method="post">
 			<span id="blabla">Ajouter un morceau de musique</span>
 	<ul id="formulaire">
 		<li class="champs"><span>Nom : </span><input name=nom class= "box" type="text"></li>

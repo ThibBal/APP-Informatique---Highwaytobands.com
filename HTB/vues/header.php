@@ -17,7 +17,7 @@
 	<li><a href="index.php?page=event">Concerts</a>
 		<ul>
 			<li><a href="index.php?page=liste_concert">Liste des concerts</a></li>
-			<li><a href="#">Ajouter un concert</a></li>
+			<li><a href="index.php?page=inscriptionconcert">Ajouter un concert</a></li>
 			<li><a href="#">Les plus récents</a></li>
 		</ul>
 	</li>
@@ -39,13 +39,8 @@
 		</ul>
 	</li>
 	<?php if(!isset($_SESSION['login'])){ ?>
-	<li><a href="index.php?page=inscription">Inscription</a>
-	<ul>
-			<li><a href="index.php?page=inscription_salle">Inscription d'une salle</a>
-			</li>
-			<li><a href="index.php?page=inscription_artiste">Inscription d'un artiste</a>
-			</li>
-	</ul>
+	<li><a href="index.php?page=inscription">Mon compte</a>
+	
 	</li>
 <?php }else{ ?> 
 <li><a href="index.php?page=compte&id=<?php echo $_SESSION['id']; ?>">Mon compte</a>
@@ -68,6 +63,7 @@
 	<input type="password" name="password" placeholder =" mot de passe" size="12" />
 	<input type="submit" value="OK" />
 </form>
+<a href="index.php?page=inscription">Inscription</a>
 <?php }else{ ?> 
 <form method="post" action="index.php?page=logout">
 <a href="index.php?page=compte&id=<?php echo $_SESSION['id']; ?>"><?php echo $_SESSION['login']?></br></a>
@@ -84,7 +80,7 @@
 </div>	
 
 </div>
-<div id="rechercher"><form method="post" action="index.php?page=rechercher.php">
+<div id="rechercher"><form method="post" action="index.php?page=rechercher">
 <input type="text" placeholder =" Rechercher" size="20" />
 </form>
 </div>		

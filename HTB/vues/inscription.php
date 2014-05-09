@@ -10,19 +10,16 @@
 
 <body>
 	<?php include 'controleurs/header.php' ?>
+
 	<div id="inscription">
-		<form enctype="multipart/form-data" action="index.php?page=membre" method="post">
-			<span id="blabla">Inscription : Veuillez compléter les champs suivants</span>
+		<form enctype="multipart/form-data" action="index.php?page=inscription" method="POST">
+			<span id="blabla">Inscription : Veuillez choisir</span>
 	<ul id="formulaire">
-		<li class="champs"><span>Login : </span><input name=login class= "box" type="text"></li>
-		<li class="champs"><span>Mot de passe :<span class=small>(5 caractères requis)</span>  </span><input name=password class="box" type="password"></li>
-		<li class="champs"><span>Vérification du mot de passe : </span><input name=password2 class="box" type="password"></li>
-		<li class="champs"><span>Nom : </span><input name=name class= "box" type="text"></li>
-		<li class="champs"><span>Adresse E-Mail : </span><input name=mail class="box" type="email"></li>
-		<li class="champs"><span>Code postal : </span><input name=zipcode class="box" type="text"></li>
-		<li class="champs"><span>Photo de profil : </span><input name=photo class="box" type="file" /></li>
-		<li class="CGU"><span>J'accepte les <a href="conditions.php">Conditions Générales d'Utilisation</a></span><input type="checkbox" name="CGU" value="checked"/></li>
-		
+		<li class="CGU"><span>Vous souhaitez être : </span>
+		<span class="statut">Un membre</span><input name="statut" type="radio" value="membre" checked="checked"/>
+		<span class="statut">Une salle</span><input name="statut" type="radio" value="salle"/>
+		<span class="statut">Un artiste</span><input name="statut" type="radio" value="artiste" /></li>
+		<li class="CGU"><span>J'accepte les <a href="conditions.php">Conditions Générales d'Utilisation</a></span><input type="checkbox" name="CGU" value="checked"/></li>		
 	</ul>
 
 	<div id="envoi"><input type="submit" value="S'inscrire" /></div>
@@ -33,5 +30,3 @@
 <?php include 'controleurs/footer.php' ?>	
 	</body>
 		</html>
-
-		
