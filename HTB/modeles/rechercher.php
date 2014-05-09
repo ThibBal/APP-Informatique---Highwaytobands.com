@@ -1,35 +1,31 @@
 <?php 
 
-function recherche_salle($rechercher){  	
-global $bdd; //Recherche les differentes salles
-$result=$bdd-> query("SELECT id FROM salle WHERE name='%$rechercher%' OR zipcode='$rechercher'");
-$res=$result-> fetch();
-return $res;
+function recherche_membre($rechercher){ // Récupère les informations d'un membre
+	global $bdd;
+$res = "SELECT * FROM membre WHERE name LIKE '%$rechercher%' OR zipcode='$rechercher' OR login LIKE '%$rechercher%' ";
+$req = $bdd-> query($res) or die(print_r($bdd->errorInfo()));
+
+ 	 	return $req;
 }
 
 
-function recherche_artiste($rechercher){  	
-global $bdd; //Recherche les differents artistes
-$result=$bdd-> query("SELECT id FROM artiste WHERE name='%$rechercher%' OR style='%$rechercher%'");
-$res=$result-> fetch();
-return $res;
+function recherche_salle($rechercher){ // Récupère les informations d'un membre
+	global $bdd;
+$res = "SELECT * FROM salle WHERE name LIKE '%$rechercher%' OR zipcode='$rechercher' OR login LIKE '%$rechercher%'";
+$req = $bdd-> query($res) or die(print_r($bdd->errorInfo()));
+
+ 	 	return $req;
 }
 
 
-function recherche_event($rechercher){  	
-global $bdd; //Recherche les differents events
-$result=$bdd-> query("SELECT id FROM evenement WHERE name='%$rechercher%' OR style='%$rechercher%' OR artiste='%$rechercher%' OR salle='%$rechercher%'");
-$res=$result-> fetch();
-return $res;
+function recherche_artiste($rechercher){ // Récupère les informations d'un membre
+	global $bdd;
+$res = "SELECT * FROM artiste WHERE name LIKE '%$rechercher%' OR style='$rechercher' OR login LIKE '%$rechercher%' ";
+$req = $bdd-> query($res) or die(print_r($bdd->errorInfo()));
+
+ 	 	return $req;
 }
 
-
-function recherche_membre($rechercher){  	
-global $bdd; //Recherche les differents membres
-$result=$bdd-> query("SELECT id FROM membre WHERE login='$rechercher%' OR zipcode='$rechercher'");
-$res=$result-> fetch();
-return $res;
-}
 
 function recup_nb_recherche(){
 global $bdd;

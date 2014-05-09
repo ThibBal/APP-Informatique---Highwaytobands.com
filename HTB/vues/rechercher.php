@@ -10,30 +10,28 @@
 
 <body>
 	<?php include 'controleurs/header.php' ?>
-	<?php if(!isset($_SESSION['login'])){ ?>
-	<a href="index.php?page=inscription"><div id="inscription">
-		Inscris toi et profite :
-		<ul>
-			<li>De contenu personnalisé selon tes préférences</li>
-			<li>De services exclusifs</li>
-			<li>D'une communauté de passionnés</li>
-		</ul>
-	</div></a>
-	<?php } ?>
+
 	<div id="contenu">
 		<div class="article">
 			<h1 class="titre"> Recherche </h1>
 
-<?php
-if (isset=$recherche_salle){ ?>
-<p> Vous avez 0 salles correspondant à votre recherche. </p>
-<?php
-	while ($donnees = $recherche->fetch())
-	{ ?> <a href="index.php?page=salle&id=<?php echo $donnees['id']; ?>"><?php echo $donnees['name']; ?> </a> <?php
-	}
 
-}			
-?>	
+<?php
+	while ($donnees = $salle->fetch()){ ?> 
+	<a href="index.php?page=salle&id=<?php echo $donnees['id']; ?>"><?php echo $donnees['name']; ?> </a></br>
+	<?php } ?>
+
+<?php
+	while ($donnees = $artiste->fetch()){ ?> 
+	<a href="index.php?page=artiste&id=<?php echo $donnees['id']; ?>"><?php echo $donnees['name']; ?> </a></br> 
+	<?php } ?>
+
+
+
+
+
+
+
 		</div>
 
 

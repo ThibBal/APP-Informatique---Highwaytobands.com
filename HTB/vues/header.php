@@ -81,7 +81,7 @@
 
 </div>
 <div id="rechercher"><form method="post" action="index.php?page=rechercher">
-<input type="text" placeholder =" Rechercher" size="20" />
+<input type ="text" name="recherche" placeholder =" Rechercher" size="20" />
 </form>
 </div>		
 
