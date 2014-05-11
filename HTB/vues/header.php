@@ -43,7 +43,7 @@
 	
 	</li>
 <?php }else{ ?> 
-<li><a href="index.php?page=compte&id=<?php echo $_SESSION['id']; ?>">Mon compte</a>
+<li><a href="index.php?page=compte_perso">Mon compte</a>
 <ul><li id="truc"><a href="index.php?page=musique">Ajouter / Supprimer une musique</a>
 <li><a href="index.php?page=liste_membre">Liste des membres</a>
 			</li>
@@ -66,7 +66,7 @@
 <a href="index.php?page=inscription">Inscription</a>
 <?php }else{ ?> 
 <form method="post" action="index.php?page=logout">
-<a href="index.php?page=compte&id=<?php echo $_SESSION['id']; ?>"><?php echo $_SESSION['login']?></br></a>
+<a href="index.php?page=compte_perso"><?php echo $_SESSION['login']?></br></a>
 	
 	<center><input type="submit" value="Déconnexion"/></center>
 </form>

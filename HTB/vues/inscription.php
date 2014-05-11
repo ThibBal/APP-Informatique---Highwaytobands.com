@@ -13,7 +13,7 @@
 
 	<div id="inscription">
 		<form enctype="multipart/form-data" action="index.php?page=inscription" method="POST">
-			<span id="blabla">Inscription : Veuillez choisir</span>
+			<span id="blabla">Inscription : Veuillez choisir un statut</span>
 	<ul id="formulaire">
 		<li class="CGU"><span>Vous souhaitez être : </span>
 		<span class="statut">Un membre</span><input name="statut" type="radio" value="membre" checked="checked"/>

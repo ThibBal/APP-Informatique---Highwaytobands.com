@@ -31,11 +31,8 @@
 
 			<div class="wiki">
 				<h2> Actualités </h2>
-				<!--<p><?php echo ($data['actu']); ?>-->
-				</p>
-				<h2> Composition du groupe </h2>
-				<!--<p> <?php echo ($data['membres_groupe']); ?>
-				</p>-->
+				<!--<?php echo ($data['actu']); ?>-->
+				
 			</div>	
 			
 		</div>
@@ -45,6 +42,17 @@
 			<h3>Informations</h3>
 			<div class="actu" id="actu">
 				<?php echo ($data['description']); ?>
+				<h3>Morceaux</h3>
+			<?php
+
+while ($musique = $extraits->fetch())
+{
+?>
+    <center><audio src="files/musiques/<?php echo($musique['fichier']); ?>" controls></audio></center>
+	<center><?php echo $musique['nom']; ?> - <?php echo $musique['album']; ?></center></br>
+<?php
+}
+?>	
 				</div>			
 			</div>
 

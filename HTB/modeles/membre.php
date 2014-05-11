@@ -19,16 +19,6 @@ global $bdd;
 
 }
 
-function veriflogin($login){ // Vérification du login
-global $bdd;
-$result=$bdd->query("SELECT COUNT(id) FROM membre WHERE login='$login'");
-$num = $result->fetchColumn();
-if ($num!=1){
-	return true;
-	}else{
-		return false;
-	}
-}
 
 function verification($login){
 global $bdd;

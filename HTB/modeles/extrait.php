@@ -1,8 +1,8 @@
 <?php
 
-function ajouter($nom, $duree, $album, $artiste_id, $fichier, $artiste){
+function ajouter($nom, $album, $fichier, $artiste_id){
 global $bdd; // Ajouter un morceau de musique
-	$bdd->query("INSERT INTO extrait(nom, duree, album, fichier, artiste) VALUES('$nom', '$duree', '$album', '$fichier', '$artiste')");
+	$bdd->query("INSERT INTO extrait(nom, album, fichier, artiste) VALUES('$nom', '$album', '$fichier', '$artiste_id')");
 
 }
 
@@ -12,7 +12,14 @@ global $bdd; // Supprimer un morceau de musique
 
 }
 
-function musique($artiste){ // Récupère les informations d'un membre
+function ajout_musique($id, $fichier){ // Ajout de la photo de profil
+global $bdd; 
+	$bdd->query("UPDATE extrait SET fichier='$fichier' WHERE id=$id 
+");
+
+}
+
+function musique($artiste){ 
 	global $bdd;
 $res = "SELECT * from extrait where artiste=$artiste";
 $req = $bdd-> query($res) or die(print_r($bdd->errorInfo()));
@@ -21,14 +28,28 @@ $req = $bdd-> query($res) or die(print_r($bdd->errorInfo()));
  	return $musique;
 }
 
-function liste_extrait($id){ // Récupère les informations d'un membre
+function liste_extrait($artiste_id){ // Récupère les informations d'un membre
 	global $bdd;
-$res = "SELECT * from extrait where artiste=$id";
+$res = "SELECT * from extrait where artiste=$artiste_id";
 $req = $bdd-> query($res) or die(print_r($bdd->errorInfo()));
 
  	 	return $req;
 }
 
+function trouver($artiste_id, $fichier){
+global $bdd;
+$sql = "SELECT * from extrait where artiste ='$artiste_id' and fichier ='$fichier'";
+$req = $bdd->query($sql) or die(print_r($bdd->errorInfo()));
+ 	$donnee = $req->fetch();
+ 	return $donnee;
+}
 
+function trouver_nom($nom, $artiste){
+global $bdd;
+$sql = "SELECT * from extrait where artiste ='$artiste' and nom ='$nom'";
+$req = $bdd->query($sql) or die(print_r($bdd->errorInfo()));
+ 	$donnee = $req->fetch();
+ 	return $donnee;
+}
 
 ?>

@@ -13,20 +13,30 @@
 
 	<div id="contenu">
 		<div class="article">
-			<h1 class="titre"> Recherche </h1>
+			<h2 class="titre"> Recherche de "<?php echo $recherche; ?>"</h2>
 
-
+<h3>Salles : </h3>
 <?php
 	while ($donnees = $salle->fetch()){ ?> 
 	<a href="index.php?page=salle&id=<?php echo $donnees['id']; ?>"><?php echo $donnees['name']; ?> </a></br>
 	<?php } ?>
 
+<h3>Artistes : </h3> 
 <?php
 	while ($donnees = $artiste->fetch()){ ?> 
 	<a href="index.php?page=artiste&id=<?php echo $donnees['id']; ?>"><?php echo $donnees['name']; ?> </a></br> 
 	<?php } ?>
 
-
+<h3>Concerts : </h3> 
+<?php
+	//while ($donnees = $event->fetch()){ ?> 
+	 
+	
+<h3>Membres : </h3> 
+<?php
+	while ($donnees = $membre->fetch()){ ?> 
+	<a href="index.php?page=compte&id=<?php echo $donnees['id']; ?>"><?php echo $donnees['login']; ?> </a></br> 
+	<?php } ?>
 
 
 

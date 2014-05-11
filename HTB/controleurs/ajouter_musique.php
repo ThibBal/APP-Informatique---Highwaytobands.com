@@ -2,9 +2,9 @@
 <?php
 
 $nom=$_POST['nom']; // Changement des variables pour les étudier 
-$duree=$_POST['duree']; 
 $album=$_POST['album']; 
-$artiste=$_SESSION['id'];
+$artiste_id=$_SESSION['id'];
+//$fihier=date("YmdHis");
 
 
   $fichier = "";
@@ -13,14 +13,20 @@ if(!empty($_POST['fichier'])){
 $fichier = mysql_real_escape_string(htmlspecialchars($_POST['fichier']));
 }
 	require('modeles/extrait.php'); 
-			 ajouter($nom, $duree, $album, $artiste_id, $fichier, $artiste);
+			 ajouter($nom, $album, $fichier, $artiste_id);
+
 				$nomOrigine = $_FILES['fichier']['name'];
 				$elementsChemin = pathinfo($nomOrigine);
 				$extensionFichier = $elementsChemin['extension'];
-				$extensionsAutorisees = array("mp3", "avi", "mp4", "m4r");
-				$nomDestination = "musique_du_".date("YmdHis").".".$extensionFichier; // Nom du fichier : id.extension
+				$extensionsAutorisees = array("mp3", "m4r");
+
+				$donnee = trouver($artiste_id, $fichier);
+
+				//$nomDestination = "musique_du_".date("YmdHis").".".$extensionFichier; // Nom du fichier : date.extension
+				$nomDestination = $donnee['id']."_".$donnee['artiste'].".".$extensionFichier;
 				ajout_musique($donnee['id'], $nomDestination); // Ajout de l'attribu photo au membre
-				$message = 'Inscription réussite';
+
+				$message = 'Morceau ajouté';
 
 if (!(in_array($extensionFichier, $extensionsAutorisees))) {
 $message = "Le fichier n'a pas l'extension attendue";
@@ -40,7 +46,7 @@ move_uploaded_file($_FILES["fichier"]["tmp_name"],
 
 
 
-
+$_SESSION['temp'] = $message;
 
 
 	header ('Location: index.php?page=accueil');
