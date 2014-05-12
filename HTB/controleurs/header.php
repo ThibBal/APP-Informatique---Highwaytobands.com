@@ -27,6 +27,7 @@ if(isset($_POST) && !empty($_POST['login']) && !empty($_POST['password'])) {
 
  }  else {
    $_SESSION['login'] = $login;
+   $_SESSION['name'] = $donnee3['name'];
    $_SESSION['id'] = $donnee3['id'];
    $message= 'Bienvenue';
   $_SESSION['temp'] = 'Bienvenue';
@@ -36,6 +37,7 @@ if(isset($_POST) && !empty($_POST['login']) && !empty($_POST['password'])) {
 
  }  else {
    $_SESSION['login'] = $login;
+    $_SESSION['name'] = $donnee2['name'];
    $_SESSION['id'] = $donnee2['id'];
    $message= 'Bienvenue';
   $_SESSION['temp'] = 'Bienvenue';
@@ -45,6 +47,7 @@ if(isset($_POST) && !empty($_POST['login']) && !empty($_POST['password'])) {
 
   }  else {
    $_SESSION['login'] = $login;
+   $_SESSION['name'] = $donnee['name'];
    $_SESSION['id'] = $donnee['id'];
    $message= 'Bienvenue';
   $_SESSION['temp'] = 'Bienvenue';

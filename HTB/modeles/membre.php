@@ -22,7 +22,7 @@ global $bdd;
 
 function verification($login){
 global $bdd;
-$sql = "SELECT id, password from membre where login ='$login'";
+$sql = "SELECT id, password, name from membre where login ='$login'";
 $req = $bdd->query($sql) or die(print_r($bdd->errorInfo()));
  	$donnee = $req->fetch();
  	return $donnee;

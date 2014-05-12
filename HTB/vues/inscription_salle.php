@@ -27,7 +27,7 @@
 		<li class="champs"><span>Photo de profil : </span><input name=photo class="box" type="file" /></li>
 		<li class="CGU"><span>Description : </span></br><textarea name=description rows=5 cols=50></textarea></li>
 	
-		<li class="CGU"><span>J'accepte les <a href="conditions.php">Conditions Générales d'Utilisation</a></span><input type="checkbox" name="CGU" value="checked"/></li>
+		
 		
 	</ul>
 

@@ -23,9 +23,9 @@ while ($donnees = $concerts->fetch())
 ?>
     <p>
     <strong>Nom de la salle</strong> : <a href="index.php?page=concert&id=<?php echo $donnees['id']; ?>"><?php echo $donnees['name']; ?></a>
-    <strong>Adresse</strong> : <?php echo $donnees['login']; ?>
+    <strong>Adresse</strong> : <?php echo $donnees['id']; ?>
     <strong>Code-postal</strong> : <?php echo $donnees['salle']; ?>
-    <strong>Téléphone</strong> : <?php echo $donnees['artist']; ?>
+    <strong>Téléphone</strong> : <?php echo $donnees['artiste']; ?>
      <strong>Capacité</strong> : <?php echo $donnees['price']; ?> places
     <strong>Description</strong> : <?php echo $donnees['description']; ?><br />
    </p>

@@ -22,14 +22,14 @@
 		<li class="champs"><span>Photo de profil : </span><input name=photo class="box" type="file" /></li>
 		<li class="CGU"><span>Présentation : </span></br><textarea name=description rows=5 cols=50></textarea></li>
 		<li class="CGU"><span>Style de musiques : </span><SELECT name=style size="1">
+<option value="0" selected disabled> Choisir un style </option>
 <OPTION>Rock
 <OPTION>Pop
 <OPTION>Alternative
 <OPTION>Rap
 <OPTION>Electronique
 </SELECT></li>
-		<li class="CGU"><span>J'accepte les <a href="conditions.php">Conditions Générales d'Utilisation</a></span><input type="checkbox" name="CGU" value="checked"/></li>
-		
+				
 	</ul>
 
 	<div id="envoi"><input type="submit" value="S'inscrire" /></div>

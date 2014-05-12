@@ -25,7 +25,6 @@ include 'vues/inscription_salle.php';
 }else{
 
 
-
 include 'vues/inscription.php';
 
 }
