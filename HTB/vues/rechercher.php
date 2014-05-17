@@ -29,8 +29,9 @@
 
 <h3>Concerts : </h3> 
 <?php
-	//while ($donnees = $event->fetch()){ ?> 
-	 
+	while ($donnees = $event->fetch()){ ?> 
+	 <a href="index.php?page=concert&id=<?php echo $donnees['id']; ?>"><?php echo $donnees['name']; ?> </a></br> 
+	<?php } ?>
 	
 <h3>Membres : </h3> 
 <?php

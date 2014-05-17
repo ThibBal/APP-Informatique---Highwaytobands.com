@@ -15,9 +15,55 @@ $req = $bdd-> query($res) or die(print_r($bdd->errorInfo()));
  	return $data;
 }
 
+function info_artiste_concert($name){
+	global $bdd;
+	$result=$bdd->query("SELECT * FROM artiste WHERE name='$name'");
+	$res = $result-> fetch();
+	return $res; 
+}
+
+function info_salle_concert($name){
+	global $bdd;
+	$result=$bdd->query("SELECT * FROM salle WHERE name='$name'");
+	$res = $result-> fetch();
+	return $res; 
+}
+
 function liste_concert(){ // Récupère les informations d'un membre
 	global $bdd;
 $res = "SELECT * from concert";
+$req = $bdd-> query($res) or die(print_r($bdd->errorInfo()));
+
+ 	 	return $req;
+}
+
+function concert_valider_artiste($id){ // Liste des concerts à valider d'un atiste
+	global $bdd;
+$res = "SELECT * from concert where artiste='$id' and valider='0'";
+$req = $bdd-> query($res) or die(print_r($bdd->errorInfo()));
+
+ 	 	return $req;
+}
+
+function concert_valider_salle($id){ // Liste des concerts à valider d'une salle
+	global $bdd;
+$res = "SELECT * from concert where salle='$id' and valider='0'";
+$req = $bdd-> query($res) or die(print_r($bdd->errorInfo()));
+
+ 	 	return $req;
+}
+
+function concert_artiste($id){ // Liste des concerts d'un atiste
+	global $bdd;
+$res = "SELECT * from concert where artiste='$id' and valider='1'";
+$req = $bdd-> query($res) or die(print_r($bdd->errorInfo()));
+
+ 	 	return $req;
+}
+
+function concert_salle($id){ // Liste des concerts d'une salle
+	global $bdd;
+$res = "SELECT * from concert where salle='$id' and valider='1'";
 $req = $bdd-> query($res) or die(print_r($bdd->errorInfo()));
 
  	 	return $req;

@@ -6,7 +6,9 @@ if(($_SESSION['statut']=='salle')||($_SESSION['statut']=='artiste')){
 if(isset($_POST['CGU'])){
 	$name=$_POST['name']; // Changement des variables pour les étudier  
 	$salle=$_POST['salle']; 
+	//$salle_nom=$_POST['salle_nom']; 
 	$artiste=$_POST['artiste'];
+	//$artiste_nom=$_POST['artiste_nom'];
 	$date=$_POST['date'];
 	$description=$_POST['description'];
 	$price=$_POST['price'];
@@ -18,6 +20,7 @@ if(isset($_POST['CGU'])){
 	//$info= dernier_concert();
 
 	if($_SESSION['statut']=='salle'){
+
 	//confirmation_artiste($artiste);
 	}
 

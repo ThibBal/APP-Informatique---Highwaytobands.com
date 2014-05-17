@@ -8,5 +8,6 @@ if (!empty($_GET['page']) && is_file('controleurs/'.$_GET['page'].'.php'))
 }
 else
 {
-       include 'controleurs/forum_rubrique.php';
+	include 'controleurs/accueil.php';
+       //include 'controleurs/forum_rubrique.php';
 } ?>

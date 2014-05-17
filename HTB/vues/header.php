@@ -14,9 +14,9 @@
 
 <div id="menu">
 <ul>
-	<li><a href="index.php?page=event">Concerts</a>
+	<li><a href="index.php?page=liste_concert">Concerts</a>
 		<ul>
-			<li><a href="index.php?page=liste_concert">Liste des concerts</a></li>
+			<li><a href="index.php?page=event">Exemple d'un concert</a></li>
 			<li><a href="index.php?page=creation_concert">Ajouter un concert</a></li>
 			<li><a href="#">Les plus récents</a></li>
 		</ul>

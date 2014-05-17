@@ -5,7 +5,7 @@ require('modeles/rechercher.php');
 $recherche= $_POST["recherche"];
 $artiste=recherche_artiste($recherche);
 $salle=recherche_salle($recherche);
-//$event=recherche_event($recherche);
+$event=recherche_concert($recherche);
 $membre=recherche_membre($recherche);
 
 

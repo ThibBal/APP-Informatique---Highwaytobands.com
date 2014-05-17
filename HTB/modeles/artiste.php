@@ -68,6 +68,4 @@ $req = $bdd-> query($res) or die(print_r($bdd->errorInfo()));
  	return $data;
 }
 
-
-
 ?>

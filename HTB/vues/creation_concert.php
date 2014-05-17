@@ -21,11 +21,11 @@
 				<?php if($_SESSION['statut']=='artiste'){ ?>
 		
 			<option value="0" selected disabled> Choisir une salle </option>
-<?php while ($salle = $salles->fetch()) {?>
-<OPTION value="<?php echo $salle['id']; ?>">><?php echo $salle['name']; ?>
+<?php while ($salle = $salles->fetch()) { ?>
+<OPTION value="<?php echo $salle['name']; ?>"><?php echo $salle['name']; ?>
 	<?php } ?>
 <?php }else{ ?>
-			<option value="<?php echo $_SESSION['id']; ?>"><?php echo $_SESSION['name']; ?></option>
+			<option value="<?php echo $_SESSION['name']; ?>"><?php echo $_SESSION['name']; ?></option>
 <?php } ?>
 
 </SELECT></li>
@@ -36,10 +36,10 @@
 		
 			<option value="0" selected disabled> Choisir un artiste </option>
 <?php while ($artiste = $artistes->fetch()) {?>
-<OPTION value="<?php echo $artiste['id']; ?>"><?php echo $artiste['name']; ?>
+<OPTION value="<?php echo $artiste['name']; ?>"><?php echo $artiste['name']; ?>
 	<?php } ?>
 <?php }else{ ?>
-			<option value="<?php echo $_SESSION['id']; ?>"><?php echo $_SESSION['name']; ?></option>
+			<option value="<?php echo $_SESSION['name']; ?>"><?php echo $_SESSION['name']; ?></option>
 
 <?php } ?>
 

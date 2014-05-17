@@ -26,6 +26,14 @@ $req = $bdd-> query($res) or die(print_r($bdd->errorInfo()));
  	 	return $req;
 }
 
+function recherche_concert($rechercher){ // Récupère les informations d'un membre
+	global $bdd;
+$res = "SELECT * FROM concert WHERE name LIKE '%$rechercher%' OR artiste LIKE '%$rechercher%' OR salle LIKE '%$rechercher%' ";
+$req = $bdd-> query($res) or die(print_r($bdd->errorInfo()));
+
+ 	 	return $req;
+}
+
 
 function recup_nb_recherche(){
 global $bdd;
