@@ -10,6 +10,8 @@
 
 <body>
 	<?php include 'controleurs/header.php' ?>
+	<script type="text/javascript"
+src="js/formulaire.js"></script>
 	<div id="inscription">
 		<form enctype="multipart/form-data" action="index.php?page=membre" method="post">
 			<span id="blabla">Inscription : Veuillez compléter les champs suivants</span>
@@ -21,8 +23,7 @@
 		<li class="champs"><span>Adresse E-Mail : </span><input name=mail class="box" type="email"></li>
 		<li class="champs"><span>Code postal : </span><input name=zipcode class="box" type="text"></li>
 		<li class="champs"><span>Photo de profil : </span><input name=photo class="box" type="file" /></li>
-		
-		
+			
 	</ul>
 
 	<div id="envoi"><input type="submit" value="S'inscrire" /></div>

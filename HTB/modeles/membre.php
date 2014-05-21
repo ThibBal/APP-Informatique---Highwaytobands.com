@@ -13,9 +13,9 @@ global $bdd;
 
 }
 
-function modifications_membre($login, $password,$mail, $zipcode, $photo, $name){ // Inscription au site
+function modifications_membre($id, $login, $mail, $zipcode, $name){ // Inscription au site
 global $bdd; 
-	$bdd->query("INSERT INTO membre(login, password, mail, zipcode, photo, name) VALUES('$login', '$password', '$mail', '$zipcode', '$photo', '$name')");
+	$bdd->query("UPDATE membre SET mail = '$mail', zipcode = '$zipcode', name = '$name' where id=$id");
 
 }
 
@@ -24,6 +24,17 @@ global $bdd;
 	$bdd->query("UPDATE membre SET photo='$photo' WHERE id=$id 
 ");
 
+}
+
+function veriflogin($login){ // Vérification du login
+global $bdd;
+$result=$bdd->query("SELECT COUNT(id) FROM membre WHERE login='$login'");
+$num = $result->fetchColumn();
+if ($num!=1){
+	return true;
+	}else{
+		return false;
+	}
 }
 
 

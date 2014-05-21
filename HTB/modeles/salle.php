@@ -21,6 +21,12 @@ global $bdd;
 
 }
 
+function modifications_salle($id, $login, $mail, $zipcode, $name){ // Inscription au site
+global $bdd; 
+	$bdd->query("UPDATE salle SET mail = '$mail', zipcode = '$zipcode', name = '$name' where id=$id");
+
+}
+
 
 function veriflogin_salle($login){ // Vérification du login
 global $bdd;

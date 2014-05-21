@@ -46,7 +46,10 @@
 			<div class="actu"><p><?php echo ($data['description']); ?></p>
 
 			</div>	
-			<center><input type="submit" value="S'abonner"/></center>
+			<form name="abonnement" action="index.php?page=abonnement_salle" method="post">
+					<input type="hidden" name="salle" value="<?php echo ($data['id']); ?>">
+   <center><INPUT type="submit" name="bouton" value="S'abonner"></center>
+</form>
 					
 		</div>
 
@@ -71,8 +74,23 @@
 
 		<div class="article">
 			<div class="sous_article">
-			<h3>Trucs</h3>
-			<div class="actu"><p></p>
+			
+			<div class="actu">
+
+					<h3>Abonnés</h3>
+					<div class="actu">
+<?php
+while ($abon = $abonnements->fetch())
+{
+
+$followers=info_membre_abonne($abon['membre_id']);
+
+?>
+   	<center><a href="index.php?page=compte&id=<?php echo $followers['id']; ?>"><?php echo $followers['name']; ?></a></center></br>
+<?php
+
+}
+?>	
 			</div>
 			</div>
 

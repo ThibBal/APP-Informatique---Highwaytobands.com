@@ -21,6 +21,12 @@ global $bdd;
 
 }
 
+function modifications_artiste($id, $login, $mail, $zipcode, $name){ // Inscription au site
+global $bdd; 
+	$bdd->query("UPDATE artiste SET mail = '$mail', zipcode = '$zipcode', name = '$name' where id=$id");
+
+}
+
 function veriflogin_artiste($login){ // Vérification du login
 global $bdd;
 $result=$bdd->query("SELECT COUNT(id) FROM artiste WHERE login='$login'");

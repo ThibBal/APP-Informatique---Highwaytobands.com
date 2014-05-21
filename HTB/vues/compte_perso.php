@@ -24,7 +24,7 @@
 			Votre mail : <?php echo($data['mail']); ?> </br>
 			Votre code postal : <?php echo($data['zipcode']); ?> </br>
 
-	<form method="post" action="index.php?page=modifier_infos_membre">			
+	<form method="post" action="index.php?page=modifier_infos">			
 		<center><input type="submit" value="Modifier vos informations"/></center>
 	</form>
 			</div>
@@ -91,7 +91,7 @@
 			Votre mail : <?php echo($data2['mail']); ?> </br>
 	Votre style de musique : <?php echo($data2['style']); ?> </br>
 
-	<form method="post" action="index.php?page=modifier">			
+<form method="post" action="index.php?page=modifier_infos">			
 		<center><input type="submit" value="Modifier vos informations"/></center>
 	</form>
 			</div>
@@ -188,7 +188,7 @@ while ($concerts = $concert->fetch())
 			Votre mail : <?php echo($data3['mail']); ?> </br>
 	Votre code postal : <?php echo($data3['zipcode']); ?> </br>
 
-	<form method="post" action="index.php?page=modifier">			
+<form method="post" action="index.php?page=modifier_infos">			
 		<center><input type="submit" value="Modifier vos informations"/></center>
 	</form>
 			</div>

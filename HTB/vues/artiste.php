@@ -26,10 +26,14 @@
 				<h2><?php echo ($data['name']); ?></h2>
 				<img width=250 src="img/artistes/<?php echo ($data['photo']); ?>"/>
 				
+				<form name="abonnement" action="index.php?page=abonnement_artiste" method="post">
+					<input type="hidden" name="artiste" value="<?php echo ($data['id']); ?>">
+   <center><INPUT type="submit" name="bouton" value="S'abonner"></center>
+</form>
 				
 		</div>
 
-			<div class="wiki">
+			<div class="sous_article">
 				<h2> Actualités </h2>
 				<!--<?php echo ($data['actu']); ?>-->
 				
@@ -122,9 +126,22 @@ while ($musique = $extraits->fetch())
 				</div>
 
 				<div class="sous_article">
-					<h3>Commentaires</h3>
+					<h3>Abonnés</h3>
 					<div class="actu">
-					<!--<?php echo (['commentaires']); ?>-->
+<?php
+while ($abon = $abonnements->fetch())
+{
+
+$followers=info_membre_abonne($abon['membre_id']);
+
+?>
+   	<center><a href="index.php?page=compte&id=<?php echo $followers['id']; ?>"><?php echo $followers['name']; ?></a></center></br>
+<?php
+
+}
+?>	
+
+
 					</div>
 				</div>
 			</div>
