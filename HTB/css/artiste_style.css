@@ -47,7 +47,19 @@
 }
 
 .sous_article{
- text-align: center;
+ 
+}
+
+.titre_actu{
+ font-size: 1em;
+ font-weight: bold; 
+}
+.date_actu{
+ font-size: 0.6em;
+ font-weight: italic;
+}
+.contenu_actu{
+ font-size: 0.9em;
 }
 
 

@@ -94,6 +94,10 @@
 <form method="post" action="index.php?page=modifier_infos">			
 		<center><input type="submit" value="Modifier vos informations"/></center>
 	</form>
+
+<form method="post" action="index.php?page=actualite">			
+		<center><input type="submit" value="Créer une actualité"/></center>
+	</form>
 			</div>
 <div class="sous_article">
 			<h3>Vos morceaux</h3>

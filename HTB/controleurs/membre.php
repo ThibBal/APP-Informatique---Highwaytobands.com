@@ -33,7 +33,7 @@ if(strlen($_POST['password'])>=5){ // Taille du mot de passe >= 5 caractères
 				$extensionFichier = $elementsChemin['extension'];
 				$extensionsAutorisees = array("jpeg", "jpg", "gif", "png");
 				$nomDestination = $donnee['id'].".".$extensionFichier; // Nom du fichier : id.extension
-				ajout_photo($donnee['id'], $nomDestination); // Ajout de l'attribu photo au membre
+				
 				$message = 'Inscription réussite';
 
 if (!(in_array($extensionFichier, $extensionsAutorisees))) {
@@ -43,7 +43,7 @@ $message = "Le fichier n'a pas l'extension attendue";
 // incluant l'heure a la seconde pres 
 $repertoireDestination = dirname(dirname(__FILE__))."/"."img"."/"."membres"."/"; // Copie dans le répertoire img
 //   $nomDestination = "fichier_du_".date("YmdHis").".".$extensionFichier;
-
+ajout_photo($donnee['id'], $nomDestination); // Ajout de l'attribu photo au membre
 move_uploaded_file($_FILES["photo"]["tmp_name"], 
                                  $repertoireDestination.$nomDestination);
 

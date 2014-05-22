@@ -23,29 +23,48 @@
 	<div id="contenu">
 		<div class="article">
 			<h1 class="titre">Fil d'actualité</h1>
-			<div class="actu"><p><a href="#">Article : Une actualité top du top</a></p>
-			<p>Cumque pertinacius ut legum gnarus accusatorem flagitaret atque sollemnia, doctus id Caesar libertatemque superbiam ratus tamquam obtrectatorem audacem excarnificari praecepit, qui ita</p></div>
-			<div class="actu"><p><a href="#">Article : Une actualité top du top</a></p>
-			<p>Cumque pertinacius ut legum gnarus accusatorem flagitaret atque sollemnia, doctus id Caesar libertatemque superbiam ratus tamquam obtrectatorem audacem excarnificari praecepit, qui ita</p></div>
-			<div class="actu"><p><a href="#">Article : Une actualité top du top</a></p>
-			<p>Cumque pertinacius ut legum gnarusratus tamquam obtrectatorem audacem excarnificari praecepit, qui ita</p></div>
+			<div class="sous_article">
+			<?php
+
+while ($actualite = $actu->fetch())
+{
+?>
+    <div class=titre_actu><?php echo($actualite['titre']); ?></div>
+    par <?php echo($actualite['artiste_id']); ?><?php echo($actualite['salle_id']); ?>
+	<div class=date_actu><?php echo($actualite['date']); ?></div></br>
+	<div class=contenu_actu><?php echo($actualite['contenu']); ?></div></br>
+	
+<?php
+}
+?>	
 
 		</div>
+	</div>
 
 
 		<div class="article">
 			<h1 class="titre">Evènements à venir</h1>
-			<p class="concert"><a href="#">Festival Rock en Seine : 22 Août 2014</a></p>
-			<p class="concert"><a href="#">Concert Truc</a></p>
-			<p class="concert"><a href="#">Festival Machin</a></p>
+			<div class="sous_article">
+				<?php 						
+while ($concerts = $concert->fetch())
+{
+?>
+    
+	<div id="concert"><a href="index.php?page=concert&id=<?php echo $concerts['id']; ?>"><?php echo $concerts['date']; ?> - <?php echo $concerts['salle']; ?> - <?php echo $concerts['artiste']; ?></a></div>
+<?php
+}
+?>			
 		</div>
+	</div>
 
 		<div class="article">
 			<h1 class="titre">Photos récentes</h1>
+			<div class="sous_article">
 			<p><center><img width=150 src="img/photo1.jpg"></center></p>
 			<p><center><img width=150 src="img/photo2.jpg"></center></p>
 			<p><center><img width=150 src="img/photo3.JPG"></center></p>
 		</div>
+	</div>
 	</div>
 
 	

@@ -18,8 +18,7 @@
 	</div>-->
 	
 
-	<div id="contenu">
-		
+	<div id="contenu">	
 		<div class="article">
 
 			<div class="sous_article">
@@ -32,20 +31,31 @@
 </form>
 				
 		</div>
-
+	
 			<div class="sous_article">
-				<h2> Actualités </h2>
-				<!--<?php echo ($data['actu']); ?>-->
-				
+				<h3> Informations </h3>
+				<?php echo ($data['description']); ?>
 			</div>	
 			
 		</div>
 
 
 		<div class="article2">
-			<h3>Informations</h3>
+			<h3>Actualités</h3>
 			<div class="actu" id="actu">
-				<?php echo ($data['description']); ?>
+				<?php
+
+while ($actualite = $actu->fetch())
+{
+?>
+    <div class=titre_actu><?php echo($actualite['titre']); ?></div>
+	<div class=date_actu><?php echo($actualite['date']); ?></div></br>
+	<div class=contenu_actu><?php echo($actualite['contenu']); ?></div></br>
+	
+<?php
+}
+?>	
+
 				<h3>Morceaux</h3>
 			<?php
 
@@ -64,64 +74,15 @@ while ($musique = $extraits->fetch())
 				<div class="sous_article">
 					<h3>Agenda Concert</h3>
 					<div class="actu">
-						<table>
-							<caption> MARCH 2014 </caption>
-							<tr>
-								<th> Lun </th>
-								<th> Mar </th>
-								<th> Mer </th>
-								<th> Jeu </th>
-								<th> Ven </th>
-								<th> Sam </th>
-								<th> Dim </th>
-							</tr>
-							<tr>
-								<td>26</td>
-								<td>27</td>
-								<td>28</td>
-								<td>29</td>
-								<td>30</td>
-								<td>01</td>
-								<td>02</td>
-							</tr>
-							<tr>
-								<td>03</td>
-								<td>04</td>
-								<td>05</td>
-								<td>06</td>
-								<td>07</td>
-								<td>08</td>
-								<td>09</td>
-							</tr>
-							<tr>
-								<td>10</td>
-								<td>11</td>
-								<td>12</td>
-								<td>13</td>
-								<td>14</td>
-								<td>15</td>
-								<td>16</td>
-							</tr>
-							<tr>
-								<td>17</td>
-								<td>18</td>
-								<td>19</td>
-								<td>20</td>
-								<td>21</td>
-								<td>22</td>
-								<td>23</td>
-							</tr>
-							<tr>	
-								<td>24</td>
-								<td>25</td>
-								<td>26</td>
-								<td>27</td>
-								<td>28</td>
-								<td>29</dta>
-								<td>30</td>
-							</tr>
-							
-						</table>			
+						<?php 						
+while ($concerts = $concert->fetch())
+{
+?>
+    
+	<a href="index.php?page=concert&id=<?php echo $concerts['id']; ?>"><?php echo $concerts['salle']; ?> - <?php echo $concerts['artiste']; ?></a></br>
+<?php
+}
+?>			
 					</div>
 				</div>
 

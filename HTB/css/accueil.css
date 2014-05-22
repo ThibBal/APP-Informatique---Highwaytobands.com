@@ -13,6 +13,7 @@
     vertical-align: top;
     background-color: rgba(0, 0, 0, 0.3);
 
+
 }
 .actu{
     border-bottom: 1px solid grey;
@@ -28,8 +29,33 @@
 
 .titre{
     text-align: center;
-    border-bottom: 1px solid grey;
+    border-bottom: 2px solid grey;
     padding-bottom: 1%;
+}
+
+.sous_article{
+
+max-height: 400px;
+    overflow-y: scroll;
+    overflow:auto; 
+}
+
+#concert{
+    text-align: center;
+    padding-bottom: 2%;
+}
+
+.titre_actu{
+ font-size: 1em;
+ font-weight: bold; 
+ border-top: 1px solid grey;
+}
+.date_actu{
+ font-size: 0.6em;
+ font-weight: italic;
+}
+.contenu_actu{
+ font-size: 0.9em;
 }
 
 #contenu{
