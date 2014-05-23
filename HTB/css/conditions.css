@@ -1,0 +1,95 @@
+.article
+{
+   
+    text-decoration:none;
+    width: 90%;
+    border-radius: 5px;
+    color: white;
+    margin : auto;
+    border: 1px solid grey;
+    vertical-align: top;
+    background-color: rgba(0, 0, 0, 0.3);
+
+}
+
+.grostitre
+{
+
+
+    color: white;
+    text-align: center;
+    font-size: 2em;
+    margin : auto;
+    vertical-align: top;
+     
+    
+}
+
+.titre
+{
+
+    color: white;
+    text-align: center;
+    font-size: 1.5em;
+    vertical-align: top;
+    
+}
+
+.soustitre
+{
+
+    color: white;
+    text-align: center;
+    font-size: 1.2em;
+    vertical-align: top;
+    
+}
+
+.texte
+{
+
+     color: white;
+    text-align: justify;
+    font-size: 0.8em;
+    margin : 20px;
+    vertical-align: top;
+    
+    
+}
+
+.actu{
+    border-bottom: 1px solid grey;
+    padding: 1%;
+}
+
+.concert{
+
+
+    border-bottom: 1px solid grey;
+    padding: 1%;
+}
+
+
+#contenu{
+
+    margin-left: 1%;
+    float: top;
+    
+    padding: auto;
+    background-color: transparent;
+   display: block;
+  
+}
+
+#inscription{
+    font-size: 1.5em;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.4);
+    
+    
+}
+
+li{
+    list-style-type:none;
+}
+

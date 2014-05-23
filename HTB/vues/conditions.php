@@ -10,10 +10,8 @@
 
 <body>
 	<?php include 'controleurs/header.php' ?>
-	<?php if(!isset($_SESSION['login'])){ ?>
-	
-	</div></a>
-	<?php } ?>
+
+
 	<div id="contenu">
 		<div class="article">
 			<h1 class="grostitre">Conditions d'utilisation</h1>
@@ -77,6 +75,26 @@
 			 </div>
 			 
 			 <div> <span class="titre"><p>Utilisation des données personnelles et respect de la vie privée</p> </span>
+			<p><span class="soustitre"> Codes d'accès</span> <br/>
+			<span class="texte">Les équipements (ordinateurs, téléphone, logiciels, moyens de télécommunication, ...) permettant l'accès au Site sont
+			   à la charge exclusive de l'Utilisateur, de même que les frais de télécommunications induits par leur utilisation.<br/>
+			   <br/>
+			   Lors de son inscription en ligne, l'Utilisateur s'engage à fournir des informations, exactes et complètes comme
+			   demandées dans le Formulaire d'inscription et donc à les tenir à jour sans délais.<br/>
+			   <br/>
+			   Dans l'hypothèse où l'Utilisateur fournirait des informations, inexactes, périmées ou incomplètes, la Société se réserve
+			   le droit de suspendre ou de résilier, dans les conditions visées aux présentes Conditions Générales d'Utilisation,
+			   l'accès à tout ou partie du Site.<br/>
+			   <br/>
+			   Les mineurs sont admis à s'inscrire sur le Site, à la condition qu'ils aient préalablement obtenu du(des) titulaire(s) de
+			   l'autorité parentale les concernant, l'autorisation de le faire et que le(les) titulaire(s) de l'autorité parentale a(ont)
+			   accepté d'être garant(s) du respect par l'utilisateur mineur des Conditions Générales d'Utilisation. Toute utilisation du
+			   Site par un utilisateur mineur est effectuée sous l'entière responsabilité du(des) titulaire(s) de l'autorité parentale 
+			   sur l'utilisateur mineur concerné.</span>
+			   </p>
+			 </div>
+			 
+			  <div> <span class="titre"><p>Utilisation des données personnelles et respect de la vie privée</p> </span>
 			<p><span class="soustitre"> Codes d'accès</span> <br/>
 			<span class="texte">Les équipements (ordinateurs, téléphone, logiciels, moyens de télécommunication, ...) permettant l'accès au Site sont
 			   à la charge exclusive de l'Utilisateur, de même que les frais de télécommunications induits par leur utilisation.<br/>

@@ -19,7 +19,7 @@
 		<span class="statut">Un membre</span><input name="statut" type="radio" value="membre" checked="checked"/>
 		<span class="statut">Une salle</span><input name="statut" type="radio" value="salle"/>
 		<span class="statut">Un artiste</span><input name="statut" type="radio" value="artiste" /></li>
-		<li class="CGU"><span>J'accepte les <a href="conditions.php">Conditions Générales d'Utilisation</a></span><input type="checkbox" name="CGU" value="checked" required/></li>		
+		<li class="CGU"><span>J'accepte les <a href="index.php?page=conditions">Conditions Générales d'Utilisation</a></span><input type="checkbox" name="CGU" value="checked" required/></li>		
 	</ul>
 
 	<div id="envoi"><input type="submit" value="S'inscrire" /></div>
