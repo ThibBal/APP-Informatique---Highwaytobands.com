@@ -22,7 +22,7 @@ while ($donnees = $salles->fetch())
 {
 ?>
     <p>
-    <strong>Nom de la salle</strong> : <a href="index.php?page=salle&id=<?php echo $donnees['id']; ?>"><?php echo $donnees['name']; ?></a>
+    <strong>Nom de la salle</strong> : <a href="index.php?page=salle&id=<?php echo $donnees['id']; ?>&name=<?php echo $donnees['name']; ?>"><?php echo $donnees['name']; ?></a>
     <strong>Adresse</strong> : <?php echo $donnees['adress']; ?>
     <strong>Code-postal</strong> : <?php echo $donnees['zipcode']; ?>
     <strong>Téléphone</strong> : <?php echo $donnees['phone']; ?>

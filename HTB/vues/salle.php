@@ -26,15 +26,15 @@
 			<h3>Concerts</h3>
 			<div id="calendrier"><p></p>
 			<ul>
-				<li>15/03/14 : Bruno Mars</li>
-				<li>16/03/14 : Imagine Dragons</li>
-				<li>18/03/14 : The Who</li>
-				<li>20/03/14 : Bastille</li>
-				<li>25/03/14 : Oasis</li>
-				<li>31/03/14 : Supertramp</li>
-				<li>01/04/14 : The Rolling Stones</li>
-				<li>10/04/14 : Mika</li>
-				<li>15/04/14 : Stromae</li>
+				<?php 						
+while ($concerts = $concert->fetch())
+{
+?>
+    
+	<li><a href="index.php?page=concert&id=<?php echo $concerts['id']; ?>"><?php echo $concerts['salle']; ?> - <?php echo $concerts['artiste']; ?></a></li></br>
+<?php
+}
+?>
 			</ul>
 			</div>	
 			</div>			
@@ -46,10 +46,29 @@
 			<div class="actu"><p><?php echo ($data['description']); ?></p>
 
 			</div>	
-			<form name="abonnement" action="index.php?page=abonnement_salle" method="post">
+			<?php if(isset($_SESSION['statut'])){
+
+if($_SESSION['statut']=='membre'){
+
+if($membre['membre_id']==$_SESSION['id']){ ?>
+
+<form name="desabonnement" action="index.php?page=desabonnement_salle" method="post">
+					<input type="hidden" name="salle" value="<?php echo ($data['id']); ?>">
+   <center><INPUT type="submit" name="bouton" value="Se désabonner"></center>
+</form>	
+
+<?php }else{ ?>
+
+<form name="abonnement" action="index.php?page=abonnement_salle" method="post">
 					<input type="hidden" name="salle" value="<?php echo ($data['id']); ?>">
    <center><INPUT type="submit" name="bouton" value="S'abonner"></center>
-</form>
+</form>	
+
+<?php
+}
+}
+}
+?>
 					
 		</div>
 

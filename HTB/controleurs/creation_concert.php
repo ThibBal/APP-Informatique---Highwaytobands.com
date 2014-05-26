@@ -33,8 +33,7 @@ if(isset($_POST['CGU'])){
 	//validation($id, $valider);
 		$message = 'Proposition de concert envoyée';
 		 $_SESSION['temp'] = $message;
-		include 'vues/accueil.php';
-
+	header ('Location: index.php?page=accueil'); 
 	
 
 
@@ -53,7 +52,7 @@ if(isset($_POST['CGU'])){
 }else{
 		$message = 'Seuls une salle et un artiste peuvent créer un évènement';
 		 $_SESSION['temp'] = $message;
-		 include 'vues/accueil.php';
+		 header ('Location: index.php?page=accueil'); 
 }
 
 }else{

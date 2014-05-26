@@ -1,15 +1,10 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset="utf-8" />
-	<link rel="stylesheet" href="css/style.css" />
-	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-	<link rel="icon" href="img/favicon.ico" />
-	<title>Highway To Bands</title>    
-</head>
+
+
 <body>
 	<?php include 'vues/header.php' ?>
-	
+<link rel="stylesheet" href="css/style.css" />	
 
 	<div id="contenu">
 		<div id="banniere"><h1>Membre : <?php echo ($data['name']); ?></h1>
@@ -23,7 +18,7 @@
 			Adresse email : <?php echo($data['mail']); ?> </br>
 			Code postal : <?php echo($data['zipcode']); ?> </br>
 
-	<form method="post" action="index.php?page=ami">			
+	<form class="formulaire" method="post" action="index.php?page=ami">			
 		<center><input type="submit" value="Devinir son ami"/></center>
 	</form>
 			</div>
@@ -37,15 +32,21 @@
 
 		<div class="article">
 			<div class="sous_article">
-			<h3>Ses artistes préférés</h3>
+			<h3>Vos artistes préférés</h3>
 			<div id="participants"><p></p>
 			<ul>
-				
-				<li>Bruno Mars</li>
-				<li>Imagine Dragons</li>
-				<li>The Who</li>
-				<li>Bastille</li>
-				<li>Stromae</li>
+				<?php
+while ($abo = $abo_artiste->fetch())
+{
+
+$followers=info_artiste_abonne($abo['artiste_id']);
+
+?>
+   	<center><a href="index.php?page=artiste&id=<?php echo $followers['id']; ?>&name=<?php echo $followers['name'] ?>"><?php echo $followers['name']; ?></a></center></br>
+<?php
+
+}
+?>	
 			</ul>
 			</div>
 			
@@ -55,17 +56,18 @@
 			<h3>Ses derniers concerts</h3>
 			<div id="participants"><p></p>
 			<ul>
-				
-				<li>15/03/14 : Bruno Mars</li>
-				<li>16/03/14 : Imagine Dragons</li>
-				<li>18/03/14 : The Who</li>
-				<li>20/03/14 : Bastille</li>
-				<li>25/03/14 : Oasis</li>
-				<li>31/03/14 : Supertramp</li>
-				<li>01/04/14 : The Rolling Stones</li>
-				<li>10/04/14 : Mika</li>
-				<li>15/04/14 : Stromae</li>
-			</ul>
+				<?php 						
+while ($concerts = $liste->fetch())
+{
+
+	$data=info_concert($concerts['concert_id']);
+
+?>
+    
+	<li><a href="index.php?page=concert&id=<?php echo $data['id']; ?>"><?php echo $data['name']; ?> - <?php echo $data['salle']; ?> - <?php echo $data['artiste']; ?> - <?php echo $data['date']; ?></a></li>
+<?php
+}
+	?>		</ul>
 			</div>
 		</div>
 		</div>

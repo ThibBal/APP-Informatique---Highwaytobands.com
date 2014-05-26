@@ -9,6 +9,14 @@
 
 }
 
+#banniere img{
+    overflow: hidden;
+-webkit-border-radius:100px;
+-moz-border-radius: 50px;
+border-radius: 100px;
+width: 200px;
+height: 200px;
+}
 
 #image_banniere{
         

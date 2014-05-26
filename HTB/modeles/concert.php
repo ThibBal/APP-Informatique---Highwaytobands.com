@@ -37,6 +37,14 @@ $req = $bdd-> query($res) or die(print_r($bdd->errorInfo()));
  	 	return $req;
 }
 
+function liste_concert_valide(){ // Récupère les informations d'un membre
+	global $bdd;
+$res = "SELECT * from concert WHERE valider='1'";
+$req = $bdd-> query($res) or die(print_r($bdd->errorInfo()));
+
+ 	 	return $req;
+}
+
 function concert_valider_artiste($id){ // Liste des concerts à valider d'un atiste
 	global $bdd;
 $res = "SELECT * from concert where artiste='$id' and valider='0'";

@@ -13,8 +13,8 @@ if(isset($_POST['titre'])){
 	if($_SESSION['statut']=='salle'){
 		$salle_id=$_SESSION['id'];
 		$salle_name=$_SESSION['name'];
-		$artiste_id=0;
-		$artiste_name=0;
+		$artiste_id='';
+		$artiste_name='';
 
 	require('modeles/actualite.php');
 	creer_actu($artiste_id, $salle_id, $artiste_name, $salle_name, $titre, $contenu, $date);
@@ -24,8 +24,8 @@ if(isset($_POST['titre'])){
 	if($_SESSION['statut']=='artiste'){
 		$artiste_id=$_SESSION['id'];
 		$artiste_name=$_SESSION['name'];
-		$salle_id=0;
-		$salle_name=0;
+		$salle_id='';
+		$salle_name='';
 
 	require('modeles/actualite.php');
 	creer_actu($artiste_id, $salle_id, $artiste_name, $salle_name, $titre, $contenu, $date);

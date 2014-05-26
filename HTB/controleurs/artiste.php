@@ -12,6 +12,12 @@ $abonnements=liste_abonnements_artiste($_GET["id"]);
 $actu=liste_actu_artiste($_GET["id"]);
 $concert=concert_artiste($_GET['name']);
 
+if(isset($_SESSION['statut'])){
+if($_SESSION['statut']=='membre'){
+$membre=membre_abonne_artiste($_SESSION['id'],$_GET["id"]);
+}
+}
+
 include 'vues/artiste.php' 
 
 ?>

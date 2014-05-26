@@ -56,14 +56,14 @@
 </ul>
 </div>
 
-<div id="connexion">
+<div id="connexion_header">
 <?php if(!isset($_SESSION['login'])){ ?>
 	<form method="post" action="index.php?page=header">
 	<input type="text" name="login" placeholder =" login" size="12"/>
 	<input type="password" name="password" placeholder =" mot de passe" size="12" />
-	<input type="submit" value="OK" />
+	<input type="submit" value="OK" /><a href="index.php?page=inscription">Inscription</a>
 </form>
-<a href="index.php?page=inscription">Inscription</a>
+
 <?php }else{ ?> 
 <form method="post" action="index.php?page=logout">
 <a href="index.php?page=compte_perso"><?php echo $_SESSION['login']?></br></a>
@@ -71,19 +71,19 @@
 	<center><input type="submit" value="Déconnexion"/></center>
 </form>
 <?php } ?>
-<div id="message"><?php if(isset($_SESSION['temp'])){ ?>
-	<?php echo htmlspecialchars($_SESSION["temp"]); 
-	unset($_SESSION['temp']); ?>
-	
-	
-		<?php } ?>
-</div>	
-
 </div>
+
+<div id="message"><?php if(isset($_SESSION['temp'])){ ?>
+	<?php echo htmlspecialchars($_SESSION['temp']); 
+	unset($_SESSION['temp']); ?>	
+		<?php } ?>
 <div id="rechercher"><form method="post" action="index.php?page=rechercher">
-<input type ="text" name="recherche" placeholder =" Rechercher" size="20" />
+<input id="rechercherform" type ="text" name="recherche" placeholder =" Rechercher" size="15" />
 </form>
-</div>		
+</div>	
+</div>
+
+
 
 
 

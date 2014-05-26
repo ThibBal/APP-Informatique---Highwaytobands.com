@@ -20,7 +20,7 @@ modifications_membre($id, $login, $mail, $zipcode, $name);
 $message='Informations correctement modifiées';
 $_SESSION['temp'] = $message;
 
-include 'vues/accueil.php';
+header ('Location: index.php?page=compteperso');
 
 }
 
@@ -71,7 +71,7 @@ modifications_salle($id, $login, $mail, $zipcode, $name);
 $message='Informations correctement modifiées';
 $_SESSION['temp'] = $message;
 
-include 'vues/accueil.php';
+header ('Location: index.php?page=accueil');
 
 
 }

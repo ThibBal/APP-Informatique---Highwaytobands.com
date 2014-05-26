@@ -1,8 +1,9 @@
 <?php 
 
 
-if(isset($_POST) && !empty($_POST['login']) && !empty($_POST['password'])) {
- extract($_POST);
+if(isset($_POST['login'])){
+ $login=$_POST['login'];
+ $password=$_POST['password'];
  $password = sha1($password); 
  include ('modeles/membre.php');
  include ('modeles/artiste.php');
@@ -23,7 +24,7 @@ if(isset($_POST) && !empty($_POST['login']) && !empty($_POST['password'])) {
 
  	$message ='Mot de passe incorrect';
     $_SESSION['temp'] = $message;
-  //  header ('Location: index.php?page=accueil');
+  header ('Location: index.php?page=accueil');
 
  }  else {
    $_SESSION['login'] = $login;

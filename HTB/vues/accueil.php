@@ -30,7 +30,8 @@ while ($actualite = $actu->fetch())
 {
 ?>
     <div class=titre_actu><?php echo($actualite['titre']); ?></div>
-    par <?php echo($actualite['artiste_id']); ?><?php echo($actualite['salle_id']); ?>
+    par <a href="index.php?page=artiste&name=<?php echo $actualite['artiste_name']; ?>&id=<?php echo $actualite['artiste_id']; ?>"><?php echo($actualite['artiste_name']); ?></a>
+    <a href="index.php?page=salle&name=<?php echo $actualite['salle_name']; ?>&id=<?php echo $actualite['salle_id']; ?>"><?php echo($actualite['salle_name']); ?></a>
 	<div class=date_actu><?php echo($actualite['date']); ?></div></br>
 	<div class=contenu_actu><?php echo($actualite['contenu']); ?></div></br>
 	

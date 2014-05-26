@@ -5,10 +5,10 @@ $membre_id=$_SESSION['id'];
 
 require('modeles/suivre.php'); 
 
-suivre_artiste($artiste_id, $membre_id);
+desabonner_artiste($membre_id, $artiste_id);
 
  
-$message='Ok !';
+$message='Désabonné !';
 
  $_SESSION['temp'] = $message;
 

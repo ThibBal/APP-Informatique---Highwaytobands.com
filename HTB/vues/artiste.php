@@ -1,34 +1,38 @@
 <!DOCTYPE html>
+<?php include 'controleurs/header.php' ?>
 <html>
-<head>
-	<meta charset="utf-8" />
-	<link rel="stylesheet" href="css/artiste_style.css" />
-	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-	<link rel="icon" href="img/favicon.ico" />
-	<title>Highway To Bands</title>    
-</head>
-
 <body>
-	<link rel="stylesheet" href="header_style.css" />
-	<link href='http://fonts.googleapis.com/css?family=Maiden+Orange' rel='stylesheet' type='text/css'>
-
-	<?php include 'controleurs/header.php' ?>
-
- <!--<div class="banniere_artiste"><img width=100% src="img/<?php echo($data['banniere']); ?>   />
-	</div>-->
-	
-
+<link rel="stylesheet" href="css/artiste_style.css" />
 	<div id="contenu">	
 		<div class="article">
 
 			<div class="sous_article">
 				<h2><?php echo ($data['name']); ?></h2>
-				<img width=250 src="img/artistes/<?php echo ($data['photo']); ?>"/>
+				<img width=150 src="img/artistes/<?php echo ($data['photo']); ?>"/>
 				
-				<form name="abonnement" action="index.php?page=abonnement_artiste" method="post">
+				<?php if(isset($_SESSION['statut'])){
+
+if($_SESSION['statut']=='membre'){
+
+if($membre['membre_id']==$_SESSION['id']){ ?>
+
+<form name="desabonnement" action="index.php?page=desabonnement_artiste" method="post">
+					<input type="hidden" name="artiste" value="<?php echo ($data['id']); ?>">
+   <center><INPUT type="submit" name="bouton" value="Se désabonner"></center>
+</form>	
+
+<?php }else{ ?>
+
+<form name="abonnement" action="index.php?page=abonnement_artiste" method="post">
 					<input type="hidden" name="artiste" value="<?php echo ($data['id']); ?>">
    <center><INPUT type="submit" name="bouton" value="S'abonner"></center>
-</form>
+</form>	
+
+<?php
+}
+}
+}
+?>
 				
 		</div>
 	
@@ -55,8 +59,10 @@ while ($actualite = $actu->fetch())
 <?php
 }
 ?>	
-
-				<h3>Morceaux</h3>
+</div>
+<h3>Morceaux</h3>			
+<div class="actu">
+				
 			<?php
 
 while ($musique = $extraits->fetch())
@@ -67,13 +73,14 @@ while ($musique = $extraits->fetch())
 <?php
 }
 ?>	
-				</div>			
+			</div>	
 			</div>
 
 			<div class="article">
 				<div class="sous_article">
 					<h3>Agenda Concert</h3>
 					<div class="actu">
+			
 						<?php 						
 while ($concerts = $concert->fetch())
 {

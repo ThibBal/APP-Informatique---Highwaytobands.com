@@ -14,10 +14,25 @@
 
 .wiki{
     font-size: 16px;
+max-height: 400px;
     overflow-y: scroll;
-    height: 40%;
+    overflow:auto;
     border: 1px solid black;
 }
+
+.sous_article img{
+    overflow: hidden;
+width: 200px;
+height: 200px;
+
+}
+
+.actu{
+   overflow-y: scroll; 
+   overflow: auto;
+   max-height: 200px;
+}
+
 
 .article
 {
@@ -47,7 +62,7 @@
 }
 
 .sous_article{
- 
+ text-align: center;
 }
 
 .titre_actu{
@@ -70,6 +85,7 @@
     display: block;
   margin-left: 1%;
   margin-right: 1%;
+height: 100%;
     
    
 }
@@ -81,14 +97,15 @@ h3{
 
 #calendrier{
     max-height: 120px;
+
     overflow-y: scroll;
+    overflow:auto;
     text-align: left;
 }
 
 
 #actu{
-   overflow-y: scroll; 
-   max-height: 400px;
+
 }
 
 .concert{

@@ -7,7 +7,7 @@ require('modeles/artiste.php');
 
 
 $actu=liste_actu();
-$concert=liste_concert();
+$concert=liste_concert_valide();
 
 
 include 'vues/accueil.php' ?>
