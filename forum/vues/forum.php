@@ -12,7 +12,7 @@
 	<?php include("header.php");?>  
 	 	
 <div>
-<?php include("forumbeau.php");?>
+<?php include("forum_rubrique.php");?>
 </div>
 
 

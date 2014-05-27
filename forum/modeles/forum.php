@@ -111,6 +111,23 @@ function listeMessage ()
     return $req;
 }
 
+function liste($id){
+    global $bdd;
+$res = "SELECT * from forum_sujet where id_sujet=$id";
+$req = $bdd-> query($res) or die(print_r($bdd->errorInfo()));
+
+        return $req;
+}
+
+function liste_message($id){
+    global $bdd;
+$res = "SELECT * from forum_message where id_message=$id";
+$req = $bdd-> query($res) or die(print_r($bdd->errorInfo()));
+
+        return $req;
+}
+
+
 function afficherPseudo ($donnees)
 {
     global $bdd;
