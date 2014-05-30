@@ -61,9 +61,15 @@ while ($concerts = $concert->fetch())
 		<div class="article">
 			<h1 class="titre">Photos récentes</h1>
 			<div class="sous_article">
-			<p><center><img width=150 src="img/photo1.jpg"></center></p>
-			<p><center><img width=150 src="img/photo2.jpg"></center></p>
-			<p><center><img width=150 src="img/photo3.JPG"></center></p>
+<?php 						
+while ($photos = $photo->fetch())
+{
+?>  
+<center><img width=150 src="files/images/<?php echo $photos['fichier']; ?>">
+</div>
+<?php
+}
+?>		
 		</div>
 	</div>
 	</div>

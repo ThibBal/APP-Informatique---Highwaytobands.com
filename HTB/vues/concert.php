@@ -73,7 +73,8 @@ if($membre['membre_id']==$_SESSION['id']){ ?>
 
 		<div class="article">
 			<h3>Description</h3>
-			<div class="actu"><p><?php echo ($data['description']); ?></p></div>			
+			<div class="actu"><p><?php echo ($data['description']); ?></p>
+				<p><?php echo ($data['date']); ?></p></div>			
 		</div>
 
 				
