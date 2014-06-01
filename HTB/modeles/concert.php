@@ -77,7 +77,7 @@ $req = $bdd-> query($res) or die(print_r($bdd->errorInfo()));
  	 	return $req;
 }
 
-function dernier_concert(){ // Récupère les informations d'un membre
+function dernier_concert(){ // Récupère les informations du dernier concert
 	global $bdd;
 $res = "SELECT * from concert ORDER BY id DESC LIMIT 1" ;
 $req = $bdd-> query($res) or die(print_r($bdd->errorInfo()));

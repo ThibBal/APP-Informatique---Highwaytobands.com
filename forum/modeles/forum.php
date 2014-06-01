@@ -1,7 +1,7 @@
 
 <?php
 
-$bdd = new PDO('mysql:host=localhost;dbname=mydb', 'root', 'toor');
+
 //Page forum rubrique
 function listeRubrique() 
 {

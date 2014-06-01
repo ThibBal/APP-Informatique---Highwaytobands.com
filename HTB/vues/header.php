@@ -51,7 +51,7 @@
 	
 	
 <?php } ?>
-	<li><a href="forum/forum.php">Forum</a></li>
+	<li><a href="index.php?page=forum_rubrique">Forum</a></li>
 	<li><a href="index.php?page=contact">Contact</a></li>					
 </ul>
 </div>

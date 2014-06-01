@@ -8,4 +8,12 @@ $req = $bdd->query($sql) or die(print_r($bdd->errorInfo()));
  	return $donnee;
 }
 
+function auteur_message($id){
+	global $bdd;
+$res = "SELECT * from membre where id ='$id'";
+$req = $bdd-> query($res) or die(print_r($bdd->errorInfo()));
+
+ 	$data = $req-> fetch();
+ 	return $data;
+}
 ?>

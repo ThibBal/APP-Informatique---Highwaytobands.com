@@ -1,15 +1,10 @@
 <!DOCTYPE html>
-<html lang="fr">
-<head>
-<meta charset="utf-8" />
-<link rel="stylesheet" href="style.css"/>
-<title> Highway to bands </title>
-</head>
+<?php include("header.php");?>  
+<link rel="stylesheet" href="forum.css"/>
 <body>
-	<div id="page">
-	<?php include("header.php");?>    	
-	<?php include("footer.php");?>  
 
-</div>
+
+
+<?php include("footer.php");?>  
 </body>
 </html>

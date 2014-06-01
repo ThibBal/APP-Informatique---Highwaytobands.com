@@ -5,6 +5,20 @@ root,
 root, root
 fichier mybd
 
+----
+Forum : corriger le CSS (et quelques fonctions)
+Back office
+Message sur les pages (par un membre)
+Relecture du code
+Redaction du manuel
+Playlist (?)
+Corriger css quelques pages
+champs adresse d'une salle
+Recherche par code postal
+Validation d'un concert
+Afficher les photos sur la page d'un artiste et d'une salle
+----
+
 - Inscription membre, salle et concert
 - Connexion membre
 - Espace membre avec liste des morceaux et informations personnelles

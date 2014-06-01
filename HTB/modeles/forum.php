@@ -1,18 +1,56 @@
 <?php
 
+function poster_message($text, $date_publication, $id_user, $id_sujet){ // Poster un message
+global $bdd; 
+    $bdd->query("INSERT INTO forum_message(text, date_publication, id_user, id_sujet) VALUES('$text', '$date_publication', '$id_user', '$id_sujet')");
+
+}
+
+function poster_sujet($titre, $date, $id_user, $id_rubrique){ // Poster un nouveau sujet
+global $bdd; 
+    $bdd->query("INSERT INTO forum_sujet(titre_sujet, date_creation, id_user, id_rubrique) VALUES('$titre', '$date', '$id_user', '$id_rubrique')");
+
+}
+
+function dernier_sujet(){ // Récupère les informations du dernier sujet (pour ensuite inscrire le premier message)
+    global $bdd;
+$res = "SELECT * from forum_sujet ORDER BY id_sujet DESC LIMIT 1" ;
+$req = $bdd-> query($res) or die(print_r($bdd->errorInfo()));
+$data = $req-> fetch();
+    return $data;
+}
+
+function listeSujet($id){
+    global $bdd;
+$res = "SELECT * from forum_sujet where id_rubrique=$id";
+$req = $bdd-> query($res) or die(print_r($bdd->errorInfo()));
+
+        return $req;
+}
+
+function liste_message($id){
+    global $bdd;
+$res = "SELECT * from forum_message where id_sujet=$id";
+$req = $bdd-> query($res) or die(print_r($bdd->errorInfo()));
+
+        return $req;
+}
 
 //Page forum rubrique
 function listeRubrique() 
 {
 	global $bdd;
-	$req = $bdd->query('SELECT * FROM forum_rubrique WHERE actif=0');
+	$req = $bdd->query('SELECT * FROM forum_rubrique');
 	return $req;
 }
+
+
+//***************************************************************//
 
 function nombreSujet($donnees) 
 {
     global $bdd;
-    $req = $bdd->prepare('SELECT COUNT(*) AS nb_sujet FROM forum_sujet INNER JOIN forum_rubrique ON forum_sujet.id_rubrique = forum_rubrique.id_rubrique WHERE forum_sujet.actif=0 AND titre_rub = ?');
+    $req = $bdd->prepare('SELECT COUNT(*) AS nb_sujet FROM forum_sujet INNER JOIN forum_rubrique ON forum_sujet.id_rubrique = forum_rubrique.id_rubrique WHERE titre_rub = ?');
     $req->execute(array($donnees));
     return $req;
 }
@@ -20,13 +58,13 @@ function nombreSujet($donnees)
 function dernierMessageUser1($donnees)
 {
     global $bdd;
-    $req = $bdd->prepare('SELECT pseudo FROM user 
-                        INNER JOIN forum_message ON user.id_user=forum_message.id_user
+    $req = $bdd->prepare('SELECT login FROM membre 
+                        INNER JOIN forum_message ON membre.id=forum_message.id_user
                         INNER JOIN forum_sujet ON forum_message.id_sujet = forum_sujet.id_sujet 
                         INNER JOIN forum_rubrique ON forum_sujet.id_rubrique=forum_rubrique.id_rubrique
                         AND forum_rubrique.id_rubrique=?
                         WHERE forum_message.actif=0 
-                        ORDER BY pseudo DESC LIMIT 1 ');
+                        ORDER BY login DESC LIMIT 1 ');
     $req->execute(array($donnees));
     return $req;
 } 
@@ -48,7 +86,7 @@ function dernierMessageDate1 ($donnees)
 function afficherSujet1 () 
 {
     global $bdd;
-    $req = $bdd->prepare('SELECT * FROM forum_sujet WHERE actif=0 AND id_rubrique=?');
+    $req = $bdd->prepare('SELECT * FROM forum_sujet WHERE id_rubrique=?');
     $req->execute(array($_GET['R']));
     return $req;
 }
@@ -56,7 +94,7 @@ function afficherSujet1 ()
 function nombreMessage($donnees)
 {
     global $bdd;
-    $req=$bdd-> prepare('SELECT COUNT(*) AS nb_message FROM forum_message INNER JOIN forum_sujet ON forum_message.id_sujet = forum_sujet.id_sujet WHERE forum_sujet.actif=0 AND titre_sujet = ? AND id_rubrique=?');
+    $req=$bdd-> prepare('SELECT COUNT(*) AS nb_message FROM forum_message INNER JOIN forum_sujet ON forum_message.id_sujet = forum_sujet.id_sujet WHERE titre_sujet = ? AND id_rubrique=?');
     $req->execute(array($donnees,$_GET['R']));
     return $req;
 }
@@ -64,11 +102,10 @@ function nombreMessage($donnees)
 function dernierMessageUser2 ($donnees)
 {
     global $bdd;
-    $req=$bdd->prepare('SELECT pseudo FROM user 
-                        INNER JOIN forum_message ON user.id_user=forum_message.id_user
+    $req=$bdd->prepare('SELECT login FROM membre
+                        INNER JOIN forum_message ON membre.id=forum_message.id_user
                         INNER JOIN forum_sujet ON forum_message.id_sujet = forum_sujet.id_sujet AND forum_sujet.id_sujet=?
-                        WHERE forum_message.actif=0   
-                        ORDER BY pseudo DESC LIMIT 1 ');
+                        ORDER BY login DESC LIMIT 1 ');
     $req->execute(array($donnees));
     return $req;
 }
@@ -88,7 +125,7 @@ function dernierMessageDate2 ($donnees)
 function afficherRubrique1() 
 {
     global $bdd;
-    $req = $bdd->prepare('SELECT * FROM forum_rubrique WHERE id_rubrique= ? AND actif=0');
+    $req = $bdd->prepare('SELECT * FROM forum_rubrique WHERE id_rubrique= ?');
     $req->execute(array($_GET['R'] ));
     return $req;
 }
@@ -96,7 +133,7 @@ function afficherRubrique1()
 function pseudoSujet($donnees) 
 {
 	global $bdd;
-	$req = $bdd->prepare('SELECT pseudo FROM user INNER JOIN forum_sujet ON user.id_user=forum_sujet.id_user WHERE forum_sujet.actif=0 AND forum_sujet.id_sujet= ?');
+	$req = $bdd->prepare('SELECT login FROM membre INNER JOIN forum_sujet ON membre.id=forum_sujet.id_user WHERE forum_sujet.id_sujet= ?');
 	$req->execute(array($donnees));
 	return $req;
 }
@@ -105,15 +142,18 @@ function pseudoSujet($donnees)
 function listeMessage () 
 {
     global $bdd;
-    $req = $bdd->prepare('SELECT * FROM forum_message WHERE actif=0 AND id_sujet= ?');
+    $req = $bdd->prepare('SELECT * FROM forum_message WHERE id_sujet= ?');
     $req->execute(array($_GET['S']));
     return $req;
 }
 
+
+
+
 function afficherPseudo ($donnees)
 {
     global $bdd;
-    $req = $bdd->prepare('SELECT * FROM user INNER JOIN forum_message ON user.id_user=forum_message.id_user WHERE forum_message.actif=0 AND id_message= ?');
+    $req = $bdd->prepare('SELECT * FROM membre INNER JOIN forum_message ON membre.id=forum_message.id_user WHERE id_message= ?');
     $req->execute(array($donnees));
     return $req;
 }
@@ -123,7 +163,7 @@ function afficherRubrique2 ()
     global $bdd;
 	$req = $bdd->prepare('SELECT * FROM forum_rubrique 
                     		INNER JOIN forum_sujet ON forum_sujet.id_rubrique=forum_rubrique.id_rubrique
-                    		WHERE forum_rubrique.actif=0 AND forum_sujet.id_sujet= ?');
+                    		WHERE forum_sujet.id_sujet= ?');
     $req->execute(array($_GET['S']));
     return $req;
 }
@@ -131,7 +171,7 @@ function afficherRubrique2 ()
 function afficherSujet2 ()
 {
     global $bdd;
-    $req = $bdd->prepare('SELECT * FROM forum_sujet WHERE actif=0 AND id_sujet= ?');
+    $req = $bdd->prepare('SELECT * FROM forum_sujet WHERE id_sujet= ?');
     $req->execute(array($_GET['S']));
     return $req;
 }
@@ -139,7 +179,7 @@ function afficherSujet2 ()
 function pseudoSujet2() 
 {
 	global $bdd;
-	$req = $bdd->prepare('SELECT pseudo FROM user INNER JOIN forum_sujet ON user.id_user=forum_sujet.id_user AND id_sujet= ?');
+	$req = $bdd->prepare('SELECT login FROM membre INNER JOIN forum_sujet ON membre.id=forum_sujet.id_user AND id_sujet= ?');
 	$req->execute(array($_GET['S']));
 	return $req;
 }
@@ -150,8 +190,7 @@ function afficherRubrique3 ()
     global $bdd;
 	$req = $bdd->prepare('SELECT * FROM forum_rubrique 
                     		INNER JOIN forum_sujet ON forum_sujet.id_rubrique=forum_rubrique.id_rubrique
-                    		WHERE forum_sujet.id_sujet= ?
-                    		AND forum_rubrique.actif=0');
+                    		WHERE forum_sujet.id_sujet= ?');
 	$req->execute(array($_GET['M']));
     return $req;
 }
@@ -159,7 +198,7 @@ function afficherRubrique3 ()
 function afficherSujet3 ()
 {
     global $bdd;
-    $req = $bdd->prepare('SELECT * FROM forum_sujet WHERE actif=0 AND id_sujet= ?');
+    $req = $bdd->prepare('SELECT * FROM forum_sujet WHERE id_sujet= ?');
 	$req->execute(array($_GET['M']));
     return $req;
 }
@@ -177,7 +216,7 @@ function insererMessage()
 function afficherRubrique4() 
 {
     global $bdd;
-    $req = $bdd->prepare('SELECT * FROM forum_rubrique WHERE actif=0 AND id_rubrique= ?');
+    $req = $bdd->prepare('SELECT * FROM forum_rubrique WHERE id_rubrique= ?');
     $req->execute(array($_GET['SU'] ));
     return $req;
 }
@@ -194,7 +233,7 @@ function insererSujet()
 function lienprofil($donnees3)   //pour toute les pages du forum
 {    
     global $bdd;
-    $req = $bdd->prepare('SELECT * FROM user WHERE pseudo= ?');
+    $req = $bdd->prepare('SELECT * FROM membre WHERE login= ?');
     $req->execute(array($donnees3));
     return $req;
 }
