@@ -61,15 +61,28 @@ while ($concerts = $concert->fetch())
 		<div class="article">
 			<h1 class="titre">Photos récentes</h1>
 			<div class="sous_article">
+				<ul>
 <?php 						
 while ($photos = $photo->fetch())
-{
+{ 
+	if($photos['artiste_id']==''){
+		?>
+	<li><a href="index.php?page=salle&name=<?php echo $photos['salle']; ?>&id=<?php echo $photos['salle_id']; ?>"><img width=150 src="files/images/<?php echo $photos['fichier']; ?>"></a></li>
+	<?php }
+	
+	if($photos['salle_id']==''){
+		?>
+	<li><a href="index.php?page=artiste&name=<?php echo $photos['artiste']; ?>&id=<?php echo $photos['artiste_id']; ?>"><img width=150 src="files/images/<?php echo $photos['fichier']; ?>"></a></li>
+	<?php	
+	}
+
 ?>  
-<center><img width=150 src="files/images/<?php echo $photos['fichier']; ?>">
-</div>
+
 <?php
 }
 ?>		
+</ul>
+</div>
 		</div>
 	</div>
 	</div>

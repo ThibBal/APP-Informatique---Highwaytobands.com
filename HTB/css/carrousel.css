@@ -1,0 +1,59 @@
+<style type="text/css">
+#carousel{
+	overflow:hidden;
+	width:300px;
+	height:67px;
+	margin:25% auto 0 auto;
+}
+
+#carousel ul{
+	position:relative;
+	list-style-type:none;
+	margin: 0px;
+	padding: 0px;
+	width:9999px;
+}
+
+#carousel li{
+	padding:0px;
+	list-style:none;
+	float:left;
+}
+</style>
+
+
+<script type="text/javascript" src="jscripts/jquery-1.6.min.js"></script>
+<style type="text/css">
+#carousel{
+	overflow:hidden;
+	width:300px;
+	height:200px;
+	margin:25% auto 0 auto;
+}
+
+#carousel ul{
+	position:relative;
+	list-style-type:none;
+	margin: 0px;  
+	padding: 0px;  
+	width:9999px;
+}
+
+#carousel li{
+	padding:0px; 
+	list-style:none;
+	float:left;
+}
+</style>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#carousel").each(function(){
+			var t = setInterval(function(){
+				$("#carousel ul").animate({marginLeft:-100},1000,function(){
+					$("#carousel ul li:last").after($("#carousel ul li:first"));
+					$(this).css({marginLeft:0});
+				})
+			},1000);
+		});
+	});
+</script>

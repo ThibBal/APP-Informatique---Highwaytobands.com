@@ -35,7 +35,7 @@
 while ($musique = $extraits->fetch())
 {
 ?>
-    <OPTION><?php echo $musique['nom']; ?>
+    <OPTION value="<?php echo $musique['id']; ?>"><?php echo $musique['nom']; ?>
 <?php
 }
 ?>

@@ -28,7 +28,7 @@
 while ($photo = $photos->fetch())
 {
 ?>
-    <OPTION><?php echo $photo['name']; ?>
+    <OPTION value="<?php echo $photo['id']; ?>"><?php echo $photo['name']; ?>
 <?php
 }
 ?>

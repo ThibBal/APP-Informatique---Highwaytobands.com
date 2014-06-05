@@ -10,8 +10,15 @@
 
 <body>
 	<?php include 'controleurs/header.php' ?>
+<?php if($data['valider']=='0'){
+	echo ('<center><h1><font color="red">A valider !</h1></center>');
+?>
+<form class="formulaire" method="post" action="index.php?page=valider_concert">	
+		<input type="hidden" name="id" value="<?php echo ($data['id']); ?>">		
+		<center><input type="submit" value="Valider"/></center>
+	</form>
 
-
+<?php } ?>	
 	<div id="contenu">
 		<div id="banniere"><h1><?php echo ($data['name']); ?></h1>
 			<img src="img/artistes/<?php echo ($info_artiste['photo']); ?>"/>

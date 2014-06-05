@@ -2,6 +2,7 @@
 <html>
 <?php include("header.php");?>  
 <link rel="stylesheet" href="css/forum.css"/>
+
  <body>
      <div id='d1'>
             <a href="index.php?page=forum">Forum de Highway to Bands</a>
@@ -14,6 +15,7 @@
                     <th class="ce3">Dernier message</br>écrit par :</th>
                 </tr>
                 <?php 
+                include('modeles/user.php');
                 while ($donnees = $req1 -> fetch()) 
                 {
                 $req2 = nombreSujet($donnees['titre_rub']);
@@ -34,7 +36,7 @@
                            </br><?php echo $donnees['description'];?></td>
                            <?php 
                          	 echo '<td>'.$donnees2['nb_sujet'].'</td>'; 
-                           echo '<td>'.$donnees3['login'].'</td>';                         	 
+                           echo '<td><a href="index.php?page=compte&id='.$donnees3['id'].'">'.$donnees3['login'].'</a></td>';                         	 
                           ?>
                     </tr>               
             

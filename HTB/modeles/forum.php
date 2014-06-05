@@ -44,6 +44,16 @@ function listeRubrique()
 	return $req;
 }
 
+function derniermessage($id) 
+{
+    global $bdd;
+$res = "SELECT * from forum_message WHERE id_sujet='$id' ORDER BY id_message DESC LIMIT 1" ;
+$req = $bdd-> query($res) or die(print_r($bdd->errorInfo()));
+$data = $req-> fetch();
+    return $data;
+}
+
+
 
 //***************************************************************//
 
@@ -58,13 +68,12 @@ function nombreSujet($donnees)
 function dernierMessageUser1($donnees)
 {
     global $bdd;
-    $req = $bdd->prepare('SELECT login FROM membre 
+    $req = $bdd->prepare('SELECT * FROM membre 
                         INNER JOIN forum_message ON membre.id=forum_message.id_user
                         INNER JOIN forum_sujet ON forum_message.id_sujet = forum_sujet.id_sujet 
                         INNER JOIN forum_rubrique ON forum_sujet.id_rubrique=forum_rubrique.id_rubrique
                         AND forum_rubrique.id_rubrique=?
-                        WHERE forum_message.actif=0 
-                        ORDER BY login DESC LIMIT 1 ');
+                        ORDER BY date_publication DESC LIMIT 1 ');
     $req->execute(array($donnees));
     return $req;
 } 
@@ -72,11 +81,10 @@ function dernierMessageUser1($donnees)
 function dernierMessageDate1 ($donnees) 
 {
     global $bdd;
-	$req = $bdd->prepare('SELECT date_publication FROM forum_message 
+	$req = $bdd->prepare('SELECT  FROM forum_message 
                         INNER JOIN forum_sujet On forum_sujet.id_sujet=forum_message.id_sujet 
                         INNER JOIN forum_rubrique ON forum_sujet.id_rubrique=forum_rubrique.id_rubrique
                         AND forum_rubrique.id_rubrique=? 
-                        WHERE forum_message.actif=0  
                         ORDER BY date_publication DESC LIMIT 1');
 	$req->execute(array($donnees));
 	return $req;
@@ -102,10 +110,10 @@ function nombreMessage($donnees)
 function dernierMessageUser2 ($donnees)
 {
     global $bdd;
-    $req=$bdd->prepare('SELECT login FROM membre
+    $req=$bdd->prepare('SELECT * FROM membre
                         INNER JOIN forum_message ON membre.id=forum_message.id_user
                         INNER JOIN forum_sujet ON forum_message.id_sujet = forum_sujet.id_sujet AND forum_sujet.id_sujet=?
-                        ORDER BY login DESC LIMIT 1 ');
+                        ORDER BY date_publication DESC LIMIT 1 ');
     $req->execute(array($donnees));
     return $req;
 }
@@ -113,10 +121,9 @@ function dernierMessageUser2 ($donnees)
 function dernierMessageDate2 ($donnees)
 {
     global $bdd;
-    $req=$bdd->prepare('SELECT date_publication FROM forum_message
+    $req=$bdd->prepare('SELECT * FROM forum_message
                             INNER JOIN forum_sujet ON forum_sujet.id_sujet=forum_message.id_sujet
                             AND forum_sujet.id_sujet=?
-                            WHERE forum_message.actif=0  
                             ORDER BY date_publication DESC LIMIT 1');
     $req->execute(array($donnees));
     return $req;

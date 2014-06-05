@@ -8,7 +8,7 @@
 
 			<div class="sous_article">
 				<h2><?php echo ($data['name']); ?></h2>
-				<img width=150 src="img/artistes/<?php echo ($data['photo']); ?>"/>
+				<img id='profil' width=150 src="img/artistes/<?php echo ($data['photo']); ?>"/>
 				
 				<?php if(isset($_SESSION['statut'])){
 
@@ -78,7 +78,7 @@ while ($musique = $extraits->fetch())
 
 			<div class="article">
 				<div class="sous_article">
-					<h3>Agenda Concert</h3>
+					<h3>Concert</h3>
 					<div class="actu">
 			
 						<?php 						
@@ -104,6 +104,24 @@ $followers=info_membre_abonne($abon['membre_id']);
 
 ?>
    	<center><a href="index.php?page=compte&id=<?php echo $followers['id']; ?>"><?php echo $followers['name']; ?></a></center></br>
+<?php
+
+}
+?>	
+
+
+					</div>
+				</div>
+
+				<div class="sous_article">
+					<h3>Photos</h3>
+					<div class="actu">
+<?php
+while ($photos = $photo->fetch())
+{
+
+?>
+   	<center><a href="files/images/<?php echo $photos['fichier']; ?>"><center><img width=150 src="files/images/<?php echo $photos['fichier']; ?>"></a></center></br>
 <?php
 
 }

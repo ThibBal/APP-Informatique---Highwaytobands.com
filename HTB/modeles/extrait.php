@@ -12,6 +12,12 @@ global $bdd; // Supprimer un morceau de musique
 
 }
 
+function supprimer_id($id){
+global $bdd; // Supprimer un morceau de musique
+	$bdd->query("DELETE FROM extrait WHERE id='$id'");
+
+}
+
 function ajout_musique($id, $fichier){ // Ajout de la photo de profil
 global $bdd; 
 	$bdd->query("UPDATE extrait SET fichier='$fichier' WHERE id=$id 
@@ -39,6 +45,14 @@ $req = $bdd-> query($res) or die(print_r($bdd->errorInfo()));
 function trouver($artiste_id, $fichier){
 global $bdd;
 $sql = "SELECT * from extrait where artiste ='$artiste_id' and fichier ='$fichier'";
+$req = $bdd->query($sql) or die(print_r($bdd->errorInfo()));
+ 	$donnee = $req->fetch();
+ 	return $donnee;
+}
+
+function trouver_id($id){
+global $bdd;
+$sql = "SELECT * from extrait where id ='$id'";
 $req = $bdd->query($sql) or die(print_r($bdd->errorInfo()));
  	$donnee = $req->fetch();
  	return $donnee;

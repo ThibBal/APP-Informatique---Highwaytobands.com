@@ -1,6 +1,7 @@
 <?php
 
 if(isset($_SESSION['statut'])){
+	if($_SESSION['statut']=='membre'){
 	if(isset($_POST['titre'])){
 		$text=$_POST['contenu'];
 		$titre=$_POST['titre'];
@@ -26,7 +27,7 @@ poster_message($text, $date_publication, $id_user, $id_sujet);
 	$_SESSION['temp'] = 'Vous devez être connecté';
 	header ('Location: index.php?page=forum');
 }
-
+}
 
 
 ?>

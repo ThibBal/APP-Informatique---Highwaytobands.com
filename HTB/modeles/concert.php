@@ -85,9 +85,9 @@ $data = $req-> fetch();
  	return $data;
 }
 
-function validation($id, $valider){ // Ajout de la photo de profil
+function validation($id){ // Ajout de la photo de profil
 global $bdd; 
-	$bdd->query("UPDATE concert SET valider='$valider' WHERE id=$id 
+	$bdd->query("UPDATE concert SET valider='1' WHERE id=$id 
 ");
 
 }

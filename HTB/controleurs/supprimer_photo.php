@@ -2,16 +2,16 @@
 <?php
 
 //$nom=$_POST['nom']; // Changement des variables pour les étudier 
-$artiste=$_SESSION['id'];
+//$artiste=$_SESSION['id'];
 $id=$_POST['nom'];
 
-	require('modeles/extrait.php'); 
+	require('modeles/photo.php'); 
 			// $donnee=trouver_nom($nom, $artiste);
-	$donnee=trouver_id($id);
-			 unlink(dirname(dirname(__FILE__))."/"."files"."/"."musiques"."/".$donnee['fichier']);
+	$donnee=trouver_photo_id($id);
+			 unlink(dirname(dirname(__FILE__))."/"."files"."/"."images"."/".$donnee['fichier']);
 			// supprimer($nom, $artiste);
-			 supprimer_id($id);
-	$message = 'Morceau supprimé';
+			 supprimer_photo_id($id);
+	$message = 'Photo supprimée';
 	$_SESSION['temp'] = $message;
 	header ('Location: index.php?page=accueil');
 	

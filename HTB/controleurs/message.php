@@ -1,6 +1,7 @@
 <?php
 
 if(isset($_SESSION['statut'])){
+	if($_SESSION['statut']=='membre'){
 	if(isset($_POST['contenu'])){
 		$text=$_POST['contenu'];
 		$id_user=$_SESSION['id'];
@@ -13,11 +14,12 @@ poster_message($text, $date_publication, $id_user, $id_sujet);
 	}
 
 	include ('vues/creer_message.php');
+
 }else{
 	$_SESSION['temp'] = 'Vous devez être connecté';
 	header ('Location: index.php?page=forum');
 }
-
+}
 
 
 ?>

@@ -20,7 +20,7 @@ max-height: 400px;
     border: 1px solid black;
 }
 
-.sous_article img{
+#profil{
     overflow: hidden;
 width: 200px;
 height: 200px;

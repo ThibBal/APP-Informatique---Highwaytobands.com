@@ -20,6 +20,16 @@
 
 			<div class="sous_article">
 			<h3>Photos de la salle</h3>
+			<?php
+while ($photos = $photo->fetch())
+{
+
+?>
+   	<center><a href="files/images/<?php echo $photos['fichier']; ?>"><center><img width=150 src="files/images/<?php echo $photos['fichier']; ?>"></a></center></br>
+<?php
+
+}
+?>	
 			</div>
 
 			<div class="sous_article">
