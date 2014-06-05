@@ -32,11 +32,12 @@
                 
            
                     <tr class="c1" onmouseover="javascript:this.className='c1h';" onmouseout="javascript:this.className='c1';">
-                        <td><div class="a1"><a href="index.php?page=forum_sujet&R=<?php echo $donnees['id_rubrique'];?>"><?php echo $donnees['titre_rub']; ?></a></div>
+                        <td><div class="a1"><a href="index.php?page=forum_sujet&R=<?php echo $donnees['id_rubrique'];?>">
+                        <?php echo $donnees['titre_rub']; ?></a></div>
                            </br><div class="a2"><?php echo $donnees['description'];?></div></td>
                            <div class="centre"><?php 
-                         	 echo '<td>'.$donnees2['nb_sujet'].'</td>'; 
-                           echo '<td><a href="index.php?page=compte&id='.$donnees3['id'].'">'.$donnees3['login'].'</a></td>';                         	 
+                         	 echo '<td class="align">'.$donnees2['nb_sujet'].'</td>'; 
+                           echo '<td class="align"><a href="index.php?page=compte&id='.$donnees3['id'].'">'.$donnees3['login'].'</a></td>';                         	 
                           ?></div>
                     </tr>               
             

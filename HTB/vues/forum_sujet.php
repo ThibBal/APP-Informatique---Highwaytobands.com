@@ -48,12 +48,14 @@
                 ?>
            
              <tr>
-                <td class="titre"><a href="index.php?page=forum_message&S=<?php echo $donnees['id_sujet'];?>"><?php echo $donnees['titre_sujet'];?></a>
-                </br> par : <a href="index.php?page=compte&id=<?php echo ($data['id']); ?>"><?php echo $data['login'];?></a></br>  
-                <?php echo $date->format('d/m/Y');?></td>
+                <td class="titre"><span class="margin"><a href="index.php?page=forum_message&S=<?php echo $donnees['id_sujet'];?>">
+                <?php echo $donnees['titre_sujet'];?></a>
+                </br> par : <a  href="index.php?page=compte&id=<?php echo ($data['id']); ?>"><?php echo $data['login'];?></a></br>  
+                <?php echo $date->format('d/m/Y');?></span></td>
                 <?php echo '<td class="nbrsujet">'. $donnees2['nb_message'].'</td>'; ?>
 
-                <td class="deniermessage"><a href="index.php?page=compte&id=<?php echo ($data2['id']); ?>"><?php echo $data2['login'];?></a></br>
+                <td class="deniermessage"><a href="index.php?page=compte&id=<?php echo ($data2['id']); ?>"><?php echo $data2['login'];?>
+                </a></br>
                 <?php 
                 if (empty($donnees4['date_publication']))
                 {

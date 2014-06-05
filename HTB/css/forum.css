@@ -129,16 +129,19 @@ table {
 	font-size: 1em;
 }
 
-.a1{
+.a1
+{
+
 	color :blue;
 	font-size: 2.5em;
 	font-weight: bolder;
-	
+	margin-left: 20px;
 }
+
 .a2{
 	color :#CCCCCC;
 	font-size: 0.8em;
-border-bottom: 2px solid ;
+	border-bottom: 2px solid ;
 }
 .a3{
 	color : #660099;
@@ -164,4 +167,30 @@ border-bottom: 2px solid ;
 }
 .centre {
 text-align : center; 
+}
+
+.align
+{
+	text-align: center;
+}
+
+.margin
+{
+	margin: 20px auto 20px 20px;
+	display: inline-block;
+}
+
+.nbrsujet
+{
+	text-align: center;
+}
+
+.deniermessage
+{
+	text-align: center;
+}
+
+td
+{
+	border: 2px solid black;
 }
