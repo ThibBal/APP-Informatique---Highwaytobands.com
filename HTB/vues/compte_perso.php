@@ -17,9 +17,8 @@
 			<img width=200px src="img/membres/<?php echo($data['photo']); ?>">
 			</div>	
 		<div class="article">
-
-			<div class="sous_article">
-			<h3>Infos personnelles</h3>
+<h3>Infos personnelles</h3>
+			<div class="sous_article">	
 			Votre login : <?php echo($data['login']); ?> </br>
 			Votre mail : <?php echo($data['mail']); ?> </br>
 			Votre code postal : <?php echo($data['zipcode']); ?> </br>
@@ -28,37 +27,9 @@
 		<center><input type="submit" value="Modifier vos informations"/></center>
 	</form>
 			</div>
-
-					
-		</div>
-
-
-		<div class="article">
+<h3>Vos dernier concerts</h3>
 			<div class="sous_article">
-			<h3>Vos artistes préférés</h3>
-			<div id="participants"><p></p>
-			<ul>
-				<?php
-while ($abo = $abo_artiste->fetch())
-{
-
-$followers=info_artiste_abonne($abo['artiste_id']);
-
-?>
-   	<center><a href="index.php?page=artiste&id=<?php echo $followers['id']; ?>&name=<?php echo $followers['name'] ?>"><?php echo $followers['name']; ?></a></center></br>
-<?php
-
-}
-?>	
-			</ul>
-			</div>
-			<form class="formulaire" method="post" action="index.php?page=modifier">			
-		<center><input type="submit" value="Modifier vos artistes préférés"/></center>
-	</form>	
-			</div>
-
-			<div class="sous_article">
-			<h3>Vos dernier concerts</h3>
+			
 			<div id="participants"><p></p>
 			<ul>
 				<?php 						
@@ -75,6 +46,61 @@ while ($concerts = $liste->fetch())
 	?>		</ul>
 			</div>
 		</div>
+					
+		</div>
+
+
+		<div class="article">
+			<h3>Vos artistes préférés</h3>
+			<div class="sous_article">
+			
+			<div id="participants"><p></p>
+			<ul>
+				<?php
+while ($abo = $abo_artiste->fetch())
+{
+
+$followers=info_artiste_abonne($abo['artiste_id']);
+
+?>
+   	<center><a href="index.php?page=artiste&id=<?php echo $followers['id']; ?>&name=<?php echo $followers['name'] ?>"><?php echo $followers['name']; ?></a>
+   	<form name="desabonnement" action="index.php?page=desabonnement_artiste" method="post">
+					<input type="hidden" name="artiste" value="<?php echo ($followers['id']); ?>">
+   <center><INPUT type="submit" name="bouton" value="Se désabonner"></center>
+</form>	</center>
+   	<?php
+
+}
+?>	
+			</ul>
+			</div>
+				
+			</div>
+<h3>Vos salles préférées</h3>
+			<div class="sous_article">
+			
+			<div id="participants"><p></p>
+			<ul>
+				<?php
+while ($abo = $abo_salle->fetch())
+{
+
+$followers=info_salle_abonne($abo['salle_id']);
+
+?>
+   	<center><a href="index.php?page=salle&id=<?php echo $followers['id']; ?>&name=<?php echo $followers['name'] ?>"><?php echo $followers['name']; ?></a><form name="desabonnement" action="index.php?page=desabonnement_salle" method="post">
+					<input type="hidden" name="salle" value="<?php echo ($followers['id']); ?>">
+   <center><INPUT type="submit" name="bouton" value="Se désabonner"></center>
+</form>	</center>
+   	<?php
+
+}
+?>	
+			</ul>
+			</div>
+			</div>
+
+
 		</div>
 	</div>
 		<?php } ?>	
@@ -86,9 +112,8 @@ while ($concerts = $liste->fetch())
 			<img width=200px src="img/artistes/<?php echo($data2['photo']); ?>">
 			</div>	
 		<div class="article">
-
-			<div class="sous_article">
-			<h3>Infos personnelles</h3>
+<h3>Infos personnelles</h3>
+			<div class="sous_article">			
 			Votre login : <?php echo($data2['login']); ?> </br>
 			Votre mail : <?php echo($data2['mail']); ?> </br>
 	Votre style de musique : <?php echo($data2['style']); ?> </br>
@@ -104,9 +129,9 @@ while ($concerts = $liste->fetch())
 	<form class="formulaire" method="post" action="index.php?page=photo">			
 		<center><input type="submit" value="Ajouter / Supprimer une photo"/></center>
 	</form>
-			</div>
+			</div><h3>Vos morceaux</h3>
 <div class="sous_article">
-			<h3>Vos morceaux</h3>
+			
 			<?php
 
 while ($musique = $extraits->fetch())
@@ -116,17 +141,17 @@ while ($musique = $extraits->fetch())
 	<?php echo $musique['nom']; ?> - <?php echo $musique['album']; ?></br>
 <?php
 }
-?>
+?></div>
 <form method="post" class="formulaire" action="index.php?page=musique">			
 		<center><input type="submit" value="Ajouter / Supprimer un morceau"/></center>
 	</form>			
-		</div>					
+							
 		</div>
 
 
-		<div class="article">
+		<div class="article"><h3>Vos concerts en attente de validation</h3>
 			<div class="sous_article">
-			<h3>Vos concerts en attente de validation</h3>
+			
 			<ul>
 <?php 						
 while ($valide = $valider->fetch())
@@ -145,16 +170,16 @@ while ($valide = $valider->fetch())
 		</div>
 
 			
-
+<h3>Vos dernier concerts</h3>
 			<div class="sous_article">
-			<h3>Vos dernier concerts</h3>
+			
 			<div id="participants"><p></p>
 			<ul><?php 						
 while ($concerts = $concert->fetch())
 {
 ?>
     
-	<li><a href="index.php?page=concert&id=<?php echo $valide['id']; ?>"><?php echo $concerts['name']; ?> - <?php echo $concerts['salle']; ?> - <?php echo $concerts['artiste']; ?> - <?php echo $concerts['date']; ?> </a></li>
+	<li><a href="index.php?page=concert&id=<?php echo $concerts['id']; ?>"><?php echo $concerts['name']; ?> - <?php echo $concerts['salle']; ?> - <?php echo $concerts['artiste']; ?> - <?php echo $concerts['date']; ?> </a></li>
 <?php
 }
 ?>
@@ -175,9 +200,9 @@ while ($concerts = $concert->fetch())
 			<img width=200px src="img/salles/<?php echo($data3['photo']); ?>">
 			</div>	
 		<div class="article">
-
+<h3>Infos personnelles</h3>
 			<div class="sous_article">
-			<h3>Infos personnelles</h3>
+			
 			Votre login : <?php echo($data3['login']); ?> </br>
 			Votre mail : <?php echo($data3['mail']); ?> </br>
 	Votre code postal : <?php echo($data3['zipcode']); ?> </br>
@@ -191,7 +216,7 @@ while ($concerts = $concert->fetch())
 	</form>
 
 	<form method="post" action="index.php?page=photo">			
-		<center><input type="submit" value="Ajouter une photo"/></center>
+		<center><input type="submit" value="Ajouter / Supprimer une photo"/></center>
 	</form>
 			</div>
 	
@@ -199,15 +224,16 @@ while ($concerts = $concert->fetch())
 
 
 		<div class="article">
-			<div class="sous_article">
 			<h3>Vos concerts en attente de validation</h3>
+			<div class="sous_article">
+			
 <ul>
 <?php 						
 while ($valide = $valider->fetch())
 {
 ?>
     
-	<li><a href="index.php?page=concert&id=<?php echo $valide['id']; ?>"><?php echo $valide['name']; ?> - <?php echo $valide['salle']; ?> - <?php echo $valide['artiste']; ?> - <?php echo $valide['date']; ?>
+	<li><a href="index.php?page=concert&id=<?php echo $valide['id']; ?>"><?php echo $valide['name']; ?> - <?php echo $valide['salle']; ?> - <?php echo $valide['artiste']; ?> - <?php echo $valide['date']; ?></a>
 	<form class="formulaire" method="post" action="index.php?page=valider_concert">	
 		<input type="hidden" name="id" value="<?php echo ($valide['id']); ?>">		
 		<center><input type="submit" value="Valider"/></center>
@@ -216,16 +242,16 @@ while ($valide = $valider->fetch())
 }
 ?>
 </ul>
-		</div>
+		</div><h3>Vos dernier concerts</h3>
 <div class="sous_article">
-			<h3>Vos dernier concerts</h3>
+			
 <ul>			
 			<?php 						
 while ($concerts = $concert->fetch())
 {
 ?>
     
-<li><a href="index.php?page=concert&id=<?php echo $concerts['id']; ?>"><?php echo $concerts['name']; ?> - <?php echo $concerts['salle']; ?> - <?php echo $concerts['artiste']; ?> - <?php echo $concerts['date']; ?></li>
+<li><a href="index.php?page=concert&id=<?php echo $concerts['id']; ?>"><?php echo $concerts['name']; ?> - <?php echo $concerts['salle']; ?> - <?php echo $concerts['artiste']; ?> - <?php echo $concerts['date']; ?></a></li>
 <?php
 }
 ?>

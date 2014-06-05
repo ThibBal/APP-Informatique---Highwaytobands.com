@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 
-
+<?php include 'controleurs/header.php' ?>
 <body>
-	<?php include 'vues/header.php' ?>
+
 <link rel="stylesheet" href="css/style.css" />	
 
 	<div id="contenu">
@@ -11,18 +11,33 @@
 			<img width=300px src="img/membres/<?php echo($data['photo']); ?>">
 			</div>	
 		<div class="article">
-
+<h3>Informations</h3>
 			<div class="sous_article">
-			<h3>Informations</h3>
+			
 			login : <?php echo($data['login']); ?> </br>
 			Adresse email : <?php echo($data['mail']); ?> </br>
 			Code postal : <?php echo($data['zipcode']); ?> </br>
 
-	<form class="formulaire" method="post" action="index.php?page=ami">			
-		<center><input type="submit" value="Devinir son ami"/></center>
-	</form>
 			</div>
-					
+				<h3>Ses concerts</h3>
+			<div class="sous_article">
+			
+			<div id="participants">
+			<ul>
+				<?php 						
+while ($concerts = $liste->fetch())
+{
+
+	$data=info_concert($concerts['concert_id']);
+
+?>
+    
+	<li><a href="index.php?page=concert&id=<?php echo $data['id']; ?>"><?php echo $data['name']; ?> - <?php echo $data['salle']; ?> - <?php echo $data['artiste']; ?> - <?php echo $data['date']; ?></a></li>
+<?php
+}
+	?>		</ul>
+			</div>
+		</div>	
 		</div>
 
 
@@ -31,8 +46,9 @@
 		
 
 		<div class="article">
-			<div class="sous_article">
-			<h3>Vos artistes préférés</h3>
+					<h3>Ses artistes préférés</h3>
+					<div class="sous_article">
+	
 			<div id="participants"><p></p>
 			<ul>
 				<?php
@@ -51,25 +67,28 @@ $followers=info_artiste_abonne($abo['artiste_id']);
 			</div>
 			
 			</div>
-
-			<div class="sous_article">
-			<h3>Ses derniers concerts</h3>
+<h3>Ses salles préférées</h3>
+					<div class="sous_article">
+	
 			<div id="participants"><p></p>
 			<ul>
-				<?php 						
-while ($concerts = $liste->fetch())
+				<?php
+while ($abo = $abo_salle->fetch())
 {
 
-	$data=info_concert($concerts['concert_id']);
+$followers=info_salle_abonne($abo['salle_id']);
 
 ?>
-    
-	<li><a href="index.php?page=concert&id=<?php echo $data['id']; ?>"><?php echo $data['name']; ?> - <?php echo $data['salle']; ?> - <?php echo $data['artiste']; ?> - <?php echo $data['date']; ?></a></li>
+   	<center><a href="index.php?page=salle&id=<?php echo $followers['id']; ?>&name=<?php echo $followers['name'] ?>"><?php echo $followers['name']; ?></a></center></br>
 <?php
+
 }
-	?>		</ul>
+?>	
+			</ul>
 			</div>
-		</div>
+			
+			</div>
+
 		</div>
 	</div>
 

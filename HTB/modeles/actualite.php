@@ -8,7 +8,7 @@ global $bdd;
 
 function liste_actu(){
 	global $bdd;
-$res = "SELECT * from actu";
+$res = "SELECT * from actu ORDER BY date desc";
 $req = $bdd-> query($res) or die(print_r($bdd->errorInfo()));
 
  	 	return $req;

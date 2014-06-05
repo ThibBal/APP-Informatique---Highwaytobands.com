@@ -70,7 +70,7 @@ if($membre['membre_id']==$_SESSION['id']){ ?>
 ?>
 
 <iframe
-  width="270"
+  width="100%"
   height="240"
   frameborder="0" style="border:0"
   src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCTQZ5rKhEnDfS2LJiU-hmV-DuCWpql02k

@@ -28,11 +28,13 @@
 
 while ($actualite = $actu->fetch())
 {
+	$dateMySQL= $actualite['date'];
+                    $date = new DateTime($dateMySQL); 
 ?>
     <div class=titre_actu><?php echo($actualite['titre']); ?></div>
     par <a href="index.php?page=artiste&name=<?php echo $actualite['artiste_name']; ?>&id=<?php echo $actualite['artiste_id']; ?>"><?php echo($actualite['artiste_name']); ?></a>
     <a href="index.php?page=salle&name=<?php echo $actualite['salle_name']; ?>&id=<?php echo $actualite['salle_id']; ?>"><?php echo($actualite['salle_name']); ?></a>
-	<div class=date_actu><?php echo($actualite['date']); ?></div></br>
+	<div class=date_actu><?php  echo $date->format('d/m/Y'); ?></div></br>
 	<div class=contenu_actu><?php echo($actualite['contenu']); ?></div></br>
 	
 <?php
@@ -49,9 +51,11 @@ while ($actualite = $actu->fetch())
 				<?php 						
 while ($concerts = $concert->fetch())
 {
+		$dateMySQL= $concerts['date'];
+                    $date = new DateTime($dateMySQL); 
 ?>
     
-	<div id="concert"><a href="index.php?page=concert&id=<?php echo $concerts['id']; ?>"><?php echo $concerts['date']; ?> - <?php echo $concerts['salle']; ?> - <?php echo $concerts['artiste']; ?></a></div>
+	<div id="concert"><a href="index.php?page=concert&id=<?php echo $concerts['id']; ?>"><?php echo $date->format('d/m/Y'); ?> - <?php echo $concerts['salle']; ?> - <?php echo $concerts['artiste']; ?></a></div>
 <?php
 }
 ?>			

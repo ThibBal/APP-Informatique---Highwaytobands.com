@@ -21,15 +21,14 @@
 		<li class="champs"><span>Nom de l'artiste : </span><input name=name class="box" type="text"></li>
 		<li class="champs"><span>Photo de profil : </span><input name=photo class="box" type="file" /></li>
 		<li class="CGU"><span>Présentation : </span></br><textarea name=description rows=5 cols=50></textarea></li>
-		<li class="CGU"><span>Style de musiques : </span><SELECT name=style size="1">
+		<li class="CGU"><span>Style de musiques : </span>
+<SELECT name=style size="1">
 <option value="0" selected disabled> Choisir un style </option>
-<OPTION>Rock
-<OPTION>Pop
-<OPTION>Alternative
-<OPTION>Rap
-<OPTION>Electronique
+<?php while ($liste = $style->fetch()) { ?>
+<OPTION value="<?php echo $liste['style']; ?>"><?php echo $liste['style']; ?>
+	<?php } ?>
 </SELECT></li>
-				
+
 	</ul>
 
 	<div id="envoi"><input type="submit" value="S'inscrire" /></div>

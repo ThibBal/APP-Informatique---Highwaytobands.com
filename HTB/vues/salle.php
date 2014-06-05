@@ -91,8 +91,8 @@ if($membre['membre_id']==$_SESSION['id']){ ?>
 			<p>Téléphone : <?php echo ($data['phone']); ?></p>
 			<p>Capacité : <?php echo ($data['capacity']); ?> places</p>
 			<center><iframe
-  width="270"
-  height="240"
+  width="100%"
+  height="200px"
   frameborder="0" style="border:0"
   src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCTQZ5rKhEnDfS2LJiU-hmV-DuCWpql02k
     &q=<?php echo ($data['adress']); ?>+<?php echo ($data['zipcode']); ?>">

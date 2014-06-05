@@ -1,11 +1,12 @@
 ﻿--- Highway to bands ---
 
-htb, htb
+htb, htb pour se connecter à la base de données (créer un identifiant dans PhpMyAdmin)
 root, 
 root, root
 fichier mybd
 
 ----
+Problème au niveau des codes postaux dans la Base de données
 Forum : corriger le CSS (et quelques fonctions)
 Back office
 Message sur les pages (par un membre)

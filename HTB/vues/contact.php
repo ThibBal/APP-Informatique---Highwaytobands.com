@@ -10,16 +10,7 @@
 
 <body>
 	<?php include 'controleurs/header.php' ?>
-	<?php if(!isset($_SESSION['login'])){ ?>
-	<a href="index.php?page=inscription"><div id="inscription">
-		Inscris toi et profite :
-		<ul>
-			<li>De contenu personnalisé selon tes préférences</li>
-			<li>De services exclusifs</li>
-			<li>D'une communauté de passionnés</li>
-		</ul>
-	</div></a>
-	<?php } ?>
+
 	<div id="contenu">
 		<div class="article">
 			<h1 class="titre">Coordonnées</h1>

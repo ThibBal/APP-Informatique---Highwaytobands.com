@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client: localhost
--- Généré le: Jeu 05 Juin 2014 à 17:55
+-- Généré le: Dim 01 Juin 2014 à 20:56
 -- Version du serveur: 5.6.12-log
 -- Version de PHP: 5.4.12
 
@@ -38,16 +38,21 @@ CREATE TABLE IF NOT EXISTS `actu` (
   `contenu` text,
   `date` date DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=28 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=23 ;
 
 --
 -- Contenu de la table `actu`
 --
 
 INSERT INTO `actu` (`id`, `artiste_id`, `salle_id`, `artiste_name`, `salle_name`, `titre`, `contenu`, `date`) VALUES
+(5, 6, 0, NULL, NULL, NULL, NULL, '0000-00-00'),
+(6, 6, 0, 'Lordi', '0', NULL, NULL, '0000-00-00'),
+(7, 6, 0, 'Lordi', '0', 'ooooo', ' oooo', '0000-00-00'),
+(8, 6, 0, 'Lordi', '0', 'ooo', ' oo', '0000-00-00'),
 (9, 6, 0, 'Lordi', '0', 'Concert bientÃ´t !', ' Bonjour un concert bientÃ´t ici !', '0000-00-00'),
 (10, 6, 0, 'Lordi', '0', 'Concert bientÃ´t !', ' coucou', '0000-00-00'),
 (11, 6, 0, 'Lordi', '0', 'Concert bientÃ´t !', ' COUCOU', '0000-00-00'),
+(12, 6, 0, 'Lordi', '0', '', ' ', '0000-00-00'),
 (13, 6, 0, 'Lordi', '0', 'Concert bientÃ´t !', ' coucou les loulous', '0000-00-00'),
 (14, 6, 0, 'Lordi', '0', 'goijgdlhgbhj', 'hjkfgjhggjfh ', NULL),
 (15, 6, 0, 'Lordi', '0', 'ooooooooooooooo', ' oooooooooooooooooooooooo', '2014-05-22'),
@@ -57,12 +62,7 @@ INSERT INTO `actu` (`id`, `artiste_id`, `salle_id`, `artiste_name`, `salle_name`
 (19, 0, 7, '0', 'LeDÃ´meDeMarseille', 'DPDA', ' Votons !', '2014-05-22'),
 (20, 0, 7, 'NULL', 'LeDÃ´meDeMarseille', 'DPDA', ' Votons !', '2014-05-22'),
 (21, 0, 7, '', 'LeDÃ´meDeMarseille', 'Votons', 'votons votons  ', '2014-05-22'),
-(22, 3, 0, 'Electric Light Orchestra', '', 'Concert bientÃ´t !', ' Bonjour ! Vous allez bien ? Vous savez que nous allons bientÃ´t nous reformer !!!!', '2014-05-27'),
-(23, 6, 0, 'Lordi', '', 'Concert bientÃ´t !', ' Bonjour Ã  tous, nous allons bientÃ´t lancer notre tournÃ©e !', '2014-06-05'),
-(24, 8, 0, 'Queen', '', 'Concert hommage', 'Bonjour nous organisons un concert hommage Ã  Freddie Mercury trÃ¨s prochainement dans une grande salle parisienne, venez nombreux ! ', '2014-06-05'),
-(25, 8, 0, 'Queen', '', 'Concert hommage', 'Concert hommage trÃ¨s bientÃ´t', '2014-06-05'),
-(26, 8, 0, 'Queen', '', 'www', ' ww', '2014-06-05'),
-(27, 0, 7, '', 'LeDÃ´meDeMarseille', 'Concert hommage', ' BientÃ´t une nouveau concert', '2014-06-05');
+(22, 3, 0, 'Electric Light Orchestra', '', 'Concert bientÃ´t !', ' Bonjour ! Vous allez bien ? Vous savez que nous allons bientÃ´t nous reformer !!!!', '2014-05-27');
 
 -- --------------------------------------------------------
 
@@ -81,7 +81,7 @@ CREATE TABLE IF NOT EXISTS `artiste` (
   `photo` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `login_UNIQUE` (`login`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
 
 --
 -- Contenu de la table `artiste`
@@ -94,8 +94,7 @@ INSERT INTO `artiste` (`id`, `login`, `password`, `name`, `style`, `description`
 (4, 'TCHOU', 'ae5b05ab3cd47f4a88d7b0da49eb96fd034406d0', 'Shakira', 'Rock', 'wESSSH', 'tba@gmail.com', '1.jpg'),
 (5, 'Europe', '36a32e96cbfd11fd98e8c98e38d9ad9b41f57f1a', 'Europa', 'Rap', 'Eurovisiooooooo', 'elysee@gmail.com', '5.jpg'),
 (6, 'Lordi', '36a32e96cbfd11fd98e8c98e38d9ad9b41f57f1a', 'Lordi', 'Rock', 'Groupe de hard rock finlandais', 'lordi@gmail.com', '6.jpg'),
-(7, 'NTM', '36a32e96cbfd11fd98e8c98e38d9ad9b41f57f1a', 'NTM', 'Rap', 'NTM est un groupe de rap fondÃ© en 1990', 'tba@gmail.com', '7.jpg'),
-(8, 'queen', '36a32e96cbfd11fd98e8c98e38d9ad9b41f57f1a', 'Queen', 'Rock', 'Queen est un groupe de rock britannique, formÃ© en 1970 Ã  Londres par Freddie Mercury, Brian May et Roger Taylor.', 'queen@isep.fr', '8.png');
+(7, 'NTM', '36a32e96cbfd11fd98e8c98e38d9ad9b41f57f1a', 'NTM', 'Rap', 'NTM est un groupe de rap fondÃ© en 1990', 'tba@gmail.com', '7.jpg');
 
 -- --------------------------------------------------------
 
@@ -147,42 +146,31 @@ CREATE TABLE IF NOT EXISTS `concert` (
   `name` varchar(255) DEFAULT NULL,
   `valider` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=37 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=26 ;
 
 --
 -- Contenu de la table `concert`
 --
 
 INSERT INTO `concert` (`id`, `artiste`, `salle`, `date`, `description`, `price`, `name`, `valider`) VALUES
-(6, 'Europa', 'Olympia', '2014-10-04', 'Descriptiiiion', 1240, 'Wesh in town 2', 1),
-(7, 'Europa', 'Olympia', '2014-05-15', 'iffififi', 0, 'Rockooooo', 1),
+(6, 'Europa', 'Olympia', '2014-10-04', 'Descriptiiiion', 1240, 'Wesh in town 2', 0),
+(7, 'Europa', 'Olympia', '2014-05-15', 'iffififi', 0, 'Rockooooo', 0),
 (8, 'Europa', 'Olympia', '2014-05-30', 'COucou', 0, 'Shakira', 1),
-(9, 'Europa', 'Olympia', '2014-05-16', 'Descriptiiion', 0, 'Rififi', 1),
-(10, 'Europa', 'Olympia', '2014-05-16', 'Descriptiiionooooo', 0, 'Rififi', 1),
+(9, 'Europa', 'Olympia', '2014-05-16', 'Descriptiiion', 0, 'Rififi', 0),
+(10, 'Europa', 'Olympia', '2014-05-16', 'Descriptiiionooooo', 0, 'Rififi', 0),
 (11, 'Europa', 'Olympia', '2014-05-10', 'didididi', 0, 'aoaoaoa', 0),
 (12, 'Europa', 'Olympia', '2014-05-15', 'dodddo', 0, 'Shakira', 1),
 (13, 'Europa', 'Olympia', '2014-08-09', 'odododo', 0, 'Wesh in town 5', 1),
 (14, 'Europa', 'Olympia', '2014-05-12', 'Wesh in town 4 wesh wesh', 0, 'Wesh in town 4', 1),
 (15, 'Europa', 'Olympia', '2014-05-25', 'dododod', 0, 'Shakira', 0),
 (16, 'Europa', 'Olympia', '2014-05-09', 'dododododaozhubjvdfkj;', 0, 'Super concert test', 0),
-(17, 'Europa', 'Olympia', '2014-05-25', 'dodododccoco', 0, 'Shakira', 1),
-(20, 'Europa', 'Bercy', '2014-08-16', 'Wahou trop bien', 0, 'Hija', 1),
+(17, 'Europa', 'Olympia', '2014-05-25', 'dodododccoco', 0, 'Shakira', 0),
+(20, 'Europa', 'Bercy', '2014-08-16', 'Wahou trop bien', 0, 'Hija', 0),
 (21, 'Europa', 'Casa Paco', '2014-08-08', 'Un petit concert bien sympa dans une salle bi', 135, 'Rock My Gig', 0),
-(22, 'Lordi', 'Olympia', '2014-05-15', 'Coucou', 0, 'Eurovision', 1),
+(22, 'Lordi', 'Olympia', '2014-05-15', 'Coucou', 0, 'Eurovision', 0),
 (23, 'Lordi', 'Weshou', '2014-05-15', 'Lordi revient en concert tout proche de chez ', 0, 'Eurovision', 1),
 (24, 'Electric Light Orchestra', 'Olympia', '2014-05-07', '', 0, 'COUCOU', 0),
-(25, 'Electric Light Orchestra', 'LeDÃ´meDeMarseille', '2014-05-16', 'Un concert trop gÃ©nial prÃ¨s de chez toi en plus ! Viens stp ! Allez viens !', 0, 'Un concert au top', 0),
-(26, 'Electric Light Orchestra', 'Bercy', '2014-07-14', 'Electric Light Orchestra se reforme et arrive en concert Ã  Bercy pour le 14 Juillet prochain ! Venez nombreux !', 135, 'ELO en concert Ã  Bercy', 1),
-(27, 'Lordi', 'Bercy', '2014-06-29', 'Lordi is back !', 0, 'Wesh in town 8', 1),
-(28, 'Electric Light Orchestra', 'Olympia', '2014-06-13', 'We are back out of the blue', 0, 'Out of the blue', 1),
-(29, 'Lordi', 'Olympia', '2014-06-05', 'Hihi', 0, 'Shakira', 0),
-(30, 'Lordi', 'Bercy', '2014-06-05', 'oooooo', 0, 'Eurovision', 0),
-(31, 'Lordi', 'LeDÃ´meDeMarseille', '2014-06-05', 'hohuhoh', 0, 'Hija', 1),
-(32, 'Lordi', 'Bercy', '2014-06-17', 'kjhk', 0, 'hjhkhkjkjh', 1),
-(33, 'Lordi', 'Eurovision', '2014-06-17', 'kjhk', 0, 'hjhkhkjkjh', 1),
-(34, 'Lordi', 'Bercy', '2014-06-14', '', 0, 'Francois', 1),
-(35, 'Lordi', 'Weshou', '2014-06-14', '', 0, 'Francois', 1),
-(36, 'Lordi', 'Casa Paco', '2014-06-14', '', 0, 'Francois', 1);
+(25, 'Electric Light Orchestra', 'LeDÃ´meDeMarseille', '2014-05-16', 'Un concert trop gÃ©nial prÃ¨s de chez toi en plus ! Viens stp ! Allez viens !', 0, 'Un concert au top', 0);
 
 -- --------------------------------------------------------
 
@@ -199,7 +187,7 @@ CREATE TABLE IF NOT EXISTS `extrait` (
   `artiste` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_extrait_artiste_idx` (`artiste_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=38 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=33 ;
 
 --
 -- Contenu de la table `extrait`
@@ -209,11 +197,7 @@ INSERT INTO `extrait` (`id`, `nom`, `album`, `artiste_id`, `fichier`, `artiste`)
 (14, 'MarioBros', 'SuperMarioBros', NULL, 'SuperMarioBrosTheme.mp3', '56'),
 (17, 'Mario Theme', 'Super Mario Bros', NULL, 'SuperMarioBrosTheme.mp3', '57'),
 (20, 'Hard Rock', 'Rock&Roll', NULL, 'musique_du_20140509211351.mp3', '57'),
-(32, 'Hard Rock Hallelujah', 'The Arockalypse', NULL, '32_6.mp3', '6'),
-(34, 'Mario Theme', 'Super Mario Bros', 6, '', NULL),
-(35, 'Mario Theme', 'Super Mario Bros', NULL, '35_6.mp3', '6'),
-(36, 'Mario Theme', 'Super Mario Bros', NULL, '36_6.mp3', '6'),
-(37, 'Nos premiÃ¨res annÃ©es', 'The Arockalypse', NULL, '37_6.mp3', '6');
+(32, 'Hard Rock Hallelujah', 'The Arockalypse', NULL, '32_6.mp3', '6');
 
 -- --------------------------------------------------------
 
@@ -229,7 +213,7 @@ CREATE TABLE IF NOT EXISTS `forum_message` (
   `id_sujet` int(11) NOT NULL,
   `actif` int(11) NOT NULL,
   PRIMARY KEY (`id_message`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=41 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=32 ;
 
 --
 -- Contenu de la table `forum_message`
@@ -263,15 +247,7 @@ INSERT INTO `forum_message` (`id_message`, `text`, `date_publication`, `id_user`
 (28, ' trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s ongtrÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s ongtrÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s ongtrÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s trÃ¨s ong', '2014-06-01 22:04:32', 59, 1, 0),
 (29, 'Football ', '2014-06-01 22:36:12', 59, 8, 0),
 (30, ' Ca fonctionne oui !', '2014-06-01 22:41:26', 59, 6, 0),
-(31, ' +2', '2014-06-01 22:51:54', 59, 5, 0),
-(33, ' Coucou', '2014-06-04 22:12:56', 101, 8, 0),
-(34, ' +3', '2014-06-04 22:13:13', 101, 5, 0),
-(35, '?', '2014-06-04 22:15:29', 101, 6, 0),
-(36, ' Je vais bientÃ´t Ã  un concert !', '2014-06-04 22:16:07', 101, 9, 0),
-(37, 'mmmmm ', '2014-06-04 22:50:55', 101, 10, 0),
-(38, ' Oui !', '2014-06-04 23:05:22', 101, 2, 0),
-(39, ' Cool moi aussi !', '2014-06-04 23:31:27', 59, 9, 0),
-(40, ' Au revoir', '2014-06-04 23:32:18', 59, 8, 0);
+(31, ' +2', '2014-06-01 22:51:54', 59, 5, 0);
 
 -- --------------------------------------------------------
 
@@ -311,7 +287,7 @@ CREATE TABLE IF NOT EXISTS `forum_sujet` (
   `id_rubrique` int(11) DEFAULT NULL,
   `actif` int(11) DEFAULT NULL,
   PRIMARY KEY (`id_sujet`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
 
 --
 -- Contenu de la table `forum_sujet`
@@ -325,9 +301,7 @@ INSERT INTO `forum_sujet` (`id_sujet`, `titre_sujet`, `description`, `date_creat
 (5, 'Wesh', NULL, '2014-06-01 14:21:28', 56, 2, NULL),
 (6, 'Ca marche ?', NULL, '2014-06-01 14:30:39', 56, 1, NULL),
 (7, 'Aaaaa', NULL, '2014-06-01 14:31:41', 56, 4, NULL),
-(8, 'Foot', NULL, '2014-06-01 22:36:12', 59, 2, NULL),
-(9, 'Concert bientÃ´t !', NULL, '2014-06-04 22:16:07', 101, 4, NULL),
-(10, 'Mhmm', NULL, '2014-06-04 22:50:55', 101, 2, NULL);
+(8, 'Foot', NULL, '2014-06-01 22:36:12', 59, 2, NULL);
 
 -- --------------------------------------------------------
 
@@ -345,7 +319,7 @@ CREATE TABLE IF NOT EXISTS `membre` (
   `name` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `login_UNIQUE` (`login`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=103 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=102 ;
 
 --
 -- Contenu de la table `membre`
@@ -377,8 +351,7 @@ INSERT INTO `membre` (`id`, `login`, `password`, `zipcode`, `mail`, `photo`, `na
 (98, 'euro', '36a32e96cbfd11fd98e8c98e38d9ad9b41f57f1a', '91360', 'azert@gmail.com', '98.png', 'euro'),
 (99, 'elsa', '36a32e96cbfd11fd98e8c98e38d9ad9b41f57f1a', '91260', 'ooo@ooo.oo', '99.', 'Elsa'),
 (100, 'coucou', '36a32e96cbfd11fd98e8c98e38d9ad9b41f57f1a', '91250', 'mistertiti91@hotmail.fr', '92.jpg', 'Bercy'),
-(101, 'benoitgu', '36a32e96cbfd11fd98e8c98e38d9ad9b41f57f1a', '91260', 'pouet@mail.com', '101.jpg', 'Benoit'),
-(102, 'moi', '36a32e96cbfd11fd98e8c98e38d9ad9b41f57f1a', '91260', 'tbalmette@gmail.com', '102.jpg', 'moi');
+(101, 'benoitgu', '36a32e96cbfd11fd98e8c98e38d9ad9b41f57f1a', '91260', 'pouet@mail.com', '101.jpg', 'Benoit');
 
 -- --------------------------------------------------------
 
@@ -431,7 +404,7 @@ CREATE TABLE IF NOT EXISTS `participation` (
   PRIMARY KEY (`id`),
   KEY `fk_participation_membre1_idx` (`membre_id`),
   KEY `fk_participation_concert1_idx` (`concert_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
 
 --
 -- Contenu de la table `participation`
@@ -441,8 +414,7 @@ INSERT INTO `participation` (`id`, `membre_id`, `concert_id`) VALUES
 (3, 57, 13),
 (4, 56, 9),
 (5, 57, 10),
-(6, 57, 7),
-(7, 40, 6);
+(6, 57, 7);
 
 -- --------------------------------------------------------
 
@@ -458,27 +430,19 @@ CREATE TABLE IF NOT EXISTS `photo` (
   `salle_id` int(11) DEFAULT NULL,
   `concert_id` int(11) DEFAULT NULL,
   `fichier` varchar(255) DEFAULT NULL,
-  `artiste` varchar(50) DEFAULT NULL,
-  `salle` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_photo_artiste1_idx` (`artiste_id`),
   KEY `fk_photo_salle1_idx` (`salle_id`),
   KEY `fk_photo_concert1_idx` (`concert_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=30 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=16 ;
 
 --
 -- Contenu de la table `photo`
 --
 
-INSERT INTO `photo` (`id`, `name`, `date`, `artiste_id`, `salle_id`, `concert_id`, `fichier`, `artiste`, `salle`) VALUES
-(17, 'Out of the blue', '2014-06-17', 3, NULL, NULL, '17_3.jpg', 'Electric Light Orchestra', NULL),
-(18, 'Nous', '2014-06-06', 3, NULL, NULL, '18_3.jpg', 'Electric Light Orchestra', NULL),
-(19, 'Mika en concert', '2014-07-05', NULL, 2, NULL, '19_2.jpg', NULL, 'Bercy'),
-(20, 'Johnny', '2014-05-26', NULL, 2, NULL, '20_2.jpg', NULL, 'Bercy'),
-(26, 'Olympia', '2014-06-04', NULL, 1, NULL, '26.jpg', NULL, 'Olympia'),
-(27, 'Lordi', '2014-06-04', 6, NULL, NULL, '27.jpg', 'Lordi', NULL),
-(28, 'Photo de groupe', '2014-06-20', 6, NULL, NULL, '28.jpg', 'Lordi', NULL),
-(29, 'Nous', '1986-07-11', 8, NULL, NULL, '29.jpg', 'Queen', NULL);
+INSERT INTO `photo` (`id`, `name`, `date`, `artiste_id`, `salle_id`, `concert_id`, `fichier`) VALUES
+(14, 'Mika en concert', '2014-05-27', NULL, 7, NULL, '14_7.jpg'),
+(15, 'nous', '2014-05-27', 3, NULL, NULL, '15_3.jpg');
 
 -- --------------------------------------------------------
 
@@ -494,7 +458,7 @@ CREATE TABLE IF NOT EXISTS `salle` (
   `capacity` int(11) DEFAULT NULL,
   `zipcode` int(11) DEFAULT NULL,
   `mail` varchar(45) DEFAULT NULL,
-  `phone` int(20) DEFAULT NULL,
+  `phone` varchar(10) DEFAULT NULL,
   `adress` varchar(45) DEFAULT NULL,
   `description` text,
   `hours` varchar(45) DEFAULT NULL,
@@ -504,43 +468,19 @@ CREATE TABLE IF NOT EXISTS `salle` (
   `pays` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `Pseudo_UNIQUE` (`login`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=10 ;
 
 --
 -- Contenu de la table `salle`
 --
 
 INSERT INTO `salle` (`id`, `login`, `password`, `name`, `capacity`, `zipcode`, `mail`, `phone`, `adress`, `description`, `hours`, `photo`, `voie`, `ville`, `pays`) VALUES
-(1, 'olympia', '36a32e96cbfd11fd98e8c98e38d9ad9b41f57f1a', 'Olympia', 1996, 75009, 'olympia@salle.com', 12595939, '28 Boulevard des Capucines', 'L Olympia est une salle de spectacle. C''est le plus ancien music-hall de Paris encore existant.', '16h-19h', 'olympia-hall.gif', NULL, NULL, NULL),
-(2, 'Bercy', '36a32e96cbfd11fd98e8c98e38d9ad9b41f57f1a', 'Bercy', 25000, 75000, 'bercy@mail.com', 123456789, '8 Boulevard de Bercy', 'Le palais omnisports de Paris-Bercy est une salle polyvalente', '10h - 20h', 'bercy.jpg', NULL, NULL, NULL),
-(3, 'casapaco', '36a32e96cbfd11fd98e8c98e38d9ad9b41f57f1a', 'Casa Paco', 50, 75000, 'casa@mail.com', 123456789, '13 Rue de Bassano', 'La Casa Paco est un bar typique espagnol, toute la chaleur, on retrouve la bonne humeur de Madrid dans ce bar restaurant.', '17h - 20h', 'casa.jpg', NULL, NULL, NULL),
-(7, 'dome', '36a32e96cbfd11fd98e8c98e38d9ad9b41f57f1a', 'LeDÃ´meDeMarseille', 8500, 13004, 'dome@email.com', 2147483647, '48 Avenue de Saint-Just', NULL, '14h-15h', 'ledome-810j.jpg', NULL, NULL, NULL),
-(8, 'Cocacola', '36a32e96cbfd11fd98e8c98e38d9ad9b41f57f1a', 'Weshou', 6543, 91260, 'azert@gmail.com', 2147483647, 'Hihi rue du troc', 'WESH', '14h', 'donald.jpg', NULL, NULL, NULL),
-(9, 'ESC', '36a32e96cbfd11fd98e8c98e38d9ad9b41f57f1a', 'Eurovision', 12345, 76489, 'esc@mail.com', 2147483647, 'Danemark', 'Good evening Europe', '13h-15h', '9.png', NULL, NULL, NULL),
-(10, 'cannes', '36a32e96cbfd11fd98e8c98e38d9ad9b41f57f1a', 'Palais des Festivals', 1010, 6400, 'cannes@gmail.com', 492998400, 'Boulevard des Festivals', 'Palais top cool', '', '10.jpg', NULL, NULL, NULL);
-
--- --------------------------------------------------------
-
---
--- Structure de la table `style`
---
-
-CREATE TABLE IF NOT EXISTS `style` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `style` varchar(15) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
-
---
--- Contenu de la table `style`
---
-
-INSERT INTO `style` (`id`, `style`) VALUES
-(1, 'Rock'),
-(2, 'Rap'),
-(3, 'Electronique'),
-(4, 'Pop'),
-(5, 'Alternative');
+(1, 'olympia', '08cf32d7f7bbd7395535521042d96127cd68cf09', 'Olympia', 1996, 75009, 'olympia@salle.com', '012595939', '28 Boulevard des Capucines', 'L Olympia est une salle de spectacle. C''est le plus ancien music-hall de Paris encore existant.', '16h-19h', 'olympia-hall.gif', NULL, NULL, NULL),
+(2, 'Bercy', '36a32e96cbfd11fd98e8c98e38d9ad9b41f57f1a', 'Bercy', 25000, 75000, 'bercy@mail.com', '0123456789', '8 Boulevard de Bercy', 'Le palais omnisports de Paris-Bercy est une salle polyvalente', '10h - 20h', 'bercy.jpg', NULL, NULL, NULL),
+(3, 'casapaco', '36a32e96cbfd11fd98e8c98e38d9ad9b41f57f1a', 'Casa Paco', 50, 75000, 'casa@mail.com', '0123456789', '13 Rue de Bassano', 'La Casa Paco est un bar typique espagnol, toute la chaleur, on retrouve la bonne humeur de Madrid dans ce bar restaurant.', '17h - 20h', 'casa.jpg', NULL, NULL, NULL),
+(7, 'dome', '36a32e96cbfd11fd98e8c98e38d9ad9b41f57f1a', 'LeDÃ´meDeMarseille', 8500, 13004, 'dome@email.com', '3367894560', '48 Avenue de Saint-Just', NULL, '14h-15h', 'ledome-810j.jpg', NULL, NULL, NULL),
+(8, 'Cocacola', '36a32e96cbfd11fd98e8c98e38d9ad9b41f57f1a', 'Weshou', 6543, 91260, 'azert@gmail.com', '3367894560', 'Hihi rue du troc', 'WESH', '14h', 'donald.jpg', NULL, NULL, NULL),
+(9, 'ESC', '36a32e96cbfd11fd98e8c98e38d9ad9b41f57f1a', 'Eurovision', 12345, 76489, 'esc@mail.com', '3367894560', 'Danemark', 'Good evening Europe', '13h-15h', '9.png', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -557,7 +497,7 @@ CREATE TABLE IF NOT EXISTS `suivre` (
   KEY `fk_suivre_membre1_idx` (`membre_id`),
   KEY `fk_suivre_salle1_idx` (`salle_id`),
   KEY `fk_suivre_artiste1_idx` (`artiste_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=41 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=21 ;
 
 --
 -- Contenu de la table `suivre`
@@ -565,17 +505,14 @@ CREATE TABLE IF NOT EXISTS `suivre` (
 
 INSERT INTO `suivre` (`id`, `membre_id`, `salle_id`, `artiste_id`) VALUES
 (1, 40, NULL, 1),
+(3, 56, NULL, 1),
+(4, 56, 1, NULL),
+(6, 57, NULL, 6),
+(7, 56, NULL, 6),
 (16, 59, 3, NULL),
-(21, 59, NULL, 3),
-(23, 40, NULL, 6),
-(25, 56, NULL, 3),
-(27, 56, NULL, 6),
-(34, 57, NULL, 4),
-(36, 57, 2, NULL),
-(37, 57, 1, NULL),
-(38, 57, 3, NULL),
-(39, 57, NULL, 3),
-(40, 57, NULL, 1);
+(17, 57, 2, NULL),
+(18, 57, 3, NULL),
+(20, 57, 8, NULL);
 
 -- --------------------------------------------------------
 
