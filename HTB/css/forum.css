@@ -60,7 +60,7 @@ text-align: center;
 
 	font-size: 2em;
 	color : #CCCCCC;
-	width : 66%;
+	width : 100%;
 	margin-left: auto;
 	margin-right: auto;
 
@@ -68,40 +68,42 @@ text-align: center;
 	
 }
 .sep{
-	width : 66%;
+	width : 100%;
 	margin-left: auto;
 	margin-right: auto;
 	height: 10px;
 }
 
 table.t1{
-	width : 66%;
-	margin-left: auto;
-	margin-right: auto;
+	width : 100%;
 	opacity:  0.7 ;
 }
 
+table {
+	width : 100%;
+}
+
 .ce1{
-	width :40%;
+	width :70%;
 	color : white;
     background-color: rgba(0, 0, 0, 0.4);
 	font-size: 0.9em;
-	padding-left: 10px;
+	
 }
 .ce2{
-	width :10%;
+	width :15%;
 	color :white;
     background-color: rgba(0, 0, 0, 0.4);
 
 	font-size: 0.9em;
-	padding-left: 10px;
+	
 }
 .ce3{
-	width :10%;
+	width :15%;
 	color :white;
     background-color: rgba(0, 0, 0, 0.4);
 	font-size: 0.9em;
-	padding-left: 10px;
+	
 }
 .ce4{
 	width :20%;	
@@ -113,8 +115,7 @@ table.t1{
 .c1{
 	width :50%;
 	height :40px;
-	color :#FFFFFF;
-	background-color: #202020;
+	
 	border-bottom: 2px solid blue;
 	font-size: 1em;
 	
@@ -122,20 +123,22 @@ table.t1{
 .c1h{
 	width :50%;
 	height :40px;
-	color :#FFFFFF;
-	background-color: #404040;
+	color :#6699CC;
+	background-color: #6699CC;
 	border-bottom: 2px solid blue;
 	font-size: 1em;
 }
 
 .a1{
 	color :blue;
-	font-size: 1em;
+	font-size: 2.5em;
 	font-weight: bolder;
+	
 }
 .a2{
-	color :#FFFFFF;
+	color :#CCCCCC;
 	font-size: 0.8em;
+border-bottom: 2px solid ;
 }
 .a3{
 	color : #660099;
@@ -158,4 +161,7 @@ table.t1{
 .t2{
 	color:#FFFFFF;
 	font-size: 1em;
+}
+.centre {
+text-align : center; 
 }
