@@ -139,9 +139,10 @@ table {
 }
 
 .a2{
-	color :#CCCCCC;
+	color: white;
 	font-size: 0.8em;
-	border-bottom: 2px solid ;
+	
+	font-style: italic;
 }
 .a3{
 	color : #660099;
@@ -192,5 +193,15 @@ text-align : center;
 
 td
 {
-	border: 2px solid black;
+	border-bottom: 2px solid white;
+}
+
+.name
+{
+	font-size: 2em;
+}
+
+.author
+{
+	font-style: italic;
 }
