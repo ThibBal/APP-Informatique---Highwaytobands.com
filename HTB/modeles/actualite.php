@@ -8,7 +8,7 @@ global $bdd;
 
 function liste_actu(){
 	global $bdd;
-$res = "SELECT * from actu ORDER BY date desc";
+$res = "SELECT * from actu ORDER BY date desc LIMIT 15";
 $req = $bdd-> query($res) or die(print_r($bdd->errorInfo()));
 
  	 	return $req;
@@ -30,4 +30,11 @@ $req = $bdd-> query($res) or die(print_r($bdd->errorInfo()));
  	 	return $req;
 }
 
+function liste_actu_perso($id,$id2){ 
+	global $bdd;
+$res = "SELECT * from actu WHERE artiste_id='$id' ";
+$req = $bdd-> query($res) or die(print_r($bdd->errorInfo()));
+
+ 	 	return $req;
+}
 ?>

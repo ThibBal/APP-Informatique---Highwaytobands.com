@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,7 +11,8 @@
 
 <body>
 	<?php include 'controleurs/header.php' ?>
-	<?php if(!isset($_SESSION['login'])){ ?>
+	<?php 
+		if(!isset($_SESSION['login'])){ ?>
 	<a href="index.php?page=inscription"><div id="inscription">
 		Inscris toi et profite :
 		<ul>
@@ -20,27 +22,43 @@
 		</ul>
 	</div></a>
 	<?php } ?>
+			
 	<div id="contenu">
 		<div class="article">
 			<h1 class="titre">Fil d'actualité</h1>
 			<div class="sous_article">
 			<?php
-
-while ($actualite = $actu->fetch())
-{
-	$dateMySQL= $actualite['date'];
-                    $date = new DateTime($dateMySQL); 
-?>
-    <div class=titre_actu><?php echo($actualite['titre']); ?></div>
-    par <a href="index.php?page=artiste&name=<?php echo $actualite['artiste_name']; ?>&id=<?php echo $actualite['artiste_id']; ?>"><?php echo($actualite['artiste_name']); ?></a>
-    <a href="index.php?page=salle&name=<?php echo $actualite['salle_name']; ?>&id=<?php echo $actualite['salle_id']; ?>"><?php echo($actualite['salle_name']); ?></a>
-	<div class=date_actu><?php  echo $date->format('d/m/Y'); ?></div></br>
-	<div class=contenu_actu><?php echo($actualite['contenu']); ?></div></br>
+if(!isset($_SESSION['login'])){
+	while ($actualite = $actu->fetch())
+	{   
+		$dateMySQL= $actualite['date'];
+	                    $date = new DateTime($dateMySQL); 
+	?>
+	    <div class=titre_actu><?php echo($actualite['titre']); ?></div>
+	    par <a href="index.php?page=artiste&name=<?php echo $actualite['artiste_name']; ?>&id=<?php echo $actualite['artiste_id']; ?>"><?php echo($actualite['artiste_name']); ?></a>
+	    <a href="index.php?page=salle&name=<?php echo $actualite['salle_name']; ?>&id=<?php echo $actualite['salle_id']; ?>"><?php echo($actualite['salle_name']); ?></a>
+		<div class=date_actu><?php  echo $date->format('d/m/Y'); ?></div></br>
+		<div class=contenu_actu><?php echo($actualite['contenu']); ?></div></br>
+		
+	<?php
+	}} else{
 	
+	while ($actualite = $actu_perso->fetch())
+	{   
+		
+		$dateMySQL= $actualite['date'];
+	                    $date = new DateTime($dateMySQL); 
+	?>
+	    <div class=titre_actu><?php echo($actualite['titre']); ?></div>
+	    par <a href="index.php?page=artiste&name=<?php echo $actualite['artiste_name']; ?>&id=<?php echo $actualite['artiste_id']; ?>"><?php echo($actualite['artiste_name']); ?></a>
+	    <a href="index.php?page=salle&name=<?php echo $actualite['salle_name']; ?>&id=<?php echo $actualite['salle_id']; ?>"><?php echo($actualite['salle_name']); ?></a>
+		<div class=date_actu><?php  echo $date->format('d/m/Y'); ?></div></br>
+		<div class=contenu_actu><?php echo($actualite['contenu']); ?></div></br>
+		
 <?php
 }
-?>	
-
+}
+?>
 		</div>
 	</div>
 
