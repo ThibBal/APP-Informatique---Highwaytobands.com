@@ -159,7 +159,7 @@ while ($valide = $valider->fetch())
 {
 ?>
     
-	<li><a href="index.php?page=concert&id=<?php echo $valide['id']; ?>"><?php echo $valide['name']; ?> - <?php echo $valide['salle']; ?> - <?php echo $valide['artiste']; ?> - <?php echo $valide['date']; ?></a>
+	<li><a href="index.php?page=concert&id=<?php echo $valide['id']; ?>"><?php echo $valide['name']; ?> - <?php echo $valide['salle']; ?> - <?php echo $valide['date']; ?></a>
 		<form class="formulaire" method="post" action="index.php?page=valider_concert">	
 		<input type="hidden" name="id" value="<?php echo ($valide['id']); ?>">		
 		<center><input type="submit" value="Valider"/></center>
@@ -234,7 +234,7 @@ while ($valide = $valider->fetch())
 {
 ?>
     
-	<li><a href="index.php?page=concert&id=<?php echo $valide['id']; ?>"><?php echo $valide['name']; ?> - <?php echo $valide['salle']; ?> - <?php echo $valide['artiste']; ?> - <?php echo $valide['date']; ?></a>
+	<li><a href="index.php?page=concert&id=<?php echo $valide['id']; ?>"><?php echo $valide['name']; ?> - <?php echo $valide['artiste']; ?> - <?php echo $valide['date']; ?></a>
 	<form class="formulaire" method="post" action="index.php?page=valider_concert">	
 		<input type="hidden" name="id" value="<?php echo ($valide['id']); ?>">		
 		<center><input type="submit" value="Valider"/></center>

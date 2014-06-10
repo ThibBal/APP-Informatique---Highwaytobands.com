@@ -12,23 +12,20 @@
 	
 	
 <div id="contenu">
-		<div id="banniere"><h1>Liste des salles répertoriées</h1>			
+		<div id="banniere"><h1>Salles</h1>			
 		</div>	
 	<div class="liste">
-
+<div id="banniere2"><h2>Les plus récentes</h2></div>	
 <?php
 
 while ($donnees = $salles->fetch())
 {
 ?>
-    <p>
-    <strong>Nom de la salle</strong> : <a href="index.php?page=salle&id=<?php echo $donnees['id']; ?>&name=<?php echo $donnees['name']; ?>"><?php echo $donnees['name']; ?></a>
-    <strong>Adresse</strong> : <?php echo $donnees['adress']; ?>
-    <strong>Code-postal</strong> : <?php echo $donnees['zipcode']; ?>
-    <strong>Téléphone</strong> : <?php echo $donnees['phone']; ?>
-     <strong>Capacité</strong> : <?php echo $donnees['capacity']; ?> places
-    <strong>Description</strong> : <?php echo $donnees['description']; ?><br />
-   </p>
+    <div class=para>
+    <div class="image"><a href="index.php?page=salle&id=<?php echo $donnees['id']; ?>&name=<?php echo $donnees['name']; ?>"><img  src="img/salles/<?php echo($donnees['photo']); ?>"></a></div><div class="presentation"><strong>Nom de la salle</strong> : <a href="index.php?page=salle&id=<?php echo $donnees['id']; ?>&name=<?php echo $donnees['name']; ?>"><?php echo $donnees['name']; ?></a></br>
+    <strong>Code-postal</strong> : <?php echo $donnees['zipcode']; ?></br>
+    <strong>Description</strong> : <?php echo $donnees['description']; ?><br /></div>
+   </div>
 <?php
 }
 
@@ -36,6 +33,27 @@ while ($donnees = $salles->fetch())
 
 ?>
 			</div>
+
+	<div class="liste">
+<div id="banniere2"><h2>Par département</h2></div>	
+<?php
+
+while ($donnees = $salles2->fetch())
+{
+?>
+    <div class=para>
+    <div class="image"><a href="index.php?page=salle&id=<?php echo $donnees['id']; ?>&name=<?php echo $donnees['name']; ?>"><img  src="img/salles/<?php echo($donnees['photo']); ?>"></a></div><div class="presentation"><strong>Nom de la salle</strong> : <a href="index.php?page=salle&id=<?php echo $donnees['id']; ?>&name=<?php echo $donnees['name']; ?>"><?php echo $donnees['name']; ?></a></br>
+    <strong>Code-postal</strong> : <?php echo $donnees['zipcode']; ?></br>
+    <strong>Description</strong> : <?php echo $donnees['description']; ?><br /></div>
+   </div>
+<?php
+}
+
+
+
+?>
+			</div>
+
 
 		</div>
 

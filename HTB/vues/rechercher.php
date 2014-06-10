@@ -18,19 +18,19 @@
 <h3>Salles : </h3>
 <?php
 	while ($donnees = $salle->fetch()){ ?> 
-	<a href="index.php?page=salle&id=<?php echo $donnees['id']; ?>"><?php echo $donnees['name']; ?> </a></br>
+	<a href="index.php?page=salle&id=<?php echo $donnees['id']; ?>&name=<?php echo $donnees['name']; ?>"><?php echo $donnees['name']; ?> </a></br>
 	<?php } ?>
 
 <h3>Artistes : </h3> 
 <?php
 	while ($donnees = $artiste->fetch()){ ?> 
-	<a href="index.php?page=artiste&id=<?php echo $donnees['id']; ?>"><?php echo $donnees['name']; ?> </a></br> 
+	<a href="index.php?page=artiste&id=<?php echo $donnees['id']; ?>&name=<?php echo $donnees['name']; ?>"><?php echo $donnees['name']; ?> </a></br> 
 	<?php } ?>
 
 <h3>Concerts : </h3> 
 <?php
 	while ($donnees = $event->fetch()){ ?> 
-	 <a href="index.php?page=concert&id=<?php echo $donnees['id']; ?>"><?php echo $donnees['name']; ?> </a></br> 
+	<a href="index.php?page=concert&id=<?php echo $donnees['id']; ?>&name=<?php echo $donnees['name']; ?>"><?php echo $donnees['name']; ?> </a></br> 
 	<?php } ?>
 	
 <h3>Membres : </h3> 

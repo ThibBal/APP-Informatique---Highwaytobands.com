@@ -12,7 +12,7 @@
 	
 	
 <div id="contenu">
-		<div id="banniere"><h1>Liste des artistes inscrits</h1>			
+		<div id="banniere"><h1>Artistes</h1>			
 		</div>	
 
 <div class="liste">

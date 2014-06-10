@@ -41,11 +41,20 @@ if ($num!=1){
 
 function liste_salle(){ // Récupère les informations d'un membre
 	global $bdd;
-$res = "SELECT * from salle";
+$res = "SELECT * from salle ORDER BY id desc";
 $req = $bdd-> query($res) or die(print_r($bdd->errorInfo()));
 
  	 	return $req;
 }
+
+function liste_salle_zipcode(){ // Récupère les informations d'un membre
+	global $bdd;
+$res = "SELECT * from salle ORDER BY zipcode";
+$req = $bdd-> query($res) or die(print_r($bdd->errorInfo()));
+
+ 	 	return $req;
+}
+
 
 
 function recupid_salle($login, $password){

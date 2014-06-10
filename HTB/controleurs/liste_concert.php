@@ -3,7 +3,7 @@
 ;
 require('modeles/concert.php');
 
-$concerts=liste_concert();
+$concerts=liste_concert_valide();
 
 
 

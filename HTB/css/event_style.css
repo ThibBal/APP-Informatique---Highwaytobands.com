@@ -83,7 +83,9 @@ h3{
 
 #participants{
     max-height: 100px;
-    overflow-y: scroll;
+
+    overflow-y: scroll; 
+   overflow: auto;
     text-align: left;
 }
 

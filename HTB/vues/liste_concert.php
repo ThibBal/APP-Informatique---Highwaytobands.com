@@ -12,7 +12,7 @@
 	
 	
 <div id="contenu">
-		<div id="banniere"><h1>Liste des concerts répertoriées</h1>			
+		<div id="banniere"><h1>Concerts</h1>			
 		</div>	
 	<div class="liste">
 

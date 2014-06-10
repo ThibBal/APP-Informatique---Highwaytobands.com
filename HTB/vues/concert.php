@@ -21,8 +21,8 @@
 <?php } ?>	
 	<div id="contenu">
 		<div id="banniere"><h1><?php echo ($data['name']); ?></h1>
-			<img src="img/artistes/<?php echo ($info_artiste['photo']); ?>"/>
-			<img src="img/salles/<?php echo ($info_salle['photo']); ?>"/>
+			<a href="index.php?page=artiste&id=<?php echo $info_artiste['id']; ?>&name=<?php echo $info_artiste['name']; ?>"><img src="img/artistes/<?php echo ($info_artiste['photo']); ?>"/></a>
+			<a href="index.php?page=salle&id=<?php echo $info_salle['id']; ?>&name=<?php echo $info_salle['name']; ?>"><img src="img/salles/<?php echo ($info_salle['photo']); ?>"/></a>
 			</div>	
 		<div class="article">
 
@@ -30,11 +30,7 @@
 			<h3>Photos</h3>
 			</div>
 
-			<div class="sous_article">
-			<h3>Playlist</h3>
-			<div class="actu"><p></p>
-		</div>	
-			</div>			
+						
 		</div>
 
 
@@ -110,10 +106,43 @@ $followers=info_membre_participe($parti['membre_id']);
 			</div>
 
 			<div class="sous_article">
-			<h3>Commentaires</h3>
-			<div class="actu">
-			<p>Cumque pertinacius ut legum gnarus accusatorem flagitaret atque sollemnia, doctus id Caesar libertatemque superbiam ratus tamquam obtrectatorem audacem excarnificari praecepit, qui ita</p>	
-			</div>
+						<h3>Commentaires</h3>
+					
+							<div class="actu2">
+<?php
+while ($comment = $commentaire->fetch())
+{
+$auteur=info($comment['membre_id']);
+?>
+<?php echo $auteur['name']; ?> : <?php echo $comment['contenu']; ?></br>
+<?php
+}
+?>	
+</div>
+<div class="ecrire">
+<?php if(isset($_SESSION['statut'])){
+
+if($_SESSION['statut']=='membre'){
+
+?> 
+<form name="comment" action="index.php?page=commentaire" method="post">
+	<input type="hidden" name="page" value="concert">
+					<input type="hidden" name="concert_id" value="<?php echo ($data['id']); ?>">
+					<input type="hidden" name="concert_name" value="<?php echo ($data['name']); ?>">
+					<textarea name=commentaire rows=2 cols=30></textarea>
+   <center><INPUT type="submit" name="bouton" value="Envoyer le commentaire"></center>
+</form>	
+
+<?php }
+
+}else{
+		echo("</br>Inscrivez-vous commenter ce concert !");
+}
+
+?>
+
+</div>
+
 		</div>
 		</div>
 	</div>

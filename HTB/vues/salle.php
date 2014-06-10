@@ -124,10 +124,43 @@ $followers=info_membre_abonne($abon['membre_id']);
 			</div>
 
 			<div class="sous_article">
-			<h3>Commentaires</h3>
-			<div class="actu">
-			<p></p>	
-			</div>
+						<h3>Commentaires</h3>
+					
+							<div class="actu2">
+<?php
+while ($comment = $commentaire->fetch())
+{
+$auteur=info_membre_abonne($comment['membre_id']);
+?>
+<?php echo $auteur['name']; ?> : <?php echo $comment['contenu']; ?></br>
+<?php
+}
+?>	
+</div>
+<div class="ecrire">
+<?php if(isset($_SESSION['statut'])){
+
+if($_SESSION['statut']=='membre'){
+
+?> 
+<form name="comment" action="index.php?page=commentaire" method="post">
+	<input type="hidden" name="page" value="salle">
+					<input type="hidden" name="salle_id" value="<?php echo ($data['id']); ?>">
+					<input type="hidden" name="salle_name" value="<?php echo ($data['name']); ?>">
+					<textarea name=commentaire rows=2 cols=30></textarea>
+   <center><INPUT type="submit" name="bouton" value="Envoyer le commentaire"></center>
+</form>	
+
+<?php }
+
+}else{
+		echo("</br>Inscrivez-vous commenter cette salle !");
+}
+
+?>
+
+</div>
+
 		</div>
 		</div>
 	</div>

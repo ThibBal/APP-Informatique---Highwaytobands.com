@@ -16,13 +16,13 @@ $data2=info_artiste($_SESSION['id']);
 $data3=info_salle($_SESSION['id']);
 
 if($_SESSION['statut']=='salle'){ 
-$valider=concert_valider_salle($_SESSION['name']);
-$concert=concert_salle($_SESSION['name']);
+$valider=concert_valider_salle($_SESSION['id']);
+$concert=concert_salle($_SESSION['id']);
 }
 
 if($_SESSION['statut']=='artiste'){
-$valider=concert_valider_artiste($_SESSION['name']);
-$concert=concert_artiste($_SESSION['name']);
+$valider=concert_valider_artiste($_SESSION['id']);
+$concert=concert_artiste($_SESSION['id']);
 $extraits=liste_extrait($_SESSION["id"]);
 }
 
