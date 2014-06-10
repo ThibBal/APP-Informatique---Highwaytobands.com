@@ -3,7 +3,7 @@
 if(isset($_SESSION['statut'])){
 	if($_SESSION['statut']=='membre'){
 	if(isset($_POST['contenu'])){
-		$text=$_POST['contenu'];
+		$text=mysql_real_escape_string(htmlspecialchars($_POST['contenu']));
 		$id_user=$_SESSION['id'];
 		$id_sujet=$_GET['S'];
 		$date_publication=	date("YmdHis");

@@ -10,7 +10,7 @@ if(isset($_SESSION['statut'])){
 	//$salle_nom=$_POST['salle_nom']; 
 	//$artiste_nom=$_POST['artiste_nom'];
 	$date=$_POST['date'];
-	$description=$_POST['description'];
+	$description=mysql_real_escape_string(htmlspecialchars($_POST['description']));
 	$price=$_POST['price'];
 	$valider=0;
 

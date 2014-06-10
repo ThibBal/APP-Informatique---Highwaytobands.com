@@ -28,7 +28,7 @@
 		<center><input type="submit" value="Modifier vos informations"/></center>
 	</form>
 			</div>
-<h3>Vos dernier concerts</h3>
+<h3>Vos derniers concerts</h3>
 			<div class="sous_article">
 			
 			<div id="participants"><p></p>
@@ -171,7 +171,7 @@ while ($valide = $valider->fetch())
 		</div>
 
 			
-<h3>Vos dernier concerts</h3>
+<h3>Vos derniers concerts</h3>
 			<div class="sous_article">
 			
 			<div id="participants"><p></p>
@@ -243,7 +243,7 @@ while ($valide = $valider->fetch())
 }
 ?>
 </ul>
-		</div><h3>Vos dernier concerts</h3>
+		</div><h3>Vos derniers concerts</h3>
 <div class="sous_article">
 			
 <ul>			

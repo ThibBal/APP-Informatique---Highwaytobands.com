@@ -16,7 +16,7 @@ $req = $bdd-> query($res) or die(print_r($bdd->errorInfo()));
 
 function liste_actu_artiste($id){ 
 	global $bdd;
-$res = "SELECT * from actu WHERE artiste_id='$id'";
+$res = "SELECT * from actu WHERE artiste_id='$id' ORDER BY date desc LIMIT 15";
 $req = $bdd-> query($res) or die(print_r($bdd->errorInfo()));
 
  	 	return $req;
@@ -24,7 +24,7 @@ $req = $bdd-> query($res) or die(print_r($bdd->errorInfo()));
 
 function liste_actu_salle($id){ 
 	global $bdd;
-$res = "SELECT * from actu WHERE salle_id='$id'";
+$res = "SELECT * from actu WHERE salle_id='$id' ORDER BY date desc LIMIT 15";
 $req = $bdd-> query($res) or die(print_r($bdd->errorInfo()));
 
  	 	return $req;

@@ -6,8 +6,8 @@ if(isset($_SESSION['statut'])){
 
 if(isset($_POST['titre'])){
 
-	$titre=$_POST['titre'];
-	$contenu=$_POST['contenu'];
+	$titre=mysql_real_escape_string(htmlspecialchars($_POST['titre']));
+	$contenu=mysql_real_escape_string(htmlspecialchars($_POST['contenu']));
 	$date=date("YmdHis");
 
 	if($_SESSION['statut']=='salle'){

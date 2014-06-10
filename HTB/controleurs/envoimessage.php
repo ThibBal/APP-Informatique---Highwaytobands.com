@@ -19,7 +19,7 @@ if(mail($destinataire,$sujet,$contenumail,$headers))
 }
 else
 {
-        $message= "Une erreur c'est produite lors de l'envois de l'email.";
+        $message= "Une erreur s'est produite lors de l'envoi de l'email.";
 }
 
  $_SESSION['temp'] = $message;

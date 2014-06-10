@@ -2,7 +2,7 @@
 <?php
 	$page=$_POST['page'];
 	$membre_id=$_SESSION['id'];
-	$contenu=$_POST['commentaire'];
+	$contenu=mysql_real_escape_string(htmlspecialchars($_POST['commentaire']));
 	$date=date("YmdHis");
 
 	if($page=='salle'){

@@ -3,8 +3,8 @@
 if(isset($_SESSION['statut'])){
 	if($_SESSION['statut']=='membre'){
 	if(isset($_POST['titre'])){
-		$text=$_POST['contenu'];
-		$titre=$_POST['titre'];
+		$text=mysql_real_escape_string(htmlspecialchars($_POST['contenu']));
+		$titre=mysql_real_escape_string(htmlspecialchars($_POST['titre']));
 		$id_user=$_SESSION['id'];
 		$id_rubrique=$_GET['R'];
 		$date_publication=	date("YmdHis");
