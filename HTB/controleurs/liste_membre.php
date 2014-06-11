@@ -1,7 +1,7 @@
 <?php
 
 require('modeles/membre.php');
-
+require('modeles/suivre.php');
 
 $membres=liste_membre();
 

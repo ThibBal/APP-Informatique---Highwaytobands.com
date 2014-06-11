@@ -154,7 +154,7 @@ if($_SESSION['statut']=='membre'){
 <?php }
 
 }else{
-		echo("</br>Inscrivez-vous commenter cette salle !");
+		echo("</br>Inscrivez-vous pour commenter cette salle !");
 }
 
 ?>

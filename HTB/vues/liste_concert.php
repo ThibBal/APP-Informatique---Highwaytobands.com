@@ -9,26 +9,29 @@
 </head>
 <body>
 	<?php include 'vues/header.php' ?>
-	
-	
+
 <div id="contenu">
 		<div id="banniere"><h1>Concerts</h1>			
 		</div>	
 	<div class="liste">
-
+<div id="banniere2"><h2>Les plus récents</h2></div>	
 <?php
 
 while ($donnees = $concerts->fetch())
 {
+
+
+	$dateMySQL= $donnees['date'];
+                    $date = new DateTime($dateMySQL);
+	                   
 ?>
-    <p>
-    <strong>Nom de la salle</strong> : <a href="index.php?page=concert&id=<?php echo $donnees['id']; ?>"><?php echo $donnees['name']; ?></a>
-    <strong>Adresse</strong> : <?php echo $donnees['id']; ?>
-    <strong>Code-postal</strong> : <?php echo $donnees['salle']; ?>
-    <strong>Téléphone</strong> : <?php echo $donnees['artiste']; ?>
-     <strong>Capacité</strong> : <?php echo $donnees['price']; ?> places
-    <strong>Description</strong> : <?php echo $donnees['description']; ?><br />
-   </p>
+    <div class=para>
+    <div class="image"><a href="index.php?page=concert&id=<?php echo $donnees['id']; ?>&name=<?php echo $donnees['name']; ?>"><img  src="img/photo1.jpg"></a></div><div class="presentation"><strong>Nom du concert</strong> : <a href="index.php?page=concert&id=<?php echo $donnees['id']; ?>&name=<?php echo $donnees['name']; ?>"><?php echo $donnees['name']; ?></a></br>
+    <strong>Artiste</strong> : <?php echo $donnees['artiste']; ?></br>
+    <strong>Salle</strong> : <?php echo $donnees['salle']; ?></br>
+    <strong>Date</strong> : <?php echo $date->format('d/m/Y'); ?></br>
+    <strong>Description</strong> : <?php echo $donnees['description']; ?><br /></div>
+   </div>
 <?php
 }
 
@@ -37,13 +40,14 @@ while ($donnees = $concerts->fetch())
 ?>
 			</div>
 
+
+
 		</div>
 
 
 
 		</div>
-	
-	
+		
 
 <?php include 'controleurs/footer.php' ?>		
 </body>

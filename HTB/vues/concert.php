@@ -136,7 +136,7 @@ if($_SESSION['statut']=='membre'){
 <?php }
 
 }else{
-		echo("</br>Inscrivez-vous commenter ce concert !");
+		echo("</br>Inscrivez-vous pour commenter ce concert !");
 }
 
 ?>

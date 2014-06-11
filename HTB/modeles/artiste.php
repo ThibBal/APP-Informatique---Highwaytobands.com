@@ -46,7 +46,7 @@ if ($num!=1){
 
 function liste_artiste(){ // Récupère les informations d'un membre
 	global $bdd;
-$res = "SELECT * from artiste";
+$res = "SELECT * from artiste ORDER BY name";
 $req = $bdd-> query($res) or die(print_r($bdd->errorInfo()));
 
  	 	return $req;

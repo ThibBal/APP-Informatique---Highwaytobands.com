@@ -73,7 +73,7 @@ $req = $bdd-> query($res) or die(print_r($bdd->errorInfo()));
 
 function liste_membre(){ // Liste des membres inscrits au site internet
 	global $bdd;
-$res = "SELECT * from membre";
+$res = "SELECT * from membre ORDER BY login";
 $req = $bdd-> query($res) or die(print_r($bdd->errorInfo()));
 
  	 	return $req;

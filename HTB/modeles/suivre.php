@@ -60,6 +60,23 @@ $req = $bdd-> query($res) or die(print_r($bdd->errorInfo()));
  	 	return $req;
 }
 
+
+function liste_artiste_abo_courte($id){ // Récupère les membre qui suivent une salle
+	global $bdd;
+$res = "SELECT artiste_id from suivre WHERE membre_id='$id' and salle_id IS  NULL LIMIT 5";
+$req = $bdd-> query($res) or die(print_r($bdd->errorInfo()));
+
+ 	 	return $req;
+}
+
+function liste_salle_abo_courte($id){ // Récupère les membre qui suivent une salle
+	global $bdd;
+$res = "SELECT salle_id from suivre WHERE membre_id='$id' and artiste_id IS  NULL LIMIT 5";
+$req = $bdd-> query($res) or die(print_r($bdd->errorInfo()));
+
+ 	 	return $req;
+}
+
 function liste_abonnements_salle_membre($id){ // Récupère les membre qui suivent une salle
 	global $bdd;
 $res = "SELECT salle_id from suivre WHERE membre_id='$id' and artiste_id IS NULL";

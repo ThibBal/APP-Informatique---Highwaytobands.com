@@ -172,7 +172,7 @@ if($_SESSION['statut']=='membre'){
 <?php }
 
 }else{
-		echo("</br>Inscrivez-vous commenter cet artiste !");
+		echo("</br>Inscrivez-vous pour commenter cet artiste !");
 }
 
 ?>
