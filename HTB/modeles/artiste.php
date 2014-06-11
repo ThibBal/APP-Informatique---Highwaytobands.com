@@ -21,6 +21,12 @@ global $bdd;
 
 }
 
+function supprimer_artiste($id){
+global $bdd; 
+	$bdd->query("DELETE FROM artiste WHERE id='$id'");
+
+}
+
 function modifications_artiste($id, $login, $mail, $zipcode, $name){ // Inscription au site
 global $bdd; 
 	$bdd->query("UPDATE artiste SET mail = '$mail', zipcode = '$zipcode', name = '$name' where id=$id");

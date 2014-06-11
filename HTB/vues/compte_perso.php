@@ -27,6 +27,15 @@
 	<form class="formulaire" method="post" action="index.php?page=modifier_infos">			
 		<center><input type="submit" value="Modifier vos informations"/></center>
 	</form>
+<?php
+if($data['admin']=='1'){
+?>
+<form class="formulaire" method="post" action="index.php?page=backoffice">			
+		<center><input type="submit" value="Accéder au back-office"/></center>
+	</form>
+<?php }
+?>
+
 			</div>
 <h3>Vos derniers concerts</h3>
 			<div class="sous_article">

@@ -4,9 +4,9 @@
 $login=$_POST['login']; // Changement des variables pour les étudier 
 $password=$_POST['password']; 
 $password2=$_POST['password2']; 
-$name=$_POST['name'];
+$name=mysql_real_escape_string(htmlspecialchars($_POST['name']));
 $style=$_POST['style'];
-$description=$_POST['description'];
+$description=mysql_real_escape_string(htmlspecialchars($_POST['description']));
 $mail=$_POST['mail']; 
 
 

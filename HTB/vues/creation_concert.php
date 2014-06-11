@@ -53,7 +53,7 @@
 		
 	</ul>
 
-	<div id="envoi"><input type="submit" value="S'inscrire" /></div>
+	<div id="envoi"><input type="submit" value="Créer le concert" /></div>
 
 
 	</form>

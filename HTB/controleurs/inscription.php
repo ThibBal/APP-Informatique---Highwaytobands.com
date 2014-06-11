@@ -11,7 +11,7 @@ include 'vues/inscription_membre.php';
 }
 
 if($statut=='artiste'){
-require('modeles/user.php');
+require('modeles/style.php');
 $style = liste_style();
 include 'vues/inscription_artiste.php';
 

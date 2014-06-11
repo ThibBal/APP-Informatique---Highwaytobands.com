@@ -1,9 +1,9 @@
--- phpMyAdmin SQL Dump
+﻿-- phpMyAdmin SQL Dump
 -- version 4.0.4
 -- http://www.phpmyadmin.net
 --
 -- Client: localhost
--- Généré le: Mer 11 Juin 2014 à 20:21
+-- Généré le: Mar 10 Juin 2014 à 10:47
 -- Version du serveur: 5.6.12-log
 -- Version de PHP: 5.4.12
 
@@ -128,6 +128,18 @@ CREATE TABLE IF NOT EXISTS `avis` (
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `categorie forum`
+--
+
+CREATE TABLE IF NOT EXISTS `categorie forum` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nom` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `commentaire`
 --
 
@@ -141,7 +153,7 @@ CREATE TABLE IF NOT EXISTS `commentaire` (
   `concert_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   FULLTEXT KEY `contenu` (`contenu`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=41 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=40 ;
 
 --
 -- Contenu de la table `commentaire`
@@ -183,8 +195,7 @@ INSERT INTO `commentaire` (`id`, `date`, `contenu`, `membre_id`, `artiste_id`, `
 (36, '2014-06-10 08:43:31', 'wesh !', 56, 0, 0, 6),
 (37, '2014-06-10 08:47:51', 'coucou', 56, 0, 0, 6),
 (38, '2014-06-10 11:02:26', 'J''adore votre groupe !', 56, 8, 0, 0),
-(39, '2014-06-10 12:45:49', 'Coucou', 59, 6, 0, 0),
-(40, '2014-06-10 15:06:08', 'Wesh wesh', 59, 6, 0, 0);
+(39, '2014-06-10 12:45:49', 'Coucou', 59, 6, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -276,19 +287,6 @@ INSERT INTO `extrait` (`id`, `nom`, `album`, `artiste_id`, `fichier`, `artiste`)
 (36, 'Mario Theme', 'Super Mario Bros', NULL, '36_6.mp3', '6'),
 (37, 'Nos premiÃ¨res annÃ©es', 'The Arockalypse', NULL, '37_6.mp3', '6'),
 (38, 'Mario Theme', 'Super Mario Bros', NULL, '38_6.mp3', '6');
-
--- --------------------------------------------------------
-
---
--- Structure de la table `faq`
---
-
-CREATE TABLE IF NOT EXISTS `faq` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `question` text,
-  `reponse` text,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -442,6 +440,7 @@ INSERT INTO `membre` (`id`, `login`, `password`, `zipcode`, `mail`, `photo`, `na
 (43, 'piere', '36a32e96cbfd11fd98e8c98e38d9ad9b41f57f1a', '91260', 'azert@gmail.com', '92.jpg', 'Pierre', NULL),
 (44, 'vincent', 'd311b1c8e5fe83187cf2d83c8e080dbcff9fc4ef', '91240', 'patate@gmail.com', '92.jpg', 'Vincent', NULL),
 (48, 'benoit', 'ecd1f14f7c1c6dc7a40210bdcc3810e0107ecbc8', '91236', 'benoit@benoit.com', '92.jpg', 'Benoit', NULL),
+(51, 'mario', 'addb47291ee169f330801ce73520b96f2eaf20ea', '91240', 'mario@mario.com', '92.jpg', 'Mario', NULL),
 (54, 'picsou', 'e333d1ce5f25b2d2ac0a06ee4310d92dc9dbe37b', '91260', 'pierre@pierre.fr', 'photo2.jpg', 'picsou', NULL),
 (56, 'Cocacola', '36a32e96cbfd11fd98e8c98e38d9ad9b41f57f1a', '91260', 'soda@coke.com', 'coca.jpg', 'Soda Light', NULL),
 (57, 'DonaldDuck', '36a32e96cbfd11fd98e8c98e38d9ad9b41f57f1a', '29449', 'donald@duck.com', 'donald.jpg', 'Donald Duck', NULL),
@@ -471,7 +470,7 @@ CREATE TABLE IF NOT EXISTS `participation` (
   PRIMARY KEY (`id`),
   KEY `fk_participation_membre1_idx` (`membre_id`),
   KEY `fk_participation_concert1_idx` (`concert_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=12 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
 
 --
 -- Contenu de la table `participation`
@@ -485,8 +484,7 @@ INSERT INTO `participation` (`id`, `membre_id`, `concert_id`) VALUES
 (7, 40, 6),
 (8, 40, 40),
 (9, 56, 6),
-(10, 59, 22),
-(11, 59, 29);
+(10, 59, 22);
 
 -- --------------------------------------------------------
 
@@ -573,7 +571,7 @@ CREATE TABLE IF NOT EXISTS `style` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `style` varchar(15) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=19 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=16 ;
 
 --
 -- Contenu de la table `style`
@@ -594,9 +592,7 @@ INSERT INTO `style` (`id`, `style`) VALUES
 (12, 'Capoeira'),
 (13, 'Blues'),
 (14, 'Ballet'),
-(15, 'Boogie'),
-(17, 'VariÃ©tÃ©'),
-(18, 'Funk');
+(15, 'Boogie');
 
 -- --------------------------------------------------------
 
@@ -613,7 +609,7 @@ CREATE TABLE IF NOT EXISTS `suivre` (
   KEY `fk_suivre_membre1_idx` (`membre_id`),
   KEY `fk_suivre_salle1_idx` (`salle_id`),
   KEY `fk_suivre_artiste1_idx` (`artiste_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=47 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=46 ;
 
 --
 -- Contenu de la table `suivre`
@@ -634,8 +630,23 @@ INSERT INTO `suivre` (`id`, `membre_id`, `salle_id`, `artiste_id`) VALUES
 (41, 40, NULL, 3),
 (42, 56, NULL, 3),
 (43, 56, 7, NULL),
-(44, 40, NULL, 8),
-(46, 59, NULL, 6);
+(44, 40, NULL, 8);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `topic`
+--
+
+CREATE TABLE IF NOT EXISTS `topic` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nom` varchar(45) DEFAULT NULL,
+  `nombre_message` int(11) DEFAULT NULL,
+  `creation` date DEFAULT NULL,
+  `categorie forum_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_topic_categorie forum1_idx` (`categorie forum_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 --
 -- Contraintes pour les tables exportées
@@ -678,6 +689,12 @@ ALTER TABLE `suivre`
   ADD CONSTRAINT `fk_suivre_artiste1` FOREIGN KEY (`artiste_id`) REFERENCES `artiste` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_suivre_membre1` FOREIGN KEY (`membre_id`) REFERENCES `membre` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_suivre_salle1` FOREIGN KEY (`salle_id`) REFERENCES `salle` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Contraintes pour la table `topic`
+--
+ALTER TABLE `topic`
+  ADD CONSTRAINT `fk_topic_categorie forum1` FOREIGN KEY (`categorie forum_id`) REFERENCES `categorie forum` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

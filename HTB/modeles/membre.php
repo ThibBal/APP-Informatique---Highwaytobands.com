@@ -6,6 +6,12 @@ global $bdd;
 
 }
 
+function supprimer_membre($id){
+global $bdd; 
+	$bdd->query("DELETE FROM membre WHERE id='$id'");
+
+}
+
 
 function inscription2($login, $password,$mail, $zipcode, $photo, $name){ // Inscription au site
 global $bdd; 
@@ -38,6 +44,7 @@ if ($num!=1){
 }
 
 
+
 function verification($login){
 global $bdd;
 $sql = "SELECT id, password, name from membre where login ='$login'";
@@ -64,7 +71,7 @@ $req = $bdd-> query($res) or die(print_r($bdd->errorInfo()));
  	return $data;
 }
 
-function liste_membre(){ // Récupère les informations d'un membre
+function liste_membre(){ // Liste des membres inscrits au site internet
 	global $bdd;
 $res = "SELECT * from membre";
 $req = $bdd-> query($res) or die(print_r($bdd->errorInfo()));

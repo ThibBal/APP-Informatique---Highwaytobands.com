@@ -23,10 +23,11 @@ global bdd;
 }
 
 function suppression_style($suppr_style){
-global bdd;
+global $bdd;
 	$result=$bdd->query("DELETE * FROM style WHERE name='$suppr_style'");
 
 }
+
 function declarer_com($id){
 
 }

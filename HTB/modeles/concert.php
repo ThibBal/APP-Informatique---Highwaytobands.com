@@ -15,6 +15,12 @@ $req = $bdd-> query($res) or die(print_r($bdd->errorInfo()));
  	return $data;
 }
 
+function supprimer_concert($id){
+global $bdd; 
+	$bdd->query("DELETE FROM concert WHERE id='$id'");
+
+}
+
 function info_artiste_concert($name){
 	global $bdd;
 	$result=$bdd->query("SELECT * FROM artiste WHERE id='$name'");
