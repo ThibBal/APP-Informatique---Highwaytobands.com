@@ -34,7 +34,7 @@
 			</li>
 			<li><a href="#">Ordre alphabétique</a>
 			</li>
-			<li><a href="#">Styles de musique</a>
+			<li><a href="index.php?page=style">Styles de musique</a>
 			</li>
 		</ul>
 	</li>

@@ -36,6 +36,8 @@ $req = $bdd-> query($res) or die(print_r($bdd->errorInfo()));
 
 
 
+
+
 function liste_abonnements_artiste($artiste_id){ //Récupère les membre qui suivent un artiste
 	global $bdd;
 $res = "SELECT membre_id from suivre WHERE artiste_id='$artiste_id'";

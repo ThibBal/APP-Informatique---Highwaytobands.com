@@ -27,9 +27,9 @@ global $bdd;
 
 }
 
-function modifications_artiste($id, $login, $mail, $zipcode, $name){ // Inscription au site
+function modifications_artiste($id, $mail, $style, $name, $password, $description){
 global $bdd; 
-	$bdd->query("UPDATE artiste SET mail = '$mail', zipcode = '$zipcode', name = '$name' where id=$id");
+	$bdd->query("UPDATE artiste SET mail = '$mail', style = '$style', password='$password', description='$description', name = '$name' where id=$id");
 
 }
 
@@ -50,6 +50,22 @@ $res = "SELECT * from artiste ORDER BY name";
 $req = $bdd-> query($res) or die(print_r($bdd->errorInfo()));
 
  	 	return $req;
+}
+
+function liste_artiste_style($style){ // Récupère les informations d'un membre
+	global $bdd;
+$res = "SELECT * from artiste WHERE style='$style' ORDER BY name";
+$req = $bdd-> query($res) or die(print_r($bdd->errorInfo()));
+
+ 	 	return $req;
+}
+
+function nbre_abonnes($id)
+{
+    global $bdd;
+    $req=$bdd-> prepare('SELECT COUNT(*) AS nb_message FROM forum_message INNER JOIN forum_sujet ON forum_message.id_sujet = forum_sujet.id_sujet WHERE titre_sujet = ? AND id_rubrique=?');
+    $req->execute(array($donnees,$_GET['R']));
+    return $req;
 }
 
 
@@ -79,5 +95,7 @@ $req = $bdd-> query($res) or die(print_r($bdd->errorInfo()));
  	$data = $req-> fetch();
  	return $data;
 }
+
+
 
 ?>

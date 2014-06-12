@@ -8,7 +8,7 @@ require('modeles/suivre.php');
 suivre_salle($salle_id, $membre_id);
 
  
-$message='Ok !';
+$message='Vous êtes maintenant abonné à cette salle';
 
  $_SESSION['temp'] = $message;
 

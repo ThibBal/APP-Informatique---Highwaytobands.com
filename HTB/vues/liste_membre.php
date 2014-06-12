@@ -15,7 +15,7 @@
 		<div id="banniere"><h1>Membres</h1>			
 		
 		</div>	
-	<div class="liste">
+	<div class="liste_style">
 <div id="banniere2"><h2>Par ordre alphabétique</h2></div>	
 <?php
 

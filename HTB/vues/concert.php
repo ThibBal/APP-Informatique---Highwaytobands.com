@@ -65,12 +65,12 @@ if($membre['membre_id']==$_SESSION['id']){ ?>
 }
 ?>
 
-<iframe
+			<center><iframe
   width="100%"
-  height="240"
+  height="200px"
   frameborder="0" style="border:0"
   src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCTQZ5rKhEnDfS2LJiU-hmV-DuCWpql02k
-    &q=<?php echo ($info_salle['adress']); ?>+<?php echo ($info_salle['zipcode']); ?>">
+    &q=<?php echo ($info_salle['numero']); ?>+<?php echo ($info_salle['voie']); ?>+<?php echo ($info_salle['ville']); ?>+<?php echo ($info_salle['zipcode']); ?>+<?php echo ($info_salle['pays']); ?>&maptype=satellite">
 </iframe><br /></center>
 		</div>
 

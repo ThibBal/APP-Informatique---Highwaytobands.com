@@ -33,7 +33,7 @@ if($password == $password2){
 				$extensionsAutorisees = array("jpeg", "jpg", "gif", "png");
 				$nomDestination = $donnee['id'].".".$extensionFichier; // Nom du fichier : id.extension
 				ajout_photo_artiste($donnee['id'], $nomDestination); // Ajout de l'attribu photo au membre
-				$message = 'Inscription réussite';
+				$message = 'Inscription réussie';
 
 if (!(in_array($extensionFichier, $extensionsAutorisees))) {
 $message = "Le fichier n'a pas l'extension attendue";

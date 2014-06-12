@@ -6,13 +6,16 @@ $password=$_POST['password'];
 $password2=$_POST['password2']; 
 $mail=$_POST['mail']; 
 $zipcode=$_POST['zipcode'];
-$name=$_POST['name'];
+$name=mysql_real_escape_string(htmlspecialchars($_POST['name']));
 $description=mysql_real_escape_string(htmlspecialchars($_POST['description']));
 $capacity=$_POST['capacity'];
 $phone=$_POST['phone'];
 $hours=$_POST['hours'];
-$adress=$_POST['adress'];
-$CGU=$_POST['CGU'];
+//$adress=$_POST['adress'];
+$numero=$_POST['numero'];
+$voie=$_POST['voie'];
+$ville=$_POST['ville'];
+$pays=$_POST['pays'];
 
 
 
@@ -35,7 +38,8 @@ if($password == $password2){
 			$verif=veriflogin_salle($login);
 			if($verif){
 				//inscription_salle($login, $password, $name, $capacity, $zipcode, $mail, $phone, $adress, $description, $hours, $photo);
-				inscription_salle($login, $password, $name, $capacity, $zipcode, $mail, $phone, $adress, $hours, $photo, $description);
+			//	inscription_salle($login, $password, $name, $capacity, $zipcode, $mail, $phone, $adress, $hours, $photo, $description);
+				inscription_salle2($login, $photo, $mail, $name, $password, $description, $hours, $capacity, $phone, $numero, $voie, $ville, $pays, $zipcode);
 $donnee = connexion_salle($login);
 				$nomOrigine = $_FILES['photo']['name'];
 				$elementsChemin = pathinfo($nomOrigine);
@@ -43,7 +47,7 @@ $donnee = connexion_salle($login);
 				$extensionsAutorisees = array("jpeg", "jpg", "gif", "png");
 				$nomDestination = $donnee['id'].".".$extensionFichier; // Nom du fichier : id.extension
 				ajout_photo_salle($donnee['id'], $nomDestination); // Ajout de l'attribu photo au membre
-				$message = 'Inscription réussite';
+				$message = 'Inscription réussie';
 
 if (!(in_array($extensionFichier, $extensionsAutorisees))) {
 $message = "Le fichier n'a pas l'extension attendue";

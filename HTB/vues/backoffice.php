@@ -109,17 +109,18 @@
 
 <h2> Gestion de la Foire Aux Questions </h2>
 <form action="index.php?page=ajout_faq" method="post"><h4> Ajouter une question </h4>
-	<input name=question class= "box" type="text">
+	<h3>Question</h3><textarea name=question rows=3 cols=15></textarea>
+	<h3>Réponse</h3><textarea name=reponse rows=3 cols=15></textarea>
 <div id="envoi"><input type="submit" value="Ajouter" /></div>
 
 	</form>
 
-<form action="index.php?page=supprimer_sytyle" method="post"><h4> Supprimer une question </h4>
+<form action="index.php?page=supprimer_faq" method="post"><h4> Supprimer une question </h4>
 	
 		<SELECT name=question size="1">
 			<option value="0" selected disabled> Sélectionner une question </option>
-<?php while ($style = $styles->fetch()) { ?>
-<OPTION value="<?php echo $style['id']; ?>"><?php echo $style['style']; ?>
+<?php while ($question = $faq->fetch()) { ?>
+<OPTION value="<?php echo $question['id']; ?>"><?php echo $question['question']; ?>
 	<?php } ?>
 
 </SELECT>

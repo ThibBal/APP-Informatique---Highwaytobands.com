@@ -4,6 +4,7 @@ require('modeles/artiste.php');
 require('modeles/salle.php');
 require('modeles/concert.php');
 require('modeles/style.php');
+require('modeles/faq.php');
 
 if(isset($_SESSION['statut'])){
 if($_SESSION['statut']=='membre'){
@@ -15,6 +16,7 @@ $artistes=liste_artiste();
 $salles=liste_salle();
 $concerts=liste_concert();
 $styles=liste_style();
+$faq=liste_faq();
 
 
 

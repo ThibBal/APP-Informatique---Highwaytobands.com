@@ -34,7 +34,7 @@ if(strlen($_POST['password'])>=5){ // Taille du mot de passe >= 5 caractères
 				$extensionsAutorisees = array("jpeg", "jpg", "gif", "png");
 				$nomDestination = $donnee['id'].".".$extensionFichier; // Nom du fichier : id.extension
 				
-				$message = 'Inscription réussite';
+				$message = 'Inscription réussie';
 
 if (!(in_array($extensionFichier, $extensionsAutorisees))) {
 $message = "Le fichier n'a pas l'extension attendue";

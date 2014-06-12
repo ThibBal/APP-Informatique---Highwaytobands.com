@@ -1,1 +1,7 @@
-<?php include 'vues/faq.php' ?>
+<?php
+
+require('modeles/faq.php');
+$faq=liste_faq();
+include 'vues/faq.php' 
+
+?>

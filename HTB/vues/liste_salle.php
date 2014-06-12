@@ -23,7 +23,7 @@ while ($donnees = $salles->fetch())
 ?>
     <div class=para>
     <div class="image"><a href="index.php?page=salle&id=<?php echo $donnees['id']; ?>&name=<?php echo $donnees['name']; ?>"><img  src="img/salles/<?php echo($donnees['photo']); ?>"></a></div><div class="presentation"><strong>Nom de la salle</strong> : <a href="index.php?page=salle&id=<?php echo $donnees['id']; ?>&name=<?php echo $donnees['name']; ?>"><?php echo $donnees['name']; ?></a></br>
-    <strong>Code-postal</strong> : <?php echo $donnees['zipcode']; ?></br>
+    <strong>Adresse</strong> : <?php echo ($donnees['numero']); ?> <?php echo ($donnees['voie']); ?> - <?php echo ($donnees['zipcode']); ?>, <?php echo ($donnees['ville']); ?>, <?php echo ($donnees['pays']); ?></br>
     <strong>Description</strong> : <?php echo $donnees['description']; ?><br /></div>
    </div>
 <?php

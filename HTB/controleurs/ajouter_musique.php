@@ -1,8 +1,8 @@
 <meta charset="utf-8" />
 <?php
 
-$nom=$_POST['nom']; // Changement des variables pour les étudier 
-$album=$_POST['album']; 
+$nom=mysql_real_escape_string(htmlspecialchars($_POST['nom'])); // Changement des variables pour les étudier 
+$album=mysql_real_escape_string(htmlspecialchars($_POST['album'])); 
 $artiste_id=$_SESSION['id'];
 //$fihier=date("YmdHis");
 

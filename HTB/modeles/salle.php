@@ -6,6 +6,12 @@ global $bdd; // Inscription au site
 
 }
 
+function inscription_salle2($login, $photo, $mail, $name, $password, $description, $hours, $capacity, $phone, $numero, $voie, $ville, $pays, $zipcode){
+global $bdd; 
+	$bdd->query("INSERT INTO salle SET login='$login', photo='$photo', mail = '$mail', name = '$name', password = '$password', description='$description', hours='$hours', capacity='$capacity', phone='$phone', numero='$numero', voie='$voie', ville='$ville', pays='$pays', zipcode='$zipcode'");
+
+}
+
 function connexion_salle($login){
 global $bdd;
 $sql = "SELECT id, password, name from salle where login ='$login'";
@@ -21,9 +27,9 @@ global $bdd;
 
 }
 
-function modifications_salle($id, $login, $mail, $zipcode, $name){ // Inscription au site
+function modifications_salle($id, $mail, $name, $password, $description, $hours, $capacity, $phone, $numero, $voie, $ville, $pays, $zipcode){
 global $bdd; 
-	$bdd->query("UPDATE salle SET mail = '$mail', zipcode = '$zipcode', name = '$name' where id=$id");
+	$bdd->query("UPDATE salle SET mail = '$mail', name = '$name', password = '$password', description='$description', hours='$hours', capacity='$capacity', phone='$phone', numero='$numero', voie='$voie', ville='$ville', pays='$pays', zipcode='$zipcode' where id=$id");
 
 }
 

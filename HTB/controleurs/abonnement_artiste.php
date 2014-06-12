@@ -8,7 +8,7 @@ require('modeles/suivre.php');
 suivre_artiste($artiste_id, $membre_id);
 
  
-$message='Ok !';
+$message='Vous êtes maintenant abonné à cet artiste';
 
  $_SESSION['temp'] = $message;
 

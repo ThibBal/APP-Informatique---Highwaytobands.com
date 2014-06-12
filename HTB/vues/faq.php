@@ -10,18 +10,20 @@
 
 <body>
 	<?php include 'controleurs/header.php' ?>
-	<?php if(!isset($_SESSION['login']))?>
 	
-	</div></a>
-	<?php  ?>
 	<div id="contenu">
 		<div class="article">
 			<p class="grostitre">FAQ</p>
+
+			<?php while ($questions = $faq->fetch())
+	{ ?>
+
+	<h2> <?php echo($questions['question']); ?></h2>
+	<h4> <?php echo($questions['reponse']); ?></h4>
+<?php
+} ?>
 		</div>
 
-
-		
-			</p>
 		</div>
 
 	</div>

@@ -85,8 +85,7 @@ if($membre['membre_id']==$_SESSION['id']){ ?>
 		<div class="article">
 			<h3>Informations</h3>
 			<div class="actu">
-			<p>Adresse : <?php echo ($data['adress']); ?></p>
-			<p>Code-postal : <?php echo ($data['zipcode']); ?></p>
+			<p>Adresse : <?php echo ($data['numero']); ?> <?php echo ($data['voie']); ?> - <?php echo ($data['zipcode']); ?>, <?php echo ($data['ville']); ?>, <?php echo ($data['pays']); ?></p>
 			<p>Horaires : <?php echo ($data['hours']); ?></p>
 			<p>Téléphone : <?php echo ($data['phone']); ?></p>
 			<p>Capacité : <?php echo ($data['capacity']); ?> places</p>
@@ -95,7 +94,7 @@ if($membre['membre_id']==$_SESSION['id']){ ?>
   height="200px"
   frameborder="0" style="border:0"
   src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCTQZ5rKhEnDfS2LJiU-hmV-DuCWpql02k
-    &q=<?php echo ($data['adress']); ?>+<?php echo ($data['zipcode']); ?>">
+    &q=<?php echo ($data['numero']); ?>+<?php echo ($data['voie']); ?>+<?php echo ($data['ville']); ?>+<?php echo ($data['zipcode']); ?>+<?php echo ($data['pays']); ?>&maptype=satellite">
 </iframe><br /></center>
 
 		</div>			

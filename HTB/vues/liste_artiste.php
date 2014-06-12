@@ -35,6 +35,28 @@ while ($donnees = $artistes->fetch())
 
 			<div class="liste">
 <div id="banniere2"><h2>Par style de musique</h2></div>	
+<?php
+
+while ($donnees = $styles->fetch())
+{
+?>
+<div class=para> <div class="image"> <div class="presentation"><h3><?php echo($donnees['style']); ?></h3></div></div></div>
+<?php
+	$artistes=liste_artiste_style($donnees['style']);
+while ($donnees = $artistes->fetch())
+{
+?>
+    <div class=para>
+    <div class="image"><a href="index.php?page=artiste&id=<?php echo $donnees['id']; ?>&name=<?php echo $donnees['name']; ?>"><img  src="img/artistes/<?php echo($donnees['photo']); ?>"></a></div><div class="presentation"><strong>Nom de l'artiste</strong> : <a href="index.php?page=artiste&id=<?php echo $donnees['id']; ?>&name=<?php echo $donnees['name']; ?>"><?php echo $donnees['name']; ?></a></br>
+    <strong>Style de musique</strong> : <?php echo $donnees['style']; ?></br>
+    <strong>Description</strong> : <?php echo $donnees['description']; ?><br /></div>
+   </div>
+<?php
+}
+}
+
+
+?>
 
 		</div>
 

@@ -19,8 +19,11 @@
 		<li class="champs"><span>Vérification du mot de passe : </span><input name=password2 class="box" type="password"></li>
 		<li class="champs"><span>Adresse E-Mail : </span><input name=mail class="box" type="email"></li>
 		<li class="champs"><span>Nom de la salle : </span><input name=name class="box" type="text"></li>
+		<li class="champs"><span>Numéro de voie : </span><input name=numero class="box" min="0" type="number"></li>
+		<li class="champs"><span>Voie : </span><input name=voie class="box" type="text"></li>
 		<li class="champs"><span>Code postal : </span><input name=zipcode class="box" type="text"></li>
-		<li class="champs"><span>Adresse : </span></br><textarea name=adress rows=2 cols=30></textarea></li>
+		<li class="champs"><span>Ville : </span><input name=ville class="box" type="text"></li>
+		<li class="champs"><span>Pays : </span><input name=pays class="box" type="text"></li>
 		<li class="champs"><span>Horaires : </span></br><textarea name=hours rows=2 cols=30></textarea></li>
 		<li class="champs"><span>Numéro de téléphone : </span><input name=phone class="box"  type="tel"></li>
 		<li class="champs"><span>Capacité : </span><input name=capacity class="box" min="0" type="number"></li>

@@ -2,7 +2,7 @@
 <?php 
 
 require('modeles/rechercher.php');
-$recherche= $_POST["recherche"];
+$recherche= mysql_real_escape_string(htmlspecialchars($_POST["recherche"]));
 $artiste=recherche_artiste($recherche);
 $salle=recherche_salle($recherche);
 $event=recherche_concert($recherche);

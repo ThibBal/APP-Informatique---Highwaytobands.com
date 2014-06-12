@@ -19,9 +19,9 @@ global $bdd;
 
 }
 
-function modifications_membre($id, $login, $mail, $zipcode, $name){ // Inscription au site
+function modifications_membre($id, $mail, $zipcode, $name, $password){ 
 global $bdd; 
-	$bdd->query("UPDATE membre SET mail = '$mail', zipcode = '$zipcode', name = '$name' where id=$id");
+	$bdd->query("UPDATE membre SET mail = '$mail', zipcode = '$zipcode', name = '$name', password = '$password' where id=$id");
 
 }
 

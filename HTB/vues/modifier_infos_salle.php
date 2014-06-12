@@ -14,7 +14,7 @@
 		<form enctype="multipart/form-data" action="index.php?page=membre_salle" method="post">
 			<span id="blabla">Inscription d'une nouvelle salle : Veuillez compléter les champs suivants</span>
 	<ul id="formulaire">
-		<li class="champs"><span>Login : </span><input name=login class= "box" type="text"></li>
+
 		<li class="champs"><span>Mot de passe :<span class=small>(5 caractères minimum)</span>  </span><input name=password class="box" type="password"></li>
 		<li class="champs"><span>Vérification du mot de passe : </span><input name=password2 class="box" type="password"></li>
 		<li class="champs"><span>Adresse E-Mail : </span><input name=mail class="box" type="email"></li>
