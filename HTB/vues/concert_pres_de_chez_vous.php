@@ -14,16 +14,19 @@
 <div> <h1> Concerts près de chez vous </h1>
 
 	<?php
+
+while ($concert = $liste_salle_near->fetch())
 	
-while ($concert = $liste_concert_near->fetch())
-{
-?>
+{$liste=concert_salle($concert['id']);
+while ($concerts = $liste -> fetch()) {?>
 <center>
-<a href="index.php?page=concert&id=<?php echo $concert['id']; 
-<?php echo "Artiste:" $concert['artiste']; ?>
-   	<?php echo $concert['description']; ?></center></br></a>
+<a href="index.php?page=concert&id=<?php echo $concerts['id']; ?>">
+<?php echo $concerts['artiste']; ?>
+   	<?php echo $concerts['description']; ?>
+  </br></a> </center>
+
 <?php
-}
+}}
 ?>	
 </div>
 
