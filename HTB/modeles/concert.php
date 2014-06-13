@@ -109,5 +109,12 @@ global $bdd;
 
 }
 
+function detection_concert($cp){
+global $bdd;
+$res = "SELECT id from salle WHERE zipcode='$cp'";
+$req = $bdd-> query($res) or die(print_r($bdd->errorInfo()));
+ 	$data = $req-> fetch();
+ 	return $req;
+}
 
 ?>

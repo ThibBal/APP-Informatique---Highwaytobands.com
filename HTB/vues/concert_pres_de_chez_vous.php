@@ -14,6 +14,7 @@
 <div> <h1> Concerts près de chez vous </h1>
 
 	<?php
+	
 while ($concert = $liste_concert_near->fetch())
 {
 ?>
