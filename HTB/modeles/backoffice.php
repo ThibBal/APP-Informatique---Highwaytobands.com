@@ -5,6 +5,11 @@ global bdd;
 	$result=$bdd->query("DELETE * FROM membre WHERE login='$login'");
 }
 
+function suppression_salle($login){
+global bdd;
+	$result=$bdd->query("DELETE * FROM salle WHERE login='$login'");
+}
+
 function suppression_event($login){
 global bdd;
 	$result=$bdd->query("DELETE * FROM concert WHERE login='$login'");

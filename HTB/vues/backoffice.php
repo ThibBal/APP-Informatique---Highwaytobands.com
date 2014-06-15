@@ -40,7 +40,7 @@
 	</form>
 
 
-<form action="index.php?page=suppression_artiste" method="post"><h4> Supprimer un artiste </h4>
+<form action="index.php?page=supprimer_artiste" method="post"><h4> Supprimer un artiste </h4>
 	
 		<SELECT name=artiste size="1">
 			<option value="0" selected disabled> Sélectionner un artiste</option>
@@ -53,7 +53,7 @@
 
 	</form>
 
-<form action="index.php?page=suppression_salle" method="post"><h4> Supprimer une salle </h4>
+<form action="index.php?page=supprimer_salle" method="post"><h4> Supprimer une salle </h4>
 	
 		<SELECT name=salle size="1">
 			<option value="0" selected disabled> Sélectionner une salle </option>

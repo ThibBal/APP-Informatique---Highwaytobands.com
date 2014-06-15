@@ -1,10 +1,10 @@
 <?php
 
-$artiste=$_POST['artiste'];
+$id=$_POST['artiste'];
 
 require('modeles/artiste.php'); 
 
-supprimer_artiste($artiste);
+supprimer_artiste($id);
 
 $_SESSION['temp'] = 'Artiste supprimé !';
 
