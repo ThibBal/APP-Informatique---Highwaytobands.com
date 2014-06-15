@@ -27,6 +27,7 @@ global $bdd;
 
 }
 
+
 function modifications_artiste($id, $mail, $style, $name, $password, $description){
 global $bdd; 
 	$bdd->query("UPDATE artiste SET mail = '$mail', style = '$style', password='$password', description='$description', name = '$name' where id=$id");
@@ -44,7 +45,7 @@ if ($num!=1){
 	}
 }
 
-function liste_artiste(){ // Récupère les informations d'un membre
+function liste_artiste(){ 
 	global $bdd;
 $res = "SELECT * from artiste ORDER BY name";
 $req = $bdd-> query($res) or die(print_r($bdd->errorInfo()));
@@ -52,7 +53,7 @@ $req = $bdd-> query($res) or die(print_r($bdd->errorInfo()));
  	 	return $req;
 }
 
-function liste_artiste_style($style){ // Récupère les informations d'un membre
+function liste_artiste_style($style){ 
 	global $bdd;
 $res = "SELECT * from artiste WHERE style='$style' ORDER BY name";
 $req = $bdd-> query($res) or die(print_r($bdd->errorInfo()));

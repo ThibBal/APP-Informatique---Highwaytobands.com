@@ -24,7 +24,11 @@
 		<li class="CGU"><span>Style de musiques : </span>
 <SELECT name=style size="1">
 <option value="0" selected disabled> Choisir un style </option>
-<?php while ($liste = $style->fetch()) { ?>
+<?php 
+require('modeles/style.php');
+$style = liste_style();
+
+while ($liste = $style->fetch()) { ?>
 <OPTION value="<?php echo $liste['style']; ?>"><?php echo $liste['style']; ?>
 	<?php } ?>
 </SELECT></li>
