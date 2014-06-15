@@ -43,7 +43,7 @@ $message = "Le fichier n'a pas l'extension attendue";
 // incluant l'heure a la seconde pres 
 $repertoireDestination = dirname(dirname(__FILE__))."/"."img"."/"."membres"."/"; // Copie dans le répertoire img
 //   $nomDestination = "fichier_du_".date("YmdHis").".".$extensionFichier;
-ajout_photo($donnee['id'], $nomDestination); // Ajout de l'attribu photo au membre
+ajout_photo_membre($donnee['id'], $nomDestination); // Ajout de l'attribu photo au membre
 move_uploaded_file($_FILES["photo"]["tmp_name"], 
                                  $repertoireDestination.$nomDestination);
 

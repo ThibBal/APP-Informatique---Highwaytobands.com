@@ -20,13 +20,14 @@
 while ($donnees = $concerts->fetch())
 {
 
-
+$artiste= info_artiste_concert($donnees['artiste_id']);
+$salle=	info_salle_concert($donnees['salle_id']);
 	$dateMySQL= $donnees['date'];
                     $date = new DateTime($dateMySQL);
 	                   
 ?>
     <div class=para>
-    <div class="image"><a href="index.php?page=concert&id=<?php echo $donnees['id']; ?>&name=<?php echo $donnees['name']; ?>"><img  src="img/photo1.jpg"></a></div><div class="presentation"><strong>Nom du concert</strong> : <a href="index.php?page=concert&id=<?php echo $donnees['id']; ?>&name=<?php echo $donnees['name']; ?>"><?php echo $donnees['name']; ?></a></br>
+    <div class="image"><a href="index.php?page=concert&id=<?php echo $donnees['id']; ?>&name=<?php echo $donnees['name']; ?>"><img  src="img/salles/<?php echo $salle['photo']; ?>"><img  src="img/artistes/<?php echo $artiste['photo']; ?>"></a></div><div class="presentation"><strong>Nom du concert</strong> : <a href="index.php?page=concert&id=<?php echo $donnees['id']; ?>&name=<?php echo $donnees['name']; ?>"><?php echo $donnees['name']; ?></a></br>
     <strong>Artiste</strong> : <?php echo $donnees['artiste']; ?></br>
     <strong>Salle</strong> : <?php echo $donnees['salle']; ?></br>
     <strong>Date</strong> : <?php echo $date->format('d/m/Y'); ?></br>

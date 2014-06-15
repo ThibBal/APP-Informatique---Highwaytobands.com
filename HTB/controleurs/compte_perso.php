@@ -40,7 +40,7 @@ include('vues/compte_perso.php');
 
 }else{
  $_SESSION['temp'] = 'Veuillez vous inscrire';
-	include('vues/accueil.php');
+	header ('Location: index.php?page=accueil');
 }
 
 ?>

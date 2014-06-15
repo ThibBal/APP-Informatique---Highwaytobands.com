@@ -27,7 +27,7 @@
 		<li class="champs"><span>Horaires : </span></br><textarea name=hours rows=2 cols=30></textarea></li>
 		<li class="champs"><span>Numéro de téléphone : </span><input name=phone class="box"  type="tel"></li>
 		<li class="champs"><span>Capacité : </span><input name=capacity class="box" min="0" type="number"></li>
-		<li class="champs"><span>Photo de profil : </span><input name=photo class="box" type="file" /></li>
+		<li class="champs"><span>Photo de profil : <span class=small>(jpg, png, gif, jpeg acceptés, 500ko au maximum)</span> </span><input name=photo class="box" type="file" /></li>
 		<li class="CGU"><span>Description : </span></br><textarea name=description rows=5 cols=50></textarea></li>
 	
 		

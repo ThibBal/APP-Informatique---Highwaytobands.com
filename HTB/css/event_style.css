@@ -36,7 +36,7 @@ height: 200px;
     text-align: center;
     display: inline-block;
     width: 22%;
-    height: 470px;    
+    height: 500px;    
     padding: 10px;
     color: black;
     font-size: 0.9em;
@@ -54,8 +54,11 @@ h3{
 }
 
 .sous_article{
+height: 100%;
+}
 
-
+.sous_article2{
+height: 40%;
 }
 
 
@@ -72,10 +75,28 @@ h3{
 }
 
 
-.actu{
+.actu3{
  
-    
+   overflow-y: scroll; 
+   overflow: auto;
+   max-height: 90%;
+
 }
+
+
+.actu2{
+font-size: 0.8em;
+   overflow-y: scroll; 
+   overflow: auto;
+   height: 65%;
+}
+
+.ecrire{
+  min-height: 30%;
+
+}
+
+
 
 .concert{
 

@@ -6,20 +6,20 @@ $CGU=$_POST['CGU'];
 
 if($statut=='membre'){
 
-include 'vues/inscription_membre.php';
+header ('Location: index.php?page=inscription_membre');
 
 }
 
 if($statut=='artiste'){
 require('modeles/style.php');
 $style = liste_style();
-include 'vues/inscription_artiste.php';
+header ('Location: index.php?page=inscription_artiste'); 
 
 }
 
 if($statut=='salle'){
 
-include 'vues/inscription_salle.php';
+header ('Location: index.php?page=inscription_salle'); 
 
 }
 

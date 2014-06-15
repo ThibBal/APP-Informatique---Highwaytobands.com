@@ -12,7 +12,7 @@ if(isset($_POST['titre'])){
 
 	if($_SESSION['statut']=='salle'){
 		$salle_id=$_SESSION['id'];
-		$salle_name=$_SESSION['name'];
+		$salle_name=mysql_real_escape_string(htmlspecialchars($_SESSION['name']));
 		$artiste_id='';
 		$artiste_name='';
 
@@ -23,7 +23,7 @@ if(isset($_POST['titre'])){
 
 	if($_SESSION['statut']=='artiste'){
 		$artiste_id=$_SESSION['id'];
-		$artiste_name=$_SESSION['name'];
+		$artiste_name=mysql_real_escape_string(htmlspecialchars($_SESSION['name']));
 		$salle_id='';
 		$salle_name='';
 

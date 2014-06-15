@@ -11,51 +11,18 @@
 <body>
 	<?php include 'controleurs/header.php' ?>
 
-
-	<div id="contenu">
+<div id="contenu">
+	
 		<div id="banniere"><h1><?php echo ($data['name']); ?></h1>
 			<img width=300 src="img/salles/<?php echo($data['photo']); ?>">
 		</div>	
 		<div class="article">
-
-			<div class="sous_article">
-			<h3>Photos de la salle</h3>
-			<?php
-while ($photos = $photo->fetch())
-{
-
-?>
-   	<center><a href="files/images/<?php echo $photos['fichier']; ?>"><center><img width=150 src="files/images/<?php echo $photos['fichier']; ?>"></a></center></br>
-<?php
-
-}
-?>	
-			</div>
-
-			<div class="sous_article">
-			<h3>Concerts</h3>
-			<div id="calendrier"><p></p>
-			<ul>
-				<?php 						
-while ($concerts = $concert->fetch())
-{
-?>
-    
-	<li><a href="index.php?page=concert&id=<?php echo $concerts['id']; ?>"><?php echo $concerts['salle']; ?> - <?php echo $concerts['artiste']; ?></a></li></br>
-<?php
-}
-?>
-			</ul>
-			</div>	
-			</div>			
-		</div>
-
-
-		<div class="article">
+			<div class="sous_article1">
 			<h3>Description</h3>
-			<div class="actu"><p><?php echo ($data['description']); ?></p>
+			<div class="actu"><p>
+				<?php echo ($data['description']); ?></p>
 
-			</div>	
+			
 			<?php if(isset($_SESSION['statut'])){
 
 if($_SESSION['statut']=='membre'){
@@ -80,15 +47,56 @@ if($membre['membre_id']==$_SESSION['id']){ ?>
 }
 ?>
 					
+	</div>	
 		</div>
-
-		<div class="article">
-			<h3>Informations</h3>
+		<div class="sous_article1">
+			<h3>Concerts</h3>
+			<div class="actu"><p></p>
+			<ul>
+				<?php 						
+while ($concerts = $concert->fetch())
+{
+?>
+    
+	<li><a href="index.php?page=concert&id=<?php echo $concerts['id']; ?>"><?php echo $concerts['name']; ?> - <?php echo $concerts['artiste']; ?></a></li></br>
+<?php
+}
+?>
+			</ul>
+			</div>	
+			</div>	
+<div class="sous_article1">
+			<h3>Photos de la salle</h3>
 			<div class="actu">
-			<p>Adresse : <?php echo ($data['numero']); ?> <?php echo ($data['voie']); ?> - <?php echo ($data['zipcode']); ?>, <?php echo ($data['ville']); ?>, <?php echo ($data['pays']); ?></p>
-			<p>Horaires : <?php echo ($data['hours']); ?></p>
-			<p>Téléphone : <?php echo ($data['phone']); ?></p>
-			<p>Capacité : <?php echo ($data['capacity']); ?> places</p>
+	
+			
+			<?php
+while ($photos = $photo->fetch())
+{
+
+?>
+   	<center><a href="files/images/<?php echo $photos['fichier']; ?>"><center><img width=150 src="files/images/<?php echo $photos['fichier']; ?>"></a></center></br>
+<?php
+
+}
+?>	
+			</div>
+		</div>
+		
+
+	</div>
+
+		<div class="article3">
+			
+
+		<div class="sous_article">
+			<h3>Informations</h3>
+			<div class="actu4">
+			<strong>Adresse : </strong><?php echo ($data['numero']); ?> <?php echo ($data['voie']); ?> - <?php echo ($data['zipcode']); ?>, <?php echo ($data['ville']); ?>, <?php echo ($data['pays']); ?></br>
+			<strong>Horaires : </strong><?php echo ($data['hours']); ?></br>
+			<strong>Téléphone : </strong><?php echo ($data['phone']); ?></br>  
+			<strong>Capacité : </strong><?php echo ($data['capacity']); ?> places</br>
+
 			<center><iframe
   width="100%"
   height="200px"
@@ -97,14 +105,35 @@ if($membre['membre_id']==$_SESSION['id']){ ?>
     &q=<?php echo ($data['numero']); ?>+<?php echo ($data['voie']); ?>+<?php echo ($data['ville']); ?>+<?php echo ($data['zipcode']); ?>+<?php echo ($data['pays']); ?>&maptype=satellite">
 </iframe><br /></center>
 
-		</div>			
+			</div>	
+		</div>	
+
+		<div class="sous_article">
+				<h3>Actualités</h3>
+		<div class="actu">
+				<?php
+
+while ($actualite = $actu->fetch())
+{
+?>
+    <div class=titre_actu><?php echo($actualite['titre']); ?></div>
+	<div class=date_actu><?php echo($actualite['date']); ?></div>
+	<div class=contenu_actu><?php echo($actualite['contenu']); ?></div></br>
+	
+<?php
+}
+?>	
+</div>
+
+		</div>	
 		</div>
+
+
+
+
 
 		<div class="article">
 			<div class="sous_article">
-			
-			<div class="actu">
-
 					<h3>Abonnés</h3>
 					<div class="actu">
 <?php
@@ -119,7 +148,7 @@ $followers=info_membre_abonne($abon['membre_id']);
 
 }
 ?>	
-			</div>
+</div>
 			</div>
 
 			<div class="sous_article">
@@ -159,8 +188,9 @@ if($_SESSION['statut']=='membre'){
 ?>
 
 </div>
-
+</div>
 		</div>
+
 		</div>
 	</div>
 

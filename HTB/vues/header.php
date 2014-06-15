@@ -15,39 +15,42 @@
 <div id="menu">
 <ul>
 	<li><a href="index.php?page=liste_concert">Concerts</a>
-		<ul>
-			<li><a href="index.php?page=event">Exemple d'un concert</a></li>
-			<li><a href="index.php?page=creation_concert">Ajouter un concert</a></li>
-			<li><a href="#">Les plus récents</a></li>
+		<ul><li><a href="index.php?page=concert_pres_de_chez_vous">Proche de chez vous</a></li>
+			<li><a href="index.php?page=creation_concert">Créer un concert</a></li>
+			<li><a href="index.php?page=liste_concert">Les plus récents</a></li>
 		</ul>
 	</li>
 	<li><a href="index.php?page=liste_salle">Salles</a>
 		<ul>
+			<li><a href="index.php?page=salle_pres_de_chez_vous">Proche de chez vous</a></li>
 			<li><a href="index.php?page=liste_salle">Liste des salles</a></li>
-			<li><a href="#">Ordre alphabétique</a></li>
-			<li><a href="#">Proche de chez vous</a></li>
+			<li><a href="index.php?page=liste_salle">Ordre alphabétique</a></li>
+			
 		</ul>
 	</li>
 	<li><a href="index.php?page=liste_artiste">Artistes</a>
 		<ul>
 			<li><a href="index.php?page=liste_artiste">Liste des artistes</a>
 			</li>
-			<li><a href="#">Ordre alphabétique</a>
+			<li><a href="index.php?page=liste_artiste">Ordre alphabétique</a>
 			</li>
-			<li><a href="index.php?page=style">Styles de musique</a>
+			<li><a href="index.php?page=style">Par styles de musique</a>
 			</li>
 		</ul>
 	</li>
 	<?php if(!isset($_SESSION['login'])){ ?>
 	<li><a href="index.php?page=inscription">Mon compte</a>
-	
+	<ul>
+			<li><a href="index.php?page=liste_membre">Liste des membres</a>
+			</li>
+		</ul>
 	</li>
 <?php }else{ ?> 
 <li><a href="index.php?page=compte_perso">Mon compte</a>
-<ul><li id="truc"><a href="index.php?page=musique">Ajouter / Supprimer une musique</a>
+<ul>
 <li><a href="index.php?page=liste_membre">Liste des membres</a>
 			</li>
-			</li></ul></li>
+			</ul></li>
 	
 	
 <?php } ?>

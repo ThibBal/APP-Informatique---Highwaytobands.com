@@ -13,11 +13,11 @@
 	<?php 
 		if(!isset($_SESSION['statut'])){ ?>
 	<a href="index.php?page=inscription"><div id="inscription">
-		Inscris toi et profite :
+		Inscrivez-vous !
 		<ul>
-			<li>De contenu personnalisé selon tes préférences</li>
-			<li>De services exclusifs</li>
-			<li>D'une communauté de passionnés</li>
+			<li>Abonnez-vous à vos artistes et salles favoris</li>
+			<li>Soyez prévenus des concerts proches de chez vous</li>
+			<li>Discutez avec une communauté de passionnés</li>
 		</ul>
 	</div></a>
 	<div id="contenu">
@@ -51,14 +51,14 @@ while ($concerts = $concert->fetch())
                     $date = new DateTime($dateMySQL); 
 ?>
     
-	<div id="concert"><a href="index.php?page=concert&id=<?php echo $concerts['id']; ?>"><?php echo $date->format('d/m/Y'); ?> - <?php echo $concerts['salle']; ?> - <?php echo $concerts['artiste']; ?></a></div>
+	<div id="concert"><a href="index.php?page=concert&id=<?php echo $concerts['id']; ?>"><?php echo $date->format('d/m/Y'); ?> - <?php echo $concerts['salle']; ?> - <?php echo $concerts['artiste']; ?> - <?php echo $concerts['name']; ?></a></div>
 <?php
 }
 ?>			
 		</div>
 	</div>
 
-		<div class="article">
+		<div class="article3">
 			<h1 class="titre">Photos récentes</h1>
 			<div class="sous_article">
 				<ul>
@@ -83,7 +83,11 @@ while ($photos = $photo->fetch())
 	</div>
 	</div>
 
-	<?php }else{ // Accueil quand l'utilisateur est connecté ?>
+	<?php }else{ 
+
+if($_SESSION['statut']=='membre'){
+
+	// Accueil quand l'utilisateur est connecté ?>
 <div id="contenu">
 		<div class="article">
 			<h1 class="titre">Fil d'actualité</h1>
@@ -125,7 +129,7 @@ while ($con = $liste_concert->fetch())
                     $date = new DateTime($dateMySQL); 
 ?>
     
-	<div id="concert"><a href="index.php?page=concert&id=<?php echo $concerts['id']; ?>"><?php echo $date->format('d/m/Y'); ?> - <?php echo $concerts['salle']; ?> - <?php echo $concerts['artiste']; ?></a></div>
+	<div id="concert"><a href="index.php?page=concert&id=<?php echo $concerts['id']; ?>"><?php echo $date->format('d/m/Y'); ?> - <?php echo $concerts['salle']; ?> - <?php echo $concerts['artiste']; ?> - <?php echo $concerts['name']; ?></a></div>
 
 <?php	
 }
@@ -133,7 +137,7 @@ while ($con = $liste_concert->fetch())
 		</div>
 	</div>
 
-		<div class="article">
+		<div class="article3">
 			<h1 class="titre">Photos récentes</h1>
 			<div class="sous_article">
 				<ul>
@@ -163,6 +167,101 @@ while ($photos = $photo->fetch())
 	</div>
 
 <?php		
+}
+
+if($_SESSION['statut']=='salle'){
+?>
+	<div id="contenu">
+		<div class="article2">
+			<h1 class="titre">Vos prochains concerts</h1>
+			<div class="sous_article">
+<?php
+				
+while ($con = $concert->fetch())
+{
+	$concerts=info_concert($con['id']);
+		$dateMySQL= $concerts['date'];
+                    $date = new DateTime($dateMySQL); 
+?>
+    
+	<div id="concert"><a href="index.php?page=concert&id=<?php echo $concerts['id']; ?>"><?php echo $date->format('d/m/Y'); ?> - <?php echo $concerts['salle']; ?> - <?php echo $concerts['artiste']; ?> - <?php echo $concerts['name']; ?></a></div>
+
+<?php	
+}
+?>		
+
+
+
+
+						</div>
+	</div>
+		<div class="article2">
+			<h1 class="titre">Vos photos</h1>
+			<div class="sous_article">
+				<ul>
+<?php 						
+while ($photos = $photo->fetch())
+{ 
+?>
+	<li><a href="index.php?page=salle&name=<?php echo $photos['salle']; ?>&id=<?php echo $photos['salle_id']; ?>"><img width=300 src="files/images/<?php echo $photos['fichier']; ?>"></a></li>
+<?php
+}
+?>		
+</ul>
+						</div>
+	</div>
+
+	</div>
+
+
+<?php }
+
+if($_SESSION['statut']=='artiste'){
+?>
+	<div id="contenu">
+		<div class="article2">
+			<h1 class="titre">Vos prochains concerts</h1>
+			<div class="sous_article">
+<?php
+				
+while ($con = $concert->fetch())
+{
+	$concerts=info_concert($con['id']);
+		$dateMySQL= $concerts['date'];
+                    $date = new DateTime($dateMySQL); 
+?>
+    
+	<div id="concert"><a href="index.php?page=concert&id=<?php echo $concerts['id']; ?>"><?php echo $date->format('d/m/Y'); ?> - <?php echo $concerts['salle']; ?> - <?php echo $concerts['artiste']; ?> - <?php echo $concerts['name']; ?></a></div>
+
+<?php	
+}
+?>		
+
+
+
+
+						</div>
+	</div>
+		<div class="article2">
+			<h1 class="titre">Vos photos</h1>
+			<div class="sous_article">
+				<ul>
+<?php 						
+while ($photos = $photo->fetch())
+{ 
+?>
+	<li><a href="index.php?page=artiste&name=<?php echo $photos['artiste']; ?>&id=<?php echo $photos['artiste_id']; ?>"><img width=300 src="files/images/<?php echo $photos['fichier']; ?>"></a></li>
+<?php
+}
+?>		
+</ul>
+						</div>
+	</div>
+
+	</div>
+
+
+<?php }
 }
 ?>	
 

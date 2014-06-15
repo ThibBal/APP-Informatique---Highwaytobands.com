@@ -19,7 +19,7 @@
 		<li class="champs"><span>Vérification du mot de passe : </span><input name=password2 class="box" type="password"></li>
 		<li class="champs"><span>Adresse E-Mail : </span><input name=mail class="box" type="email"></li>
 		<li class="champs"><span>Nom de l'artiste : </span><input name=name class="box" type="text"></li>
-		<li class="champs"><span>Photo de profil : </span><input name=photo class="box" type="file" /></li>
+		<li class="champs"><span>Photo de profil : <span class=small>(jpg, png, gif, jpeg acceptés, 500ko au maximum)</span> </span><input name=photo class="box" type="file" /></li>
 		<li class="CGU"><span>Présentation : </span></br><textarea name=description rows=5 cols=50></textarea></li>
 		<li class="CGU"><span>Style de musiques : </span>
 <SELECT name=style size="1">

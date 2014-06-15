@@ -3,7 +3,43 @@
    
     text-decoration:none;
    	display: inline-block;
-    width: 32%;
+    width: 35%;
+    border-radius: 5px;
+    padding: 2px;
+    color: white;
+    font-size: 0.9em;
+    margin : auto;
+    border: 1px solid grey;
+    vertical-align: top;
+    background-color: rgba(0, 0, 0, 0.3);
+
+
+}
+
+.article2
+{
+   
+    text-decoration:none;
+    display: inline-block;
+    width: 48%;
+    border-radius: 5px;
+    padding: 2px;
+    color: white;
+    font-size: 0.9em;
+    margin : auto;
+    border: 1px solid grey;
+    vertical-align: top;
+    background-color: rgba(0, 0, 0, 0.3);
+
+
+}
+
+.article3
+{
+   
+    text-decoration:none;
+    display: inline-block;
+    width: 25%;
     border-radius: 5px;
     padding: 2px;
     color: white;

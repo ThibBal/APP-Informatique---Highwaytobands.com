@@ -12,8 +12,25 @@
 {
     
     display: inline-block;
-    width: 22%;
-    height: 470px;    
+    width: 24%;
+    height: 700px;    
+    padding: 8px;
+    color: white;
+    font-size: 0.9em;
+    margin : auto;
+    vertical-align: top;   
+    border-right: 2px solid black; 
+    padding-left: 1%
+    
+
+}
+
+.article3
+{
+    
+    display: inline-block;
+    width: 44%;
+    height: 700px;    
     padding: 8px;
     color: white;
     font-size: 0.9em;
@@ -26,7 +43,27 @@
 }
 
 .sous_article{
- text-align: center;
+    vertical-align: left;
+    text-align : left;
+    height: 45%;
+}
+
+.sous_article1{
+    vertical-align: left;
+    text-align : left;
+    height: 30%;
+}
+
+.sous_article2{
+    vertical-align: left;
+    text-align : left;
+    height: 60%;
+}
+
+.sous_article3{
+    vertical-align: left;
+    text-align : left;
+    height: 50%;
 }
 
 
@@ -51,14 +88,30 @@ li{
     max-height: 120px;
     overflow-y: scroll;
     text-align: left;
+    overflow: auto;
 }
 
 
 .actu{
-    
-    
+   overflow-y: scroll; 
+   overflow: auto;
+   max-height: 90%;
+
 }
 
 .concert{
  
+}
+
+
+.actu2{
+font-size: 0.8em;
+   overflow-y: scroll; 
+   overflow: auto;
+   height: 65%;
+}
+
+.ecrire{
+  min-height: 30%;
+
 }

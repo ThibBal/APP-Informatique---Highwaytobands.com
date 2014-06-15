@@ -5,9 +5,9 @@ require('modeles/concert.php');
 require('modeles/suivre.php');
 require('modeles/photo.php');
 require('modeles/commentaire.php');
+require('modeles/actualite.php');
 
-
-
+$actu=liste_actu_salle($_GET["id"]);
 $abonnements=liste_abonnements_salle($_GET["id"]);
 $data=info_salle($_GET["id"]);
 $concert=concert_salle($_GET['id']);

@@ -33,7 +33,7 @@ if(isset($_POST['login'])){
    $message= 'Bienvenue';
   $_SESSION['temp'] = 'Bienvenue';
   $_SESSION['statut'] = 'salle';
-   header ('Location: index.php?page=accueil');
+   header ('Location: index.php?page=compte_perso');
  } 
 
  }  else {
@@ -43,7 +43,7 @@ if(isset($_POST['login'])){
    $message= 'Bienvenue';
   $_SESSION['temp'] = 'Bienvenue';
     $_SESSION['statut'] = 'artiste';
-   header ('Location: index.php?page=accueil');
+   header ('Location: index.php?page=compte_perso');
  } 
 
   }  else {
@@ -53,7 +53,7 @@ if(isset($_POST['login'])){
    $message= 'Bienvenue';
   $_SESSION['temp'] = 'Bienvenue';
   $_SESSION['statut'] = 'membre';
-   header ('Location: index.php?page=accueil');
+   header ('Location: index.php?page=compte_perso');
  } 
 
 }

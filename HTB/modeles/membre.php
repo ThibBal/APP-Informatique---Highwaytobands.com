@@ -25,7 +25,7 @@ global $bdd;
 
 }
 
-function ajout_photo($id, $photo){ // Ajout de la photo de profil
+function ajout_photo_membre($id, $photo){ // Ajout de la photo de profil
 global $bdd; 
 	$bdd->query("UPDATE membre SET photo='$photo' WHERE id=$id 
 ");

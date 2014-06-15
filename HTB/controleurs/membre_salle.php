@@ -16,7 +16,7 @@ $numero=$_POST['numero'];
 $voie=$_POST['voie'];
 $ville=$_POST['ville'];
 $pays=$_POST['pays'];
-
+$cp=substr($zipcode, 0, 2);
 
 
 //$photo=$_POST['photo'];
@@ -39,7 +39,7 @@ if($password == $password2){
 			if($verif){
 				//inscription_salle($login, $password, $name, $capacity, $zipcode, $mail, $phone, $adress, $description, $hours, $photo);
 			//	inscription_salle($login, $password, $name, $capacity, $zipcode, $mail, $phone, $adress, $hours, $photo, $description);
-				inscription_salle2($login, $photo, $mail, $name, $password, $description, $hours, $capacity, $phone, $numero, $voie, $ville, $pays, $zipcode);
+				inscription_salle2($login, $photo, $mail, $name, $password, $description, $hours, $capacity, $phone, $numero, $voie, $ville, $pays, $zipcode, $cp);
 $donnee = connexion_salle($login);
 				$nomOrigine = $_FILES['photo']['name'];
 				$elementsChemin = pathinfo($nomOrigine);

@@ -1,12 +1,9 @@
-<script>
-
-		
-	$("#login").keyup(function () {
-		var val = $("#login").val().toLowerCase().replace(/ /g,'');
-		$("#name").val(val);
+	$("#username").keyup(function () {
+		var val = $("#username").val().toLowerCase().replace(/ /g,'');
+		$(".inscription #login").val(val);
 	});
 
-	$("#inscription").submit(function() {
+	$("#membre_inscription").submit(function() {
 		
 		var err = false;
 		
@@ -19,7 +16,7 @@
 			$("#mail_error").hide();
 		}
 
-		if($("#pass").val() != $("#pass2").val()) {
+		if($(".inscription #pass").val() != $("#pass2").val()) {
 			$("#pass_error").show();
 			err = true;
 		}
@@ -30,5 +27,3 @@
 		
 		return !err;
 	});
-
-</script>

@@ -1,17 +1,17 @@
 <meta charset="utf-8" />
 <?php
 
+require('modeles/admin.php');
+$admin=mail_admin();
  
-$mail=$_POST['mail']; 
-$sujet=$_POST['sujet'];
-$contenumail=$_POST['contenumail'];
+$mail=htmlspecialchars($_POST['mail']); 
+$sujet=htmlspecialchars($_POST['sujet']);
+$contenumail=htmlspecialchars($_POST['contenumail']);
 
-
-
-
-$destinataire = 'paulm-f@hotmail.fr';
-$headers = "From: \"expediteur moi\"<paulm-f@hotmail.fr>\n";
-$headers .= "Reply-To: paulm-f@hotmail.fr\n";
+$destinataire = $admin['mail'];
+//$destinataire = 'tbalmette@gmail.com';
+$headers = "From: \"$mail\"<$mail>\n";
+//$headers .= "Reply-To: paulm-f@hotmail.fr\n";
 $headers .= "Content-Type: text/plain; charset=\"iso-8859-1\"";
 if(mail($destinataire,$sujet,$contenumail,$headers))
 {

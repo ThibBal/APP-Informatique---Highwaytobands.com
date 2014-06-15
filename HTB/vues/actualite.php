@@ -17,7 +17,7 @@
 	<ul id="formulaire">
 
 		<li class="CGU"> <span>Titre de l'actualité : </span></br> <input type='text' name=titre> </li>
-		<li class="CGU"> <span>Contenu : </span></br> <textarea name=contenu rows=20 cols=100> </textarea> </li>
+		<li class="CGU"> <span>Contenu : </span></br> <textarea name=contenu rows=20 cols=100></textarea> </li>
 		<div id="envoi"> <input type="submit" value="Poster l'actualité" /> </div>
 			</form>
 	</div>

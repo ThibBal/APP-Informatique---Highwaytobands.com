@@ -86,6 +86,12 @@
 
 	</form>
 
+<form action="index.php?page=modifier_mail" method="post"><h4> Modifier l'adresse e-mail de l'administrateur </h4>
+	<input name=mail class= "box" type="text" value="<?php echo($mail['mail']) ?>">
+<div id="envoi"><input type="submit" value="Modifier" /></div>
+
+	</form>
+
 
 <h2> Gestion des concerts </h2>
 <form action="index.php?page=creation_concert" method="post"><h4> Ajouter un concert </h4>

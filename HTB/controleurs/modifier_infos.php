@@ -135,6 +135,7 @@ if($_SESSION['statut']=='salle'){
 				$ville=mysql_real_escape_string(htmlspecialchars($_POST['ville']));
 				$pays=$_POST['pays'];
 				$id=$_SESSION['id'];
+				$departement=substr($zipcode, 0, 2);
 
 				if(!empty($_FILES['fichier'])){
 					if($_FILES['fichier']['size']<500000){
@@ -158,7 +159,7 @@ if($_SESSION['statut']=='salle'){
 
 				}
 
-				modifications_salle($id, $mail, $name, $password, $description, $hours, $capacity, $phone, $numero, $voie, $ville, $pays, $zipcode);
+				modifications_salle($id, $mail, $name, $password, $description, $hours, $capacity, $phone, $numero, $voie, $ville, $pays, $zipcode, $departement);
 				$message='Informations correctement modifiées';
 				$_SESSION['temp'] = $message;
 

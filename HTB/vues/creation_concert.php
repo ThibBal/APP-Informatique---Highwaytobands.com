@@ -12,7 +12,7 @@
 	<?php include 'controleurs/header.php' ?>
 	<div id="inscription">
 		<form action="index.php?page=creation_concert" method="post"> 
-			<span id="blabla">Création évènement : Veuillez compléter les champs suivants</span>
+			<span id="blabla">Ajout d'un concert : Veuillez compléter les champs suivants</span>
 	<ul id="formulaire">
 		<li class="champs"><span>Nom : </span><input name=name class= "box" type="text"></li>
 
@@ -53,7 +53,7 @@
 		
 	</ul>
 
-	<div id="envoi"><input type="submit" value="Créer le concert" /></div>
+	<div id="envoi"><input type="submit" value="Proposer le concert" /></div>
 
 
 	</form>

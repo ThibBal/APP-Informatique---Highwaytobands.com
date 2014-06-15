@@ -6,7 +6,7 @@ if($_SESSION['statut']=='artiste'){
 $name=mysql_real_escape_string(htmlspecialchars($_POST['name'])); // Changement des variables pour les étudier 
 $date=$_POST['date']; 
 $artiste_id=$_SESSION['id'];
-$artiste=$_SESSION['name'];
+$artiste=htmlspecialchars($_SESSION['name']);
 $fichier = "";
 
 if(!empty($_POST['fichier'])){
@@ -48,7 +48,7 @@ if($_SESSION['statut']=='salle'){
 $name=mysql_real_escape_string(htmlspecialchars($_POST['name'])); // Changement des variables pour les étudier 
 $date=$_POST['date']; 
 $salle_id=$_SESSION['id'];
-$salle=$_SESSION['name'];
+$salle=htmlspecialchars($_SESSION['name']);
 $fichier = "";
 
 if(!empty($_POST['fichier'])){
