@@ -115,9 +115,12 @@ while ($photos = $photo->fetch())
 
 while ($actualite = $actu->fetch())
 {
+		$dateMySQL= $actualite['date'];
+	                    $date = new DateTime($dateMySQL)
+
 ?>
     <div class=titre_actu><?php echo($actualite['titre']); ?></div>
-	<div class=date_actu><?php echo($actualite['date']); ?></div>
+	<div class=date_actu><?php echo $date->format('d/m/Y'); ?></div>
 	<div class=contenu_actu><?php echo($actualite['contenu']); ?></div></br>
 	
 <?php

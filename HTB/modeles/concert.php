@@ -35,7 +35,7 @@ function info_salle_concert($id){
 	return $res; 
 }
 
-function liste_concert(){ // Récupère les informations d'un membre
+function liste_concert(){ 
 	global $bdd;
 $res = "SELECT * from concert";
 $req = $bdd-> query($res) or die(print_r($bdd->errorInfo()));
@@ -43,15 +43,15 @@ $req = $bdd-> query($res) or die(print_r($bdd->errorInfo()));
  	 	return $req;
 }
 
-function liste_concert_valide(){ // Récupère les informations d'un membre
+function liste_concert_valide(){ 
 	global $bdd;
-$res = "SELECT * from concert WHERE valider='1' ORDER BY DATE";
+$res = "SELECT * from concert WHERE valider='1' AND date > CURDATE() ORDER BY DATE";
 $req = $bdd-> query($res) or die(print_r($bdd->errorInfo()));
 
  	 	return $req;
 }
 
-function liste_concert_bientot(){ // Récupère les informations d'un membre
+function liste_concert_bientot(){ 
 	global $bdd;
 $res = "SELECT * from concert WHERE DATE > CURDATE() ORDER BY Date";
 $req = $bdd-> query($res) or die(print_r($bdd->errorInfo()));
@@ -83,9 +83,25 @@ $req = $bdd-> query($res) or die(print_r($bdd->errorInfo()));
  	 	return $req;
 }
 
+function concert_artiste_bientot($id){ // Liste des concerts d'un atiste dans le futur
+	global $bdd;
+$res = "SELECT * from concert where artiste_id='$id' and valider='1' AND date > CURDATE() ORDER BY DATE";
+$req = $bdd-> query($res) or die(print_r($bdd->errorInfo()));
+
+ 	 	return $req;
+}
+
 function concert_salle($id){ // Liste des concerts d'une salle
 	global $bdd;
 $res = "SELECT * from concert where salle_id='$id' and valider='1' ORDER BY DATE";
+$req = $bdd-> query($res) or die(print_r($bdd->errorInfo()));
+
+ 	 	return $req;
+}
+
+function concert_salle_bientot($id){ // Liste des concerts d'une salle dans le futur
+	global $bdd;
+$res = "SELECT * from concert where salle_id='$id' and valider='1' AND date > CURDATE() ORDER BY DATE";
 $req = $bdd-> query($res) or die(print_r($bdd->errorInfo()));
 
  	 	return $req;

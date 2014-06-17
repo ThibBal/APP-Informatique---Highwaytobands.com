@@ -26,12 +26,12 @@ $liste_concert=liste_concerts_membre($_SESSION['id']);
 }
 
 	if($_SESSION['statut']=='artiste'){
-$concert=concert_artiste($_SESSION['id']);
+$concert=concert_artiste_bientot($_SESSION['id']);
 $photo=liste_photo_artiste($_SESSION['id']); 
 }
 
 	if($_SESSION['statut']=='salle'){
-$concert=concert_salle($_SESSION['id']);
+$concert=concert_salle_bientot($_SESSION['id']);
 $photo=liste_photo_salle($_SESSION['id']); 
 }
 

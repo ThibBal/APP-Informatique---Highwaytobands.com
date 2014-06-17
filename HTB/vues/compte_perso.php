@@ -37,7 +37,7 @@ if($data['admin']=='1'){
 ?>
 
 			</div>
-<h3>Vos derniers concerts</h3>
+<h3>Vos concerts</h3>
 			<div class="sous_article">
 			
 			<div id="participants"><p></p>
@@ -47,10 +47,11 @@ while ($concerts = $liste->fetch())
 {
 
 	$data=info_concert($concerts['concert_id']);
-
+$dateMySQL= $data['date'];
+	                    $date = new DateTime($dateMySQL); 
 ?>
     
-	<li><a href="index.php?page=concert&id=<?php echo $data['id']; ?>"><?php echo $data['name']; ?> - <?php echo $data['salle']; ?> - <?php echo $data['artiste']; ?> - <?php echo $data['date']; ?></a></li>
+	<li><a href="index.php?page=concert&id=<?php echo $data['id']; ?>"><?php echo $data['name']; ?> - <?php echo $data['salle']; ?> - <?php echo $data['artiste']; ?> - <?php echo $date->format('d/m/Y'); ?></a></li>
 <?php
 }
 	?>		</ul>
@@ -166,9 +167,12 @@ while ($musique = $extraits->fetch())
 <?php 						
 while ($valide = $valider->fetch())
 {
+	$dateMySQL= $valide['date'];
+	                    $date = new DateTime($dateMySQL);
+
 ?>
     
-	<li><a href="index.php?page=concert&id=<?php echo $valide['id']; ?>"><?php echo $valide['name']; ?> - <?php echo $valide['salle']; ?> - <?php echo $valide['date']; ?></a>
+	<li><a href="index.php?page=concert&id=<?php echo $valide['id']; ?>"><?php echo $valide['name']; ?> - <?php echo $valide['salle']; ?> - <?php echo $date->format('d/m/Y'); ?></a>
 		<form class="formulaire" method="post" action="index.php?page=valider_concert">	
 		<input type="hidden" name="id" value="<?php echo ($valide['id']); ?>">		
 		<center><input type="submit" value="Valider"/></center>
@@ -180,16 +184,19 @@ while ($valide = $valider->fetch())
 		</div>
 
 			
-<h3>Vos derniers concerts</h3>
+<h3>Vos prochains concerts</h3>
 			<div class="sous_article">
 			
 			<div id="participants"><p></p>
 			<ul><?php 						
 while ($concerts = $concert->fetch())
 {
+	$dateMySQL= $concerts['date'];
+	                    $date = new DateTime($dateMySQL);
+
 ?>
     
-	<li><a href="index.php?page=concert&id=<?php echo $concerts['id']; ?>"><?php echo $concerts['name']; ?> - <?php echo $concerts['salle']; ?> - <?php echo $concerts['artiste']; ?> - <?php echo $concerts['date']; ?> </a></li>
+	<li><a href="index.php?page=concert&id=<?php echo $concerts['id']; ?>"><?php echo $concerts['name']; ?> - <?php echo $concerts['salle']; ?> - <?php echo $concerts['artiste']; ?> - <?php echo $date->format('d/m/Y'); ?> </a></li>
 <?php
 }
 ?>
@@ -241,9 +248,12 @@ while ($concerts = $concert->fetch())
 <?php 						
 while ($valide = $valider->fetch())
 {
+	$dateMySQL= $valide['date'];
+	                    $date = new DateTime($dateMySQL);
+
 ?>
     
-	<li><a href="index.php?page=concert&id=<?php echo $valide['id']; ?>"><?php echo $valide['name']; ?> - <?php echo $valide['artiste']; ?> - <?php echo $valide['date']; ?></a>
+	<li><a href="index.php?page=concert&id=<?php echo $valide['id']; ?>"><?php echo $valide['name']; ?> - <?php echo $valide['artiste']; ?> - <?php echo $date->format('d/m/Y'); ?></a>
 	<form class="formulaire" method="post" action="index.php?page=valider_concert">	
 		<input type="hidden" name="id" value="<?php echo ($valide['id']); ?>">		
 		<center><input type="submit" value="Valider"/></center>
@@ -252,16 +262,19 @@ while ($valide = $valider->fetch())
 }
 ?>
 </ul>
-		</div><h3>Vos derniers concerts</h3>
+		</div><h3>Vos prochains concerts</h3>
 <div class="sous_article">
 			
 <ul>			
 			<?php 						
 while ($concerts = $concert->fetch())
 {
+	$dateMySQL= $concerts['date'];
+	                    $date = new DateTime($dateMySQL);
+
 ?>
     
-<li><a href="index.php?page=concert&id=<?php echo $concerts['id']; ?>"><?php echo $concerts['name']; ?> - <?php echo $concerts['salle']; ?> - <?php echo $concerts['artiste']; ?> - <?php echo $concerts['date']; ?></a></li>
+<li><a href="index.php?page=concert&id=<?php echo $concerts['id']; ?>"><?php echo $concerts['name']; ?> - <?php echo $concerts['salle']; ?> - <?php echo $concerts['artiste']; ?> - <?php echo $date->format('d/m/Y'); ?></a></li>
 <?php
 }
 ?>

@@ -34,7 +34,7 @@
 			</li>
 			<li><a href="index.php?page=liste_artiste">Ordre alphabétique</a>
 			</li>
-			<li><a href="index.php?page=style">Par styles de musique</a>
+			<li><a href="index.php?page=style">Par style de musique</a>
 			</li>
 		</ul>
 	</li>

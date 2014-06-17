@@ -16,7 +16,7 @@
 		Inscrivez-vous !
 		<ul>
 			<li>Abonnez-vous à vos artistes et salles favoris</li>
-			<li>Soyez prévenus des concerts proches de chez vous</li>
+			<li>Découvrez les concerts proches de chez vous</li>
 			<li>Discutez avec une communauté de passionnés</li>
 		</ul>
 	</div></a>
@@ -67,12 +67,12 @@ while ($photos = $photo->fetch())
 { 
 	if($photos['artiste_id']==''){
 		?>
-	<li><a href="index.php?page=salle&name=<?php echo $photos['salle']; ?>&id=<?php echo $photos['salle_id']; ?>"><img width=150 src="files/images/<?php echo $photos['fichier']; ?>"></a></li>
+	<li><a href="index.php?page=salle&name=<?php echo $photos['salle']; ?>&id=<?php echo $photos['salle_id']; ?>"><img width=150 src="files/images/<?php echo $photos['fichier']; ?>"><?php echo $photos['name']; ?></a></li>
 	<?php }
 	
 	if($photos['salle_id']==''){
 		?>
-	<li><a href="index.php?page=artiste&name=<?php echo $photos['artiste']; ?>&id=<?php echo $photos['artiste_id']; ?>"><img width=150 src="files/images/<?php echo $photos['fichier']; ?>"></a></li>
+	<li><a href="index.php?page=artiste&name=<?php echo $photos['artiste']; ?>&id=<?php echo $photos['artiste_id']; ?>"><img width=150 src="files/images/<?php echo $photos['fichier']; ?>"><?php echo $photos['name']; ?></a></li>
 	<?php	
 	}
 }
@@ -146,12 +146,12 @@ while ($photos = $photo->fetch())
 { 
 	if($photos['artiste_id']==''){
 		?>
-	<li><a href="index.php?page=salle&name=<?php echo $photos['salle']; ?>&id=<?php echo $photos['salle_id']; ?>"><img width=150 src="files/images/<?php echo $photos['fichier']; ?>"></a></li>
+	<li><a href="index.php?page=salle&name=<?php echo $photos['salle']; ?>&id=<?php echo $photos['salle_id']; ?>"><img width=150 src="files/images/<?php echo $photos['fichier']; ?>"><?php echo $photos['name']; ?></a></li>
 	<?php }
 	
 	if($photos['salle_id']==''){
 		?>
-	<li><a href="index.php?page=artiste&name=<?php echo $photos['artiste']; ?>&id=<?php echo $photos['artiste_id']; ?>"><img width=150 src="files/images/<?php echo $photos['fichier']; ?>"></a></li>
+	<li><a href="index.php?page=artiste&name=<?php echo $photos['artiste']; ?>&id=<?php echo $photos['artiste_id']; ?>"><img width=150 src="files/images/<?php echo $photos['fichier']; ?>"><?php echo $photos['name']; ?></a></li>
 	<?php	
 	}
 
@@ -203,7 +203,7 @@ while ($con = $concert->fetch())
 while ($photos = $photo->fetch())
 { 
 ?>
-	<li><a href="index.php?page=salle&name=<?php echo $photos['salle']; ?>&id=<?php echo $photos['salle_id']; ?>"><img width=300 src="files/images/<?php echo $photos['fichier']; ?>"></a></li>
+	<li><a href="index.php?page=salle&name=<?php echo $photos['salle']; ?>&id=<?php echo $photos['salle_id']; ?>"><img width=300 src="files/images/<?php echo $photos['fichier']; ?>"><?php echo $photos['name']; ?></a></li>
 <?php
 }
 ?>		
@@ -250,7 +250,7 @@ while ($con = $concert->fetch())
 while ($photos = $photo->fetch())
 { 
 ?>
-	<li><a href="index.php?page=artiste&name=<?php echo $photos['artiste']; ?>&id=<?php echo $photos['artiste_id']; ?>"><img width=300 src="files/images/<?php echo $photos['fichier']; ?>"></a></li>
+	<li><a href="index.php?page=artiste&name=<?php echo $photos['artiste']; ?>&id=<?php echo $photos['artiste_id']; ?>"><img width=300 src="files/images/<?php echo $photos['fichier']; ?>"><?php echo $photos['name']; ?></a></li>
 <?php
 }
 ?>		

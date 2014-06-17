@@ -12,6 +12,15 @@ global $bdd;
 
 }
 
+function supprimer_salle($id){
+global $bdd; 
+	$bdd->query("DELETE FROM sall WHERE id='$id'");
+	$bdd->query("DELETE FROM actu WHERE salle_id='$id'");
+	$bdd->query("DELETE FROM suivre WHERE salle_id='$id'");
+	$bdd->query("DELETE FROM commentaire WHERE salle_id ='$id'");
+
+}
+
 function connexion_salle($login){
 global $bdd;
 $sql = "SELECT id, password, name from salle where login ='$login'";

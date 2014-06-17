@@ -122,6 +122,8 @@ max-height: 400px;
 
 li{
     list-style-type:none;
+    text-align: center;
+    margin: 1%;
 }
 
 

@@ -24,6 +24,9 @@ global $bdd;
 function supprimer_artiste($id){
 global $bdd; 
 	$bdd->query("DELETE FROM artiste WHERE id='$id'");
+	$bdd->query("DELETE FROM actu WHERE artiste_id='$id'");
+	$bdd->query("DELETE FROM suivre WHERE artiste_id='$id'");
+	$bdd->query("DELETE FROM commentaire WHERE artiste_id ='$id'");
 
 }
 

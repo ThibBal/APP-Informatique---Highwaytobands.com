@@ -15,7 +15,6 @@
 			<div class="sous_article">
 			
 			login : <?php echo($data['login']); ?> </br>
-			Adresse email : <?php echo($data['mail']); ?> </br>
 			Code postal : <?php echo($data['zipcode']); ?> </br>
 
 			</div>
@@ -29,10 +28,13 @@ while ($concerts = $liste->fetch())
 {
 
 	$data=info_concert($concerts['concert_id']);
+	$dateMySQL= $data['date'];
+	                    $date = new DateTime($dateMySQL)
+
 
 ?>
     
-	<li><a href="index.php?page=concert&id=<?php echo $data['id']; ?>"><?php echo $data['name']; ?> - <?php echo $data['salle']; ?> - <?php echo $data['artiste']; ?> - <?php echo $data['date']; ?></a></li>
+	<li><a href="index.php?page=concert&id=<?php echo $data['id']; ?>"><?php echo $data['name']; ?> - <?php echo $data['salle']; ?> - <?php echo $data['artiste']; ?> - <?php echo $date->format('d/m/Y'); ?></a></li>
 <?php
 }
 	?>		</ul>

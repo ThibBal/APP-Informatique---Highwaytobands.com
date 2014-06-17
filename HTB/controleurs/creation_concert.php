@@ -4,7 +4,7 @@ if(isset($_SESSION['statut'])){
 	if(($_SESSION['statut']=='salle')||($_SESSION['statut']=='artiste')){
 
 		if(isset($_POST['CGU'])){
-	$name=htmlspecialchars($_POST['name']); // Changement des variables pour les étudier  
+	$name=htmlspecialchars($_POST['name']); 
 	$salle_id=$_POST['salle']; 
 	$artiste_id=$_POST['artiste'];
 	//$salle_nom=$_POST['salle_nom']; 
@@ -15,13 +15,13 @@ if(isset($_SESSION['statut'])){
 	$valider=0;
 
 	if($_SESSION['statut']=='artiste'){
-		$artiste=htmlspecialchars($_SESSION['name']);
+		$artiste=mysql_real_escape_string(htmlspecialchars($_SESSION['name']));
 		$salle='';
 	}
 
 	if($_SESSION['statut']=='salle'){
 		$artiste='';
-		$salle=htmlspecialchars($_SESSION['name']);
+		$salle=mysql_real_escape_string(htmlspecialchars($_SESSION['name']));
 	}	
 
 

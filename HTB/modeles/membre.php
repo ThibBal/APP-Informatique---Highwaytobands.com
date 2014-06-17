@@ -9,6 +9,10 @@ global $bdd;
 function supprimer_membre($id){
 global $bdd; 
 	$bdd->query("DELETE FROM membre WHERE id='$id'");
+	$bdd->query("DELETE FROM participation WHERE membre_id='$id'");
+	$bdd->query("DELETE FROM suivre WHERE membre_id='$id'");
+	$bdd->query("DELETE FROM forum_message WHERE id_user ='$id'");
+	$bdd->query("DELETE FROM commentaire WHERE membre_id ='$id'");
 
 }
 
