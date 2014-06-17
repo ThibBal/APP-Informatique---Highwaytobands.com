@@ -13,6 +13,6 @@ $id=$_POST['nom'];
 			 supprimer_photo_id($id);
 	$message = 'Photo supprimée';
 	$_SESSION['temp'] = $message;
-	header ('Location: index.php?page=accueil');
+	header ('Location: index.php?page=compte_perso');
 	
 	?>

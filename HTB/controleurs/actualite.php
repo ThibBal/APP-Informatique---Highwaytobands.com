@@ -44,7 +44,7 @@ include 'vues/actualite.php';
 }else{
 		$message = 'Seuls une salle et un artiste peuvent poster une actualité';
 		 $_SESSION['temp'] = $message;
-			header ('Location: index.php?page=accueil'); 
+				header('Location: ' . $_SERVER['HTTP_REFERER']); 
 }
 
 $message='Article posté';

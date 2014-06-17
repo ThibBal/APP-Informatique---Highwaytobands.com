@@ -11,35 +11,23 @@
 	<?php include 'controleurs/header.php' ?>
 
 
-<div> <h1> Concerts près de chez vous </h1>
+<div> <h1> Salles situéees près de chez vous </h1>
+<?php
 
-	<?php
-
-while ($concert = $liste_salle_near->fetch())
-	
+while ($donnees = $salles->fetch())
 {
-	$liste=concert_salle($concert['id']);
-
-while ($donnees = $liste -> fetch())
-{
- $dateMySQL= $donnees['date'];
- $date = new DateTime($dateMySQL);
-
- 	?>
-
-
+?>
     <div class=para>
-    <div class="image"><a href="index.php?page=concert&id=<?php echo $donnees['id']; ?>&name=<?php echo $donnees['name']; ?>"><img  src="img/photo1.jpg"></a></div><div class="presentation"><strong>Nom du concert</strong> : <a href="index.php?page=concert&id=<?php echo $donnees['id']; ?>&name=<?php echo $donnees['name']; ?>"><?php echo $donnees['name']; ?></a></br>
-    <strong>Artiste</strong> : <?php echo $donnees['artiste']; ?></br>
-    <strong>Salle</strong> : <?php echo $donnees['salle']; ?></br>
-    <strong>Date</strong> : <?php echo $date->format('d/m/Y'); ?></br>
+    <div class="image"><a href="index.php?page=salle&id=<?php echo $donnees['id']; ?>&name=<?php echo $donnees['name']; ?>"><img  src="img/salles/<?php echo($donnees['photo']); ?>"></a></div><div class="presentation"><strong>Nom de la salle</strong> : <a href="index.php?page=salle&id=<?php echo $donnees['id']; ?>&name=<?php echo $donnees['name']; ?>"><?php echo $donnees['name']; ?></a></br>
+    <strong>Adresse</strong> : <?php echo ($donnees['numero']); ?> <?php echo ($donnees['voie']); ?> - <?php echo ($donnees['zipcode']); ?>, <?php echo ($donnees['ville']); ?>, <?php echo ($donnees['pays']); ?></br>
     <strong>Description</strong> : <?php echo $donnees['description']; ?><br /></div>
    </div>
-
-
 <?php
-}}
-?>	
+}
+
+
+
+?>
 </div>
 
 </body>

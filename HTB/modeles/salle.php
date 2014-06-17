@@ -23,7 +23,7 @@ global $bdd;
 
 function connexion_salle($login){
 global $bdd;
-$sql = "SELECT id, password, name from salle where login ='$login'";
+$sql = "SELECT * from salle where login ='$login'";
 $req = $bdd->query($sql) or die(print_r($bdd->errorInfo()));
  	$donnee = $req->fetch();
  	return $donnee;

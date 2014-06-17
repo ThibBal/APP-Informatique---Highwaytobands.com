@@ -136,7 +136,7 @@ global $bdd;
 
 function detection_concert($cp){
 global $bdd;
-$res = "SELECT id from salle WHERE departement='$cp'";
+$res = "SELECT * from salle WHERE departement='$cp'";
 $req = $bdd-> query($res) or die(print_r($bdd->errorInfo()));
  	return $req;
 }

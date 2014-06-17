@@ -126,11 +126,17 @@ $followers=info_salle_abonne($abo['salle_id']);
 <h3>Infos personnelles</h3>
 			<div class="sous_article">			
 			Votre login : <?php echo($data2['login']); ?> </br>
-			Votre mail : <?php echo($data2['mail']); ?> </br>
+				Votre page : <a href="index.php?page=artiste&id=<?php echo $data2['id']; ?>"><?php echo $data2['name']; ?></a></br>
+				Votre mail : <?php echo($data2['mail']); ?> </br>
 	Votre style de musique : <?php echo($data2['style']); ?> </br>
+	Votre description : <?php echo($data2['description']); ?></br>
+
 
 <form class="formulaire" method="post" action="index.php?page=modifier_infos">			
 		<center><input type="submit" value="Modifier vos informations"/></center>
+	</form>
+	<form class="formulaire" method="post" action="index.php?page=creation_concert">			
+		<center><input type="submit" value="Proposer un concert"/></center>
 	</form>
 
 <form class="formulaire" method="post" action="index.php?page=actualite">			
@@ -221,11 +227,18 @@ while ($concerts = $concert->fetch())
 			<div class="sous_article">
 			
 			Votre login : <?php echo($data3['login']); ?> </br>
+			Votre page : <a href="index.php?page=salle&id=<?php echo $data3['id']; ?>"><?php echo $data3['name']; ?></a></br>
 			Votre mail : <?php echo($data3['mail']); ?> </br>
+			Votre adresse : <?php echo($data3['numero']); ?> <?php echo($data3['voie']); ?>, <?php echo($data3['ville']); ?> </br>
 	Votre code postal : <?php echo($data3['zipcode']); ?> </br>
+
 
 <form method="post" action="index.php?page=modifier_infos">			
 		<center><input type="submit" value="Modifier vos informations"/></center>
+	</form>
+
+		<form class="formulaire" method="post" action="index.php?page=creation_concert">			
+		<center><input type="submit" value="Proposer un concert"/></center>
 	</form>
 
 <form method="post" action="index.php?page=actualite">			

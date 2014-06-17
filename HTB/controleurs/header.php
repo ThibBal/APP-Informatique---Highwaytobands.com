@@ -22,12 +22,11 @@ if(isset($_POST['login'])){
 
  if( $donnee3['password'] != $password) {
 
- 	$message ='Mot de passe incorrect';
-    $_SESSION['temp'] = $message;
-  header ('Location: index.php?page=accueil');
+    $_SESSION['temp'] = 'Mot de passe incorrect';
+header('Location: ' . $_SERVER['HTTP_REFERER']);
 
  }  else {
-   $_SESSION['login'] = $login;
+   $_SESSION['login'] = $donnee3['login'];
    $_SESSION['name'] = $donnee3['name'];
    $_SESSION['id'] = $donnee3['id'];
    $message= 'Bienvenue';
@@ -37,7 +36,7 @@ if(isset($_POST['login'])){
  } 
 
  }  else {
-   $_SESSION['login'] = $login;
+     $_SESSION['login'] = $donnee2['login'];
     $_SESSION['name'] = $donnee2['name'];
    $_SESSION['id'] = $donnee2['id'];
    $message= 'Bienvenue';
@@ -47,7 +46,7 @@ if(isset($_POST['login'])){
  } 
 
   }  else {
-   $_SESSION['login'] = $login;
+  $_SESSION['login'] = $donnee['login'];
    $_SESSION['name'] = $donnee['name'];
    $_SESSION['id'] = $donnee['id'];
    $message= 'Bienvenue';

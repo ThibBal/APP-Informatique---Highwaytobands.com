@@ -15,7 +15,7 @@
 	poster_comment($membre_id, $artiste_id, $salle_id, $concert_id, $contenu, $date);
 	$_SESSION['temp'] = 'Commentaire posté';
 
-		 	header ('Location: index.php?page=accueil'); 
+		 	header('Location: ' . $_SERVER['HTTP_REFERER']);
 		 
 }
 
@@ -28,7 +28,9 @@ if($page=='artiste'){
 	poster_comment($membre_id, $artiste_id, $salle_id, $concert_id, $contenu, $date);
 	$_SESSION['temp'] = 'Commentaire posté';
 
-		 	header ('Location: index.php?page=accueil'); 
+		 
+		 	header('Location: ' . $_SERVER['HTTP_REFERER']);
+		 
 		 
 }
 
@@ -41,7 +43,9 @@ if($page=='concert'){
 	poster_comment($membre_id, $artiste_id, $salle_id, $concert_id, $contenu, $date);
 	$_SESSION['temp'] = 'Commentaire posté';
 
-		 	header ('Location: index.php?page=accueil'); 
+
+		 	header('Location: ' . $_SERVER['HTTP_REFERER']);
+		 
 		 
 }
 

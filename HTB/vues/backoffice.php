@@ -10,7 +10,7 @@
 	<link href='http://fonts.googleapis.com/css?family=Maiden+Orange' rel='stylesheet' type='text/css'>
 
 	<?php include 'controleurs/header.php' ?>
-<center><h1> Back-office de Highway to Bands </h1></center>
+<center><h1> Back-Office de Highway to Bands </h1></center>
 	<div id='contenu'>
 		<h2> Gestion des utilisateurs </h2>
 <form action="index.php?page=supprimer_membre" method="post"><h4> Supprimer un membre </h4>

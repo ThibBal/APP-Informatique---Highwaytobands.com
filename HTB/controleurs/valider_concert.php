@@ -13,12 +13,12 @@ if(isset($_SESSION['statut'])){
 
 			$_SESSION['temp'] = 'Concert validé';
 
-			header ('Location: index.php?page=accueil'); 
+				header('Location: ' . $_SERVER['HTTP_REFERER']); 
 
 		}else{
 			$_SESSION['temp'] = 'Cette page ne vous est pas destinée';
 
-			header ('Location: index.php?page=accueil'); 
+		header('Location: ' . $_SERVER['HTTP_REFERER']);
 
 		}
 
@@ -33,11 +33,11 @@ if(isset($_SESSION['statut'])){
 
 			$_SESSION['temp'] = 'Concert validé';
 
-			header ('Location: index.php?page=accueil'); 
+				header('Location: ' . $_SERVER['HTTP_REFERER']); 
 
 		}else{
 			$_SESSION['temp'] = 'Cette page ne vous est pas destinée';
-			header ('Location: index.php?page=accueil'); 
+				header('Location: ' . $_SERVER['HTTP_REFERER']);
 
 		}
 
@@ -45,7 +45,7 @@ if(isset($_SESSION['statut'])){
 }else{
 		$_SESSION['temp'] = 'Cette page ne vous est pas destinée';
 
-		header ('Location: index.php?page=accueil'); 
+	header('Location: ' . $_SERVER['HTTP_REFERER']);
 
 	}
 

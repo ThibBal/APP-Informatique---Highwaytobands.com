@@ -13,6 +13,6 @@ $id=$_POST['nom'];
 			 supprimer_id($id);
 	$message = 'Morceau supprimé';
 	$_SESSION['temp'] = $message;
-	header ('Location: index.php?page=accueil');
+	header ('Location: index.php?page=compte_perso');
 	
 	?>

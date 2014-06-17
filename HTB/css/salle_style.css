@@ -103,6 +103,9 @@ li{
  
 }
 
+textarea{
+  width: 90%;
+}
 
 .actu2{
 font-size: 0.8em;

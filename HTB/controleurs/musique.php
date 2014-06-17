@@ -9,7 +9,7 @@ include 'vues/musique.php';
 }else{
 	$message = "Vous n'êtes pas un artiste";
 	$_SESSION['temp'] = $message;
-	include 'vues/accueil.php';
+		header ('Location: index.php?page=accueil');
 }
 
 

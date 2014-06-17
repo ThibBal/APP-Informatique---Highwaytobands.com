@@ -10,6 +10,6 @@ $message='Vous participez au concert !';
 
  $_SESSION['temp'] = $message;
 
-header ('Location: index.php?page=accueil'); 
+header('Location: ' . $_SERVER['HTTP_REFERER']);
 	
 ?>

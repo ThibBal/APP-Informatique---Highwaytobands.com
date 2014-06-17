@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8" />
@@ -10,9 +10,7 @@
 
 <body>
 	<?php include 'controleurs/header.php' ?>
-	<script type="text/javascript"
-src="js/formulaire.js"></script>
-<div id="inscription">
+	<div id="inscription">
 		<form enctype="multipart/form-data" action="index.php?page=membre" method="post" id="inscription">
 			<span id="blabla">Inscription : Veuillez compléter les champs suivants</span>
 	<ul id="formulaire">
