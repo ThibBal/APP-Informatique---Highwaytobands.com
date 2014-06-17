@@ -18,6 +18,7 @@ $req = $bdd-> query($res) or die(print_r($bdd->errorInfo()));
 function supprimer_concert($id){
 global $bdd; 
 	$bdd->query("DELETE FROM concert WHERE id='$id'");
+	$bdd->query("DELETE FROM participation WHERE concert_id='$id'");
 
 }
 

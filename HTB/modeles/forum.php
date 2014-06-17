@@ -6,6 +6,19 @@ global $bdd;
 
 }
 
+function ajout_rubrique($titre, $description){ 
+global $bdd; 
+    $bdd->query("INSERT INTO forum_rubrique(titre_rub, description) VALUES('$titre', '$description')");
+
+}
+
+function supprimer_rubrique($id){
+global $bdd; 
+    $bdd->query("DELETE FROM forum_rubrique WHERE id_rubrique='$id'");
+    $bdd->query("DELETE FROM forum_sujet WHERE id_rubrique='$id'");
+}
+
+
 function poster_sujet($titre, $date, $id_user, $id_rubrique){ // Poster un nouveau sujet
 global $bdd; 
     $bdd->query("INSERT INTO forum_sujet(titre_sujet, date_creation, id_user, id_rubrique) VALUES('$titre', '$date', '$id_user', '$id_rubrique')");

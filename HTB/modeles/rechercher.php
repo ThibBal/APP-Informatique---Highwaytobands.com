@@ -2,7 +2,7 @@
 
 function recherche_membre($rechercher){ // Récupère les informations d'un membre
 	global $bdd;
-$res = "SELECT * FROM membre WHERE name LIKE '%$rechercher%' OR zipcode='$rechercher' OR login LIKE '%$rechercher%' ";
+$res = "SELECT * FROM membre WHERE name LIKE '%$rechercher%' OR zipcode LIKE '$rechercher%' OR login LIKE '%$rechercher%' ";
 $req = $bdd-> query($res) or die(print_r($bdd->errorInfo()));
 
  	 	return $req;
@@ -11,7 +11,7 @@ $req = $bdd-> query($res) or die(print_r($bdd->errorInfo()));
 
 function recherche_salle($rechercher){ // Récupère les informations d'un membre
 	global $bdd;
-$res = "SELECT * FROM salle WHERE name LIKE '%$rechercher%' OR zipcode='$rechercher' OR login LIKE '%$rechercher%'";
+$res = "SELECT * FROM salle WHERE name LIKE '%$rechercher%' OR zipcode LIKE '$rechercher%' OR login LIKE '%$rechercher%'";
 $req = $bdd-> query($res) or die(print_r($bdd->errorInfo()));
 
  	 	return $req;

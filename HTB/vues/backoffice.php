@@ -94,12 +94,6 @@
 
 
 <h2> Gestion des concerts </h2>
-<form action="index.php?page=creation_concert" method="post"><h4> Ajouter un concert </h4>
-	<input name=concert class= "box" type="text">
-<div id="envoi"><input type="submit" value="Ajouter ce concert" /></div>
-
-	</form>
-
 <form action="index.php?page=supprimer_concert" method="post"><h4> Supprimer un concert </h4>
 	
 		<SELECT name=concert size="1">
@@ -113,10 +107,31 @@
 
 	</form>
 
+	<h2> Administration du forum </h2>
+<form action="index.php?page=ajout_rubrique" method="post"><h4> Ajouter une rubrique </h4>
+	<input name=rubrique class= "box" type="text">
+	<h5>Description</h5><textarea name=description rows=3 cols=15></textarea>
+<div id="envoi"><input type="submit" value="Ajouter cette rubrique" /></div>
+
+	</form>
+
+<form action="index.php?page=supprimer_rubrique" method="post"><h4> Supprimer une rubrique </h4>
+	
+		<SELECT name=rubrique size="1">
+			<option value="0" selected disabled> Sélectionner une rubrique </option>
+<?php while ($style = $styles->fetch()) { ?>
+<OPTION value="<?php echo $style['id']; ?>"><?php echo $style['style']; ?>
+	<?php } ?>
+
+</SELECT>
+<div id="envoi"><input type="submit" value="Supprimer" /></div>
+
+	</form>
+
 <h2> Gestion de la Foire Aux Questions </h2>
 <form action="index.php?page=ajout_faq" method="post"><h4> Ajouter une question </h4>
-	<h3>Question</h3><textarea name=question rows=3 cols=15></textarea>
-	<h3>Réponse</h3><textarea name=reponse rows=3 cols=15></textarea>
+	<h5>Question</h5><textarea name=question rows=3 cols=15></textarea>
+	<h5>Réponse</h5><textarea name=reponse rows=3 cols=15></textarea>
 <div id="envoi"><input type="submit" value="Ajouter" /></div>
 
 	</form>
@@ -140,5 +155,5 @@
 	</div>
 </body>
 
-
+	<?php include 'controleurs/footer.php' ?>
 

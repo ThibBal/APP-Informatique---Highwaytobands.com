@@ -12,8 +12,13 @@
 	<?php include 'controleurs/header.php' ?>
 	
 	<div id="contenu">
+
+
 		<div class="article">
 			<p class="grostitre">FAQ</p>
+Bienvenue sur la Foire aux Questions de Highway to Bands.
+Vous trouverez dans cette rubriques les questions les plus récurrentes posées concernant notre site Internet.
+N'hésitez-pas à nous contacter si vous avez besoin de renseignements supplémentaires concernant l'utilisation de Highway to Bands.
 
 			<?php while ($questions = $faq->fetch())
 	{ ?>
