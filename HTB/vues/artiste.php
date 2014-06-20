@@ -13,6 +13,15 @@
 				
 				<div class="abo"><?php if(isset($_SESSION['statut'])){
 
+				if($_SESSION['statut']=='salle'){ ?>
+						<form class="formulaire" method="post" action="index.php?page=creation_concert">			
+		<center><input type="submit" value="Proposer un concert"/></center>
+	</form>
+			<?php	} ?>
+
+
+<?php
+
 					if($_SESSION['statut']=='membre'){
 
 						if($membre['membre_id']==$_SESSION['id']){ ?>
@@ -40,7 +49,9 @@
 	<div class="sous_article">
 		<h3> Informations </h3>
 		<div class="actu">
-			<?php echo ($data['description']); ?>
+			<?php echo ($data['description']); ?></br>
+
+			<strong>Style de musique : </strong><?php echo ($data['style']); ?>
 		</div>	
 		
 	</div>

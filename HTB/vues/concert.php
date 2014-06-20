@@ -75,6 +75,7 @@
 			<h3>Description</h3>
 			<strong>Artiste :</strong> <a href="index.php?page=artiste&id=<?php echo $info_artiste['id']; ?>&name=<?php echo $info_artiste['name']; ?>"><?php echo ($info_artiste['name']); ?></a></br>
 			<strong>Salle : </strong><a href="index.php?page=salle&id=<?php echo $info_salle['id']; ?>&name=<?php echo $info_salle['name']; ?>"><?php echo ($info_salle['name']); ?></a></br>
+			<strong>Style de musique : </strong><?php echo ($info_artiste['style']); ?>
 			<div class="actu"><p><?php echo ($data['description']); ?></p></div>			
 		</div>
 

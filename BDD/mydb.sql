@@ -17,10 +17,10 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Base de données: `mydb`
+-- Base de données: `highwaytobands_`
 --
-CREATE DATABASE IF NOT EXISTS `mydb` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
-USE `mydb`;
+CREATE DATABASE IF NOT EXISTS `highwaytobands_` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `highwaytobands_`;
 
 -- --------------------------------------------------------
 

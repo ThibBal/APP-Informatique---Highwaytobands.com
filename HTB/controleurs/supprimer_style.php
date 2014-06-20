@@ -1,12 +1,12 @@
 <?php
 
-$artiste=$_POST['artiste'];
+$artiste=$_POST['style'];
 
-require('modeles/artiste.php'); 
+require('modeles/style.php'); 
 
-supprimer_artiste($artiste);
+supprimer_style($artiste);
 
-$_SESSION['temp'] = 'Artiste supprimé !';
+$_SESSION['temp'] = 'Style supprimé !';
 
 
 header ('Location: index.php?page=backoffice');

@@ -45,7 +45,7 @@
 				<li class="champs"><span>Description : </span><textarea name=description rows=5 cols=50><?php echo($data['description']) ?></textarea></li>
 				<li class="champs"><span>Style de musiques : </span>
 					<SELECT name=style size="1">
-						<option value="0" selected disabled> Choisir un style </option>
+						<option><?php echo($data['style']) ?>
 						<?php
 						require('modeles/style.php');
 						$style=liste_style();

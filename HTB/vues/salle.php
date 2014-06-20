@@ -25,6 +25,14 @@
 			
 			<?php if(isset($_SESSION['statut'])){
 
+				if($_SESSION['statut']=='artiste'){ ?>
+						<form class="formulaire" method="post" action="index.php?page=creation_concert">			
+		<center><input type="submit" value="Proposer un concert"/></center>
+	</form>
+			<?php	} ?>
+
+
+<?php
 if($_SESSION['statut']=='membre'){
 
 if($membre['membre_id']==$_SESSION['id']){ ?>
