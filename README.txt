@@ -1,5 +1,9 @@
 ﻿--- Highway to bands --- highwaytobands.com ---
 
+Code source du projet d'élèves d'A1 à l'ISEP, réalisé par le groupe G1B.
+
+---
+
 Bonjour !
 
 Le fichier mydb.sql contient l'archive de notre base de données
